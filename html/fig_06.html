@@ -14351,42 +14351,14 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Dowload-data">Dowload data<a class="anchor-link" href="#Dowload-data">&#182;</a></h2>
+<h2 id="Dowload-data(Fig.-6,-Fig.-7)">Dowload data(<a href="https://www.dropbox.com/sh/zy9aoqbnpo6s8am/AAASpJ2E9bJipz55U_6SFto_a?dl=1">Fig. 6</a>, <a href="https://www.dropbox.com/sh/2lbco4q48g8wjh8/AACwwwbTStiqtCujwzhIDw__a?dl=1">Fig. 7</a>)<a class="anchor-link" href="#Dowload-data(Fig.-6,-Fig.-7)">&#182;</a></h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Can also be downloaded from <a href="https://drive.google.com/drive/folders/1RPes0tQnweCk4mH1VyHbOlX-TLDSFaQw?usp=sharing">here</a> for Figure 6 and <a href="https://drive.google.com/drive/folders/1pStjUFEHdRbSs9FpXrd8J2R5dZ0BQYfC?usp=sharing">here</a> for Figure 7</p>
+<p>This should be placed in a folder named <code>data</code> in the same level as this notebook</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> rclone sync --config<span class="o">=</span><span class="s2">&quot;rclone.conf&quot;</span> hatp23:data/06 data/06
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ! rclone sync --config=&quot;rclone.conf&quot; hatp23:data/07 data/07</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14395,7 +14367,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">base_dir</span> <span class="o">=</span> <span class="s2">&quot;data/06&quot;</span>  <span class="c1"># Change to 07 to produce Figure 7</span>
@@ -14601,13 +14573,13 @@ a.anchor-link {
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mean WLC depth:&quot;</span><span class="p">,</span> <span class="n">mean_wlc_depth</span><span class="p">,</span> <span class="n">mean_wlc_depth_unc</span><span class="p">)</span>
-<span class="n">Rs</span> <span class="o">=</span> <span class="mf">0.96</span> <span class="o">*</span> <span class="n">uni</span><span class="o">.</span><span class="n">solRad</span>
+<span class="n">Rs</span> <span class="o">=</span> <span class="mf">1.152</span> <span class="o">*</span> <span class="n">uni</span><span class="o">.</span><span class="n">solRad</span>
 <span class="n">Rp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_wlc_depth</span> <span class="o">*</span> <span class="mf">1e-6</span> <span class="o">*</span> <span class="n">Rs</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">Mp</span> <span class="o">=</span> <span class="mf">1.35</span> <span class="o">*</span> <span class="n">uni</span><span class="o">.</span><span class="n">jupiterMass</span>
+<span class="n">Mp</span> <span class="o">=</span> <span class="mf">1.92</span> <span class="o">*</span> <span class="n">uni</span><span class="o">.</span><span class="n">jupiterMass</span>
 <span class="n">gp</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">G</span> <span class="o">*</span> <span class="n">Mp</span> <span class="o">/</span> <span class="n">Rp</span> <span class="o">**</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rs (Rsun):&quot;</span><span class="p">,</span> <span class="n">Rs</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;Rsun&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rp (Rj):&quot;</span><span class="p">,</span> <span class="n">Rp</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;Rjupiter&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;gp (m/s^2):&quot;</span><span class="p">,</span> <span class="n">gp</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;m/s^2&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rs (Rsun):&quot;</span><span class="p">,</span> <span class="n">Rs</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;Rsun&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;gp (m/s^2):&quot;</span><span class="p">,</span> <span class="n">gp</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cm/s^2&quot;</span><span class="p">))</span>
 
 <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../paper/figures/tspec/tspec_</span><span class="si">{</span><span class="n">table_suffix</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
 </pre></div>
@@ -14634,9 +14606,9 @@ offsets (% mean wlc depth): [-2.78392137 -1.76836393  4.83580017  2.00308868 -0.
 (5, 3, 17)
 Saving tspec to: data/06/tspec_c.csv
 mean WLC depth: 12945.182608127869 2.168930318004236
-Rs (Rsun): 0.96 solRad
-Rp (Rj): 1.0628938158690115 jupiterRad
-gp (m/s^2): 29.618942962205868 m / s2
+Rp (Rj): 1.2754725790428136 jupiterRad
+Rs (Rsun): 1.152 solRad
+gp (m/s^2): 2925.3276999709506 cm / s2
 </pre>
 </div>
 </div>
