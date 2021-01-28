@@ -38,6 +38,7 @@ jobs:
           key:
             ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{
             hashFiles('env_hatp23.yml') }}
+
       - uses: conda-incubator/setup-miniconda@v2
         with:
           activate-environment: hatp23
@@ -45,7 +46,7 @@ jobs:
           python-version: 3
           auto-activate-base: false
           use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
-      - name: Download data
+
       - run: |
           export RCLONE_CONFIG_HATP23_TOKEN=${{ secrets.RCLONE_CONFIG_HATP23_TOKEN }}
           if [[ ${{ matrix.n }} == '03' ]]
@@ -57,17 +58,17 @@ jobs:
           else
             rclone sync -P --config=./rclone.conf hatp23:data/${{ matrix.n }} ./notebooks/data/${{ matrix.n }}
           fi
-      - name: Build notebooks
-      - run: |
           jupyter nbconvert --to html --output-dir='./html' --execute ./notebooks/fig_${{ matrix.n }}.ipynb
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add . && git commit --allow-empty -m "updated fig_${{ matrix.n }}.html"
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: fig_${{ matrix.n }}
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
@@ -75,6 +76,7 @@ jobs:
           branch: fig_${{ matrix.n }}
           labels: automerge
           delete-branch: "true"
+
       - name: Trigger next workflow
         if: success()
         uses: peter-evans/repository-dispatch@v1
