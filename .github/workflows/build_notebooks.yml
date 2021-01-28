@@ -45,10 +45,20 @@ jobs:
           python-version: 3
           auto-activate-base: false
           use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
+      - name: Download data
       - run: |
-          export RCLONE_CONFIG_HATP23_TYPE=dropbox
           export RCLONE_CONFIG_HATP23_TOKEN=${{ secrets.RCLONE_CONFIG_HATP23_TOKEN }}
-          rclone sync hatp23:data/${{ matrix.n }} ./notebooks/data/${{ matrix.n }}
+          if [[ ${{ matrix.n }} == '03' ]]
+          then
+            rclone sync -P --config=./rclone.conf hatp23:data/02 ./notebooks/data/03
+          elif [[ ${{ matrix.n }} == '10' ]]
+          then
+            rclone sync -P --config=./rclone.conf hatp23:data/04 ./notebooks/data/10
+          else
+            rclone sync -P --config=./rclone.conf hatp23:data/${{ matrix.n }} ./notebooks/data/${{ matrix.n }}
+          fi
+      - name: Build notebooks
+      - run: |
           jupyter nbconvert --to html --output-dir='./html' --execute ./notebooks/fig_${{ matrix.n }}.ipynb
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
