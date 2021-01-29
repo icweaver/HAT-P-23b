@@ -1,7 +1,6 @@
 name: hatp23
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
   - appdirs=1.4.4=py_0
