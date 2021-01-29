@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.12.19
+# v0.12.20
 
 using Markdown
 using InteractiveUtils
@@ -169,18 +169,18 @@ species[min_evidence_loc[1]], models[min_evidence_loc[2]]
 # ╔═╡ 5124e5a4-72fc-43f7-acad-09ce03e7ff3b
 ΔlnZ_mat = hcat(species, evidences .- min_evidence);
 
+# ╔═╡ 86db95f8-61a7-11eb-14f1-3be866dce482
+latex_form
+
 # ╔═╡ 9345710e-2bb7-4dfa-9a27-0e4fc0501eeb
 # with_terminal() do
 # 	lap(ΔlnZ_mat)
 # end
 
 # ╔═╡ 744482f8-3bd4-41ea-863d-2fcd284269d6
-begin
-	import LatexPrint: latex_form
-	function latex_form(m::Measurement{Float64})
-		"$(round(m.val; digits=2)) \\pm $(round(m.err; digits=2))"
-	end
-end
+# function latex_form(m::Measurement{Float64})
+# 	"$(round(m.val; digits=2)) \\pm $(round(m.err; digits=2))"
+# end
 
 # ╔═╡ 7b4234f2-57c7-45e6-8360-6e5afb4b7dc5
 begin
@@ -274,8 +274,9 @@ Am I estimating stellar variability the correct way?
 # ╠═2d5bcf3d-3783-4eed-81ea-faf9c783b937
 # ╠═e3b146b9-29a5-431b-a29b-deba294bde45
 # ╠═5124e5a4-72fc-43f7-acad-09ce03e7ff3b
-# ╟─9345710e-2bb7-4dfa-9a27-0e4fc0501eeb
-# ╟─744482f8-3bd4-41ea-863d-2fcd284269d6
+# ╠═86db95f8-61a7-11eb-14f1-3be866dce482
+# ╠═9345710e-2bb7-4dfa-9a27-0e4fc0501eeb
+# ╠═744482f8-3bd4-41ea-863d-2fcd284269d6
 # ╟─7b4234f2-57c7-45e6-8360-6e5afb4b7dc5
 # ╟─509e85b3-be33-4ad2-8070-21501a983723
 # ╟─b0cad196-a4f0-4245-bbbb-d7fbad621e08
