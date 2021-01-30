@@ -1,28 +1,4 @@
-import argparse
-
-def str_to_bool(value):
-    if isinstance(value, bool):
-        return value
-    if value.lower() in {'false', 'f', '0', 'no', 'n'}:
-        return False
-    elif value.lower() in {'true', 't', '1', 'yes', 'y'}:
-        return True
-    raise ValueError(f'{value} is not a valid boolean value')
-
-parser = argparse.ArgumentParser()
-
-parser.add_argument("--base_dir")
-parser.add_argument("--spot_temp", type=float)
-parser.add_argument("--spot_frac", type=float)
-parser.add_argument("--fit_R0", type=str_to_bool)
-parser.add_argument("--molecules", nargs='+', type=str)
-parser.add_argument("--clouds", type=str_to_bool)
-parser.add_argument("--hazes", type=str_to_bool)
-parser.add_argument("--heterogeneity", type=str_to_bool)
-
-args = parser.parse_args()
-
-base_dir = args.base_dir #"spot_lower_fit_R0"
+base_dir = "spot_upper_fixed_R0"
 
 # Planet properties:
 R0 = 1.275  # Reference radius, in Jupiter radii
@@ -38,7 +14,7 @@ data_fname = "tspec_hp23_c.csv"
 nlive = 10000
 
 # Define molecules and atoms whose vmr will be fit:
-molecules = args.molecules #["Na", "K", "TiO"]
+molecules = Na
 
 # Define minimum and maximum temperatures for the atmosphere
 # (prior will be uniform between those temperatures):
@@ -51,7 +27,7 @@ Include_E1 = True
 # Define if an additional grey opacity will be fit. If they are, define
 # minimum and maximum cross-section (in log-space) for that absorber. Note that
 # a *cloud deck* is already fitted to the data via the R0 parameter:
-clouds = args.clouds #True
+clouds = False
 clouds_min = -50.0
 clouds_max = 0.0
 
@@ -65,7 +41,7 @@ P0_max = 1e6
 
 # Fit R0 normalization? If yes, a factor with prior U (1-diff_factor,1+diff_factor)
 # will be multiplied to R0
-fit_R0 = True
+fit_R0 = False
 diff_factor = 0.2
 
 # If flat_line is true, it will be assumed that the underlying
@@ -74,8 +50,8 @@ flat_line = False
 
 # Define if stellar heterogeneity will be fit:
 # Define if hazes will be fit:
-hazes =         args.hazes #True
-heterogeneity = args.heterogeneity #True
+hazes = False
+heterogeneity = False
 # Method for modeling heterogeneity signal. There are two options:
 #  'simple' = two component photosphere, in which the planet occults a
 #             region with a spectrum S_occ and there is also an unocculted
@@ -88,16 +64,8 @@ heterogeneity = args.heterogeneity #True
 het_mode = "simple"
 
 # Fixed spot parameters
-spot_temp = args.spot_temp #2200.0
-spot_frac = args.spot_frac #0.022
-print(f"{base_dir=}", type(base_dir))
-print(f"{spot_temp=}", type(spot_temp))
-print(f"{spot_frac=}", type(spot_frac))
-print(f"{fit_R0=}", type(fit_R0))
-print(f"{molecules=}", type(molecules))
-print(f"{clouds=}", type(clouds))
-print(f"{hazes=}", type(hazes))
-print(f"{heterogeneity=}", type(heterogeneity))
+spot_temp = 3800.0
+spot_frac = 0.026
 
 # Temperature limits of stellar spectral models to explore
 Tmin_star = 2300
@@ -121,3 +89,12 @@ nbin = 0
 #             the exact method as Tbin -> 0.
 cs_method = "nearest"
 Tbin = 10.0
+
+# print(f"{base_dir=}", type(base_dir))
+# print(f"{spot_temp=}", type(spot_temp))
+# print(f"{spot_frac=}", type(spot_frac))
+# print(f"{fit_R0=}", type(fit_R0))
+# print(f"{molecules=}", type(molecules))
+# print(f"{clouds=}", type(clouds))
+# print(f"{hazes=}", type(hazes))
+# print(f"{heterogeneity=}", type(heterogeneity))

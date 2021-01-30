@@ -817,3 +817,5 @@ def write_latex_single(row):
 def write_latex_wav(row):
     wav_d, wav_u = row
     return f"{wav_d:.1f} - {wav_u:.1f}"
+
+
