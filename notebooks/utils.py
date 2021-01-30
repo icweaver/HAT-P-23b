@@ -58,19 +58,52 @@ def decompress_pickle(fname):
     return pickle.load(data)
 
 
-def get_lnZ(data):
-    # load in exoretreival pkls
-    #with open(fpath, 'rb') as f:
-    #    post = pickle.load(f)
-    #with open(fpath_flat, 'rb') as f:
-    #    post_flat = pickle.load(f)
+def get_evidences(base_dir):
+    fit_R0 = "fitR0" if "fit_R0" in base_dir else "NofitR0"
 
-    #delta_ln_Z = post['lnZ'] - post_flat['lnZ']
-    #model_unc = post['lnZerr']
-    #model_flat_unc = post_flat['lnZerr']
-    #delta_ln_Z_unc = np.sqrt(sM**2 + sF**2)
-    #return delta_ln_Z, delta_ln_Z_unc, post['lnZ'], sM
-    return data['lnZ'], data["lnZerr"]
+    species = ["Na", "K", "TiO", "Na_K", "Na_TiO", "K_TiO", "Na_K_TiO"]
+    model_names_dict = {
+        "clear": f"NoHet_FitP0_NoClouds_NoHaze_{fit_R0}",
+        "clear+cloud": f"NoHet_FitP0_Clouds_NoHaze_{fit_R0}",
+        "clear+haze": f"NoHet_FitP0_NoClouds_Haze_{fit_R0}",
+        "clear+cloud+haze": f"NoHet_FitP0_Clouds_Haze_{fit_R0}",
+        "clear+spot": f"Het_FitP0_NoClouds_NoHaze_{fit_R0}",
+        "clear+spot+cloud": f"Het_FitP0_Clouds_NoHaze_{fit_R0}",
+        "clear+spot+haze": f"Het_FitP0_NoClouds_Haze_{fit_R0}",
+        "clear+spot+cloud+haze": f"Het_FitP0_Clouds_Haze_{fit_R0}",
+    }
+
+    data_dict = {
+        sp: {
+            model_name: load_pickle(
+                f"{base_dir}/HATP23_E1_{model_id}_{sp}/retrieval.pkl"
+            )
+            for (model_name, model_id) in model_names_dict.items()
+        }
+        for sp in species
+    }
+
+    lnZ = {}
+    lnZ_err = {}
+    for species_name, species_data in data_dict.items():
+        lnZ[species_name] = {}
+        lnZ_err[species_name] = {}
+        for model_name, model_data in species_data.items():
+            lnZ[species_name][model_name] = model_data["lnZ"]
+            lnZ_err[species_name][model_name] = model_data["lnZerr"]
+
+    df_lnZ = pd.DataFrame(lnZ)
+    df_lnZ_err = pd.DataFrame(lnZ_err)
+
+    species_min = df_lnZ.min().idxmin()
+    model_min = df_lnZ[species_min].idxmin()
+
+    df_flat = data_dict[species_min][model_min]
+    df_Delta_lnZ = df_lnZ - df_flat["lnZ"]
+    df_Delta_lnZ_err = np.sqrt(df_lnZ_err ** 2 + df_flat["lnZerr"] ** 2)
+
+    return df_Delta_lnZ, df_Delta_lnZ_err, species_min, model_min
+
 
 def get_phases(t, P, t0):
     """
@@ -246,13 +279,7 @@ def plot_binned(
 
 
 def plot_chips(
-    dirpath,
-    fpathame,
-    target="",
-    vmin=0,
-    vmax=2_000,
-    spec_ap=0,
-    sky_ap=0,
+    dirpath, fpathame, target="", vmin=0, vmax=2_000, spec_ap=0, sky_ap=0
 ):
     # This plots the chips by numbers:
     #
@@ -648,11 +675,7 @@ def plot_model(
     return ax
 
 
-def plot_instrument(
-    ax,
-    instrument_data=None,
-    instr_kwargs=None,
-):
+def plot_instrument(ax, instrument_data=None, instr_kwargs=None):
     """Plot retrieved transmission spectrum.
 
     Parameters
@@ -797,8 +820,9 @@ def weighted_mean_uneven_errors(k, k_up, k_low, model=1):
         x_denominator += w[i + 1]
         e_numerator += (w[i + 1] ** 2) * V[i + 1]  # below eqn 17
         e_denominator += w[i + 1]
-    return x_numerator / x_denominator, np.sqrt(
-        e_numerator / (e_denominator ** 2)
+    return (
+        x_numerator / x_denominator,
+        np.sqrt(e_numerator / (e_denominator ** 2)),
     )
 
 
@@ -806,8 +830,10 @@ def write_latex_row(row):
     v, vu, vd = row
     return f"{v:.3f}^{{+{vu:.3f}}}_{{-{vd:.3f}}}"
 
+
 def write_latex2(val, unc):
-    return f'{val:.2f} \pm {unc:.2f}'
+    return f"{val:.2f} \pm {unc:.2f}"
+
 
 def write_latex_single(row):
     v, v_unc = row
@@ -817,5 +843,3 @@ def write_latex_single(row):
 def write_latex_wav(row):
     wav_d, wav_u = row
     return f"{wav_d:.1f} - {wav_u:.1f}"
-
-
