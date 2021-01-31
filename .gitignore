@@ -2,5 +2,4 @@ _build
 __pycache__/
 .ipynb_checkpoints/
 data*/
-paper/
 retrievals/

@@ -19,17 +19,29 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # Install dependencies
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v1
+    - name: Cache conda
+      uses: actions/cache@v1
+      env:
+        # Increase this value to reset cache if etc/example-environment.yml has not changed
+        CACHE_NUMBER: 0
       with:
+        path: ~/conda_pkgs_dir
+        key:
+          ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{
+          hashFiles('env_hatp23.yml') }}
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        activate-environment: hatp23b
+        environment-file: env_hatp23b.yml
         python-version: 3.9
+        auto-activate-base: false
+        use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements_book.txt
-        pip install -r requirements_hatp23b.txt
+        export RCLONE_CONFIG_HATP23_TOKEN=${{ secrets.RCLONE_CONFIG_HATP23_TOKEN }}
+        rclone sync -P --config=./rclone.conf hatp23b:ACCESS/Projects/HAT-P-23b/paper_data ./notebooks/data
 
     # Build the book
     - name: Build the book
