@@ -13,4 +13,4 @@ sections:
 - file: notebooks/retr_evidences
 - file: notebooks/cloudy_vs_clear
 - file: notebooks/detrended_wlcs_corners
-- file: notebooks/detrended_blcs
+- file: notebooks/detrended_binned_lcs
