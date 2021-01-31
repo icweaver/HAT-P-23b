@@ -18,7 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
     - name: Cache conda
       uses: actions/cache@v1
       env:
@@ -28,7 +27,7 @@ jobs:
         path: ~/conda_pkgs_dir
         key:
           ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{
-          hashFiles('env_hatp23.yml') }}
+          hashFiles('env_hatp23b.yml') }}
 
     - uses: conda-incubator/setup-miniconda@v2
       with:
