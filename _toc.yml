@@ -1,0 +1,16 @@
+file: README
+numbered: true
+
+sections:
+- file: notebooks/raw_frames
+- file: notebooks/extacted_spectra
+- file: notebooks/extracted_wlcs
+- file: notebooks/detrended_wlcs
+- file: notebooks/photometric_act
+- file: notebooks/tspec_full
+- file: notebooks/tspec_species
+- file: notebooks/tspec_forward_model
+- file: notebooks/retr_evidences
+- file: notebooks/cloudy_vs_clear
+- file: notebooks/detrended_wlcs_corners
+- file: notebooks/detrended_blcs

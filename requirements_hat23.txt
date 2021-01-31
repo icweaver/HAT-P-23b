@@ -1,0 +1,5 @@
+astropy
+corner
+matplotlib
+pandas
+seaborn
