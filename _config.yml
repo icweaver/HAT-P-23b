@@ -5,7 +5,7 @@ logo: images/access.png
 only_build_toc_files: true
 
 execute:
-  execute_notebooks: force
+  execute_notebooks: off
 
 exclude_patterns: [".git*", _build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", notebooks/__pycache__/, notebooks/data, notebooks/utils.py]
 

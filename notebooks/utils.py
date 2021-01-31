@@ -670,7 +670,7 @@ def plot_model(
     if sample:
         model_sampled = model_dict["sampled_data"]
         wav_sampled, flux_sampled = model_sampled["wav"], model_sampled["flux"]
-        ax.plot(wav_sampled, flux_sampled, "s", c=c)
+        ax.plot(wav_sampled, flux_sampled, "s", mec=0.7*c, c=c)
 
     return ax
 
@@ -706,6 +706,7 @@ def plot_instrument(ax, instrument_data=None, instr_kwargs=None):
     )
 
     return ax
+
 
 def plot_params():
     return {
@@ -789,10 +790,12 @@ def plot_spec_file(
     ax.plot(wavs, specs_med, lw=2, color=c)
     return ax, wavs, data
 
+
 def plot_tspec_IMACS(ax, base_dir):
     data_dirs = sorted(glob.glob(f"{base_dir}/hp*"))
     data_dict = {
-        f"Transit {i}": data_dir for (i, data_dir) in enumerate(data_dirs, start=1)
+        f"Transit {i}": data_dir
+        for (i, data_dir) in enumerate(data_dirs, start=1)
     }
 
     # Use first entry for wavelength
@@ -806,7 +809,9 @@ def plot_tspec_IMACS(ax, base_dir):
     for transit, dirpath in data_dict.items():
         # WLCs
         fpath = f"{dirpath}/white-light/results.dat"
-        results = pd.read_table(fpath, sep="\s+", escapechar="#", index_col="Variable")
+        results = pd.read_table(
+            fpath, sep="\s+", escapechar="#", index_col="Variable"
+        )
         p, p_u, p_d = results.loc["p"]
         wlc_depth = p ** 2 * 1e6
         wlc_depth_u = p_u ** 2 * 1e6
@@ -815,9 +820,13 @@ def plot_tspec_IMACS(ax, base_dir):
 
         # Tspec
         fpath = f"{dirpath}/transpec.csv"
-        df_tspec = pd.read_csv(fpath)[["Depth (ppm)", "Depthup (ppm)", "DepthDown (ppm)"]]
+        df_tspec = pd.read_csv(fpath)[
+            ["Depth (ppm)", "Depthup (ppm)", "DepthDown (ppm)"]
+        ]
 
-        if (transit == "Transit 1" and "full" in dirpath) or ("species" in dirpath):
+        if (transit == "Transit 1" and "full" in dirpath) or (
+            "species" in dirpath
+        ):
             tspec, tspec_u, tspec_d = df_tspec.values.T
         else:
             tspec, tspec_u, tspec_d = df_tspec.values[1:-1, :].T
@@ -835,7 +844,9 @@ def plot_tspec_IMACS(ax, base_dir):
     # wlc_offsets *= 0
     print(f"offsets: {wlc_offsets}")
     print(f"offsets (% mean wlc depth): {wlc_offsets*100/mean_wlc_depth}")
-    tspec_stats = np.array(tspec_stats)  # transits x (depth, u, d) x wavelength
+    tspec_stats = np.array(
+        tspec_stats
+    )  # transits x (depth, u, d) x wavelength
     print(tspec_stats.shape)
     tspec_stats[:, 0, :] -= wlc_offsets[np.newaxis].T
 
@@ -998,6 +1009,7 @@ def plot_tspec_IMACS(ax, base_dir):
     print("gp (m/s^2):", gp.to("cm/s^2"))
 
     return ax
+
 
 def savefig(fpath):
     pathlib.Path(fpath).parents[0].mkdir(parents=True, exist_ok=True)

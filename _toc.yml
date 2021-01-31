@@ -10,7 +10,8 @@ sections:
 - file: notebooks/tspec_full
 - file: notebooks/tspec_species
 - file: notebooks/tspec_forward_model
-- file: notebooks/retr_evidences
+- file: notebooks/retrieval_evidence
+- file: notebooks/retrieval_tspec
 - file: notebooks/cloudy_vs_clear
 - file: notebooks/detrended_wlcs_corners
 - file: notebooks/detrended_binned_lcs
