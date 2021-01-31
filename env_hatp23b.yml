@@ -1,6 +1,7 @@
 name: hatp23b
 channels:
   - conda-forge
+  - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
   - appdirs=1.4.4=py_0
@@ -12,8 +13,8 @@ dependencies:
   - black=19.3b0=py_0
   - blas=1.0=mkl
   - bleach=3.2.2=pyhd3eb1b0_0
-  - ca-certificates=2020.12.5=ha878542_0
-  - certifi=2020.12.5=py39hf3d152e_1
+  - ca-certificates=2021.1.19=h06a4308_0
+  - certifi=2020.12.5=py39h06a4308_0
   - cffi=1.14.4=py39h261ae71_0
   - click=7.1.2=pyhd3eb1b0_0
   - corner=2.1.0=pyhd3deb0d_1
@@ -35,12 +36,10 @@ dependencies:
   - ipykernel=5.3.4=py39hb070fc8_0
   - ipython=7.19.0=py39hb070fc8_1
   - ipython_genutils=0.2.0=pyhd3eb1b0_1
-  - ipywidgets=7.6.3=pyhd3eb1b0_1
   - jedi=0.17.2=py39h06a4308_1
   - jinja2=2.11.2=pyhd3eb1b0_0
   - jpeg=9b=h024ee3a_2
   - jsonschema=3.2.0=py_2
-  - jupyter=1.0.0=py39h06a4308_7
   - jupyter_client=6.1.7=py_0
   - jupyter_console=6.2.0=py_0
   - jupyter_core=4.7.0=py39h06a4308_0
@@ -71,11 +70,9 @@ dependencies:
   - mkl_random=1.0.2=py39h63df603_0
   - nb_black=1.0.7=py_0
   - nbclient=0.5.1=py_0
-  - nbconvert=6.0.7=py39h06a4308_0
   - nbformat=5.1.2=pyhd3eb1b0_1
   - ncurses=6.2=he6710b0_1
   - nest-asyncio=1.4.3=pyhd3eb1b0_0
-  - notebook=6.2.0=py39h06a4308_0
   - numpy=1.19.2=py39h89c1606_0
   - numpy-base=1.19.2=py39h2ae0177_0
   - olefile=0.46=py_0
@@ -126,10 +123,8 @@ dependencies:
   - wcwidth=0.2.5=py_0
   - webencodings=0.5.1=py39h06a4308_1
   - wheel=0.36.2=pyhd3eb1b0_0
-  - widgetsnbextension=3.5.1=py39h06a4308_0
   - xz=5.2.5=h7b6447c_0
   - zeromq=4.3.3=he6710b0_3
   - zipp=3.4.0=pyhd3eb1b0_0
   - zlib=1.2.11=h7b6447c_3
   - zstd=1.4.5=h9ceee32_0
-prefix: /home/mango/miniconda3/envs/hatp23
