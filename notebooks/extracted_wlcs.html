@@ -134,23 +134,28 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="retr_evidences.html">
+  <a class="reference internal" href="retrieval_evidence.html">
    9. Retrieval evidences
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="retrieval_tspec.html">
+   10. Retrieval transmission spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="cloudy_vs_clear.html">
-   10. Cloudy vs. clear prediction
+   11. Cloudy vs. clear prediction
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="detrended_wlcs_corners.html">
-   11. Detrended WLC corner plots
+   12. Detrended WLC corner plots
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="detrended_binned_lcs.html">
-   12. Detrended binned WLCs
+   13. Detrended binned WLCs
   </a>
  </li>
 </ul>
@@ -426,6 +431,23 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "# Load\ndata_dir = \"data/extracted_wlcs\"\nLCs_pickle = \"LCs_hp23_bins.pbz2\"\ndata_dict = {\n    \"Transit 1\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut160621_a15_20_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[239, 240, 241, 256, 276, 278, 283, 284, 288:299]\",\n        \"t0\": 2457561.84167,\n    },\n    \"Transit 2\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut170609_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[10]\",\n        \"t0\": 2457914.79167,\n    },\n    \"Transit 3\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180603_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[0:17]\",\n        \"t0\": 2458273.80556,\n    },\n    \"Transit 4\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180620_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[93, 94, 149, 157:171]\",\n        \"t0\": 2458290.78472,\n    },\n    \"Transit 5\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180821_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[4:6, 51, 53, 54, 56:59, 64, 66, 68, 69, 72, 77:80, 87:94, 96:98, 101, 129:131, 133, 174:181]\",\n        \"t0\": 2458352.64028,\n    },\n}";
+                var nbb_formatted_code = "# Load\ndata_dir = \"data/extracted_wlcs\"\nLCs_pickle = \"LCs_hp23_bins.pbz2\"\ndata_dict = {\n    \"Transit 1\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut160621_a15_20_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[239, 240, 241, 256, 276, 278, 283, 284, 288:299]\",\n        \"t0\": 2457561.84167,\n    },\n    \"Transit 2\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut170609_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[10]\",\n        \"t0\": 2457914.79167,\n    },\n    \"Transit 3\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180603_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[0:17]\",\n        \"t0\": 2458273.80556,\n    },\n    \"Transit 4\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180620_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[93, 94, 149, 157:171]\",\n        \"t0\": 2458290.78472,\n    },\n    \"Transit 5\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180821_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[4:6, 51, 53, 54, 56:59, 64, 66, 68, 69, 72, 77:80, 87:94, 96:98, 101, 129:131, 133, 174:181]\",\n        \"t0\": 2458352.64028,\n    },\n}";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -482,7 +504,7 @@
 <img alt="../_images/extracted_wlcs_10_0.png" src="../_images/extracted_wlcs_10_0.png" />
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 10;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "# Plot\ncomps = [\"comp4\", \"comp5\"]\nncomps = len(comps)\n\nfig, axes = plt.subplots(\n    len(data_dict), ncomps, sharex=True, sharey=True, figsize=FIG_LARGE\n)\n\nif axes.ndim == 1:\n    axes = axes.reshape(1, axes.size)\ncolors = sns.color_palette()\nfor i, (transit_name, transit_info) in enumerate(data_dict.items()):\n    data = transit_info[\"data\"]\n    t0 = transit_info[\"t0\"]\n\n    for ax, comp in zip(axes[i, :], comps):\n        p = utils.plot_divided_wlcs(\n            ax,\n            data,\n            t0=t0,\n            ferr=0.001,\n            comps_to_use=[comp],\n            bad_idxs_user=transit_info[\"bad_idxs\"],\n            div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mew\": 0.0, \"ms\": 3, \"c\": colors[i]},\n            bad_div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mec\": \"k\", \"ms\": 6, \"c\": \"w\"},\n        )\n\n        ax.annotate(\n            rf\"{transit_name}/{comp}\",\n            xy=(0.05, 0.85),\n            xycoords=\"axes fraction\",\n            fontsize=12,\n            color=colors[i],\n            weight=\"bold\",\n        )\n\n        ax.set_ylim(0.96, 1.04)\n        ax.yaxis.set_ticks([0.96, 0.98, 1.00, 1.02, 1.04])\n\n\nfig.text(0.54, -0.02, \"Time from estimated mid-transit (hours)\", ha=\"center\")\nfig.text(-0.01, 0.5, \"Normalizd flux\", va=\"center\", rotation=\"vertical\")\nfig.tight_layout()\nfig.set_size_inches(FIG_LARGE)\n\nutils.savefig(\"../paper/figures/extracted_wlcs/all_transits_extr_wlcs.pdf\")";
                 var nbb_formatted_code = "# Plot\ncomps = [\"comp4\", \"comp5\"]\nncomps = len(comps)\n\nfig, axes = plt.subplots(\n    len(data_dict), ncomps, sharex=True, sharey=True, figsize=FIG_LARGE\n)\n\nif axes.ndim == 1:\n    axes = axes.reshape(1, axes.size)\ncolors = sns.color_palette()\nfor i, (transit_name, transit_info) in enumerate(data_dict.items()):\n    data = transit_info[\"data\"]\n    t0 = transit_info[\"t0\"]\n\n    for ax, comp in zip(axes[i, :], comps):\n        p = utils.plot_divided_wlcs(\n            ax,\n            data,\n            t0=t0,\n            ferr=0.001,\n            comps_to_use=[comp],\n            bad_idxs_user=transit_info[\"bad_idxs\"],\n            div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mew\": 0.0, \"ms\": 3, \"c\": colors[i]},\n            bad_div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mec\": \"k\", \"ms\": 6, \"c\": \"w\"},\n        )\n\n        ax.annotate(\n            rf\"{transit_name}/{comp}\",\n            xy=(0.05, 0.85),\n            xycoords=\"axes fraction\",\n            fontsize=12,\n            color=colors[i],\n            weight=\"bold\",\n        )\n\n        ax.set_ylim(0.96, 1.04)\n        ax.yaxis.set_ticks([0.96, 0.98, 1.00, 1.02, 1.04])\n\n\nfig.text(0.54, -0.02, \"Time from estimated mid-transit (hours)\", ha=\"center\")\nfig.text(-0.01, 0.5, \"Normalizd flux\", va=\"center\", rotation=\"vertical\")\nfig.tight_layout()\nfig.set_size_inches(FIG_LARGE)\n\nutils.savefig(\"../paper/figures/extracted_wlcs/all_transits_extr_wlcs.pdf\")";
                 var nbb_cells = Jupyter.notebook.get_cells();

@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10. Cloudy vs. clear prediction" href="cloudy_vs_clear.html" />
+    <link rel="next" title="10. Retrieval transmission spectra" href="retrieval_tspec.html" />
     <link rel="prev" title="8. Forward model" href="tspec_forward_model.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -139,18 +139,23 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="retrieval_tspec.html">
+   10. Retrieval transmission spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="cloudy_vs_clear.html">
-   10. Cloudy vs. clear prediction
+   11. Cloudy vs. clear prediction
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="detrended_wlcs_corners.html">
-   11. Detrended WLC corner plots
+   12. Detrended WLC corner plots
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="detrended_binned_lcs.html">
-   12. Detrended binned WLCs
+   13. Detrended binned WLCs
   </a>
  </li>
 </ul>
@@ -189,7 +194,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/retr_evidences.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebooks/retrieval_evidence.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -352,7 +357,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load</span>
-<span class="n">base_dir</span> <span class="o">=</span> <span class="s2">&quot;data/retr_evidence&quot;</span>
+<span class="n">base_dir</span> <span class="o">=</span> <span class="s2">&quot;data/retrieval_evidence&quot;</span>
 <span class="n">df_Delta_lnZ</span><span class="p">,</span> <span class="n">df_Delta_lnZ_err</span><span class="p">,</span> <span class="n">species_min</span><span class="p">,</span> <span class="n">model_min</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_evidences</span><span class="p">(</span><span class="n">base_dir</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Minimul log-evidence: (</span><span class="si">{</span><span class="n">species_min</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">model_min</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df_Delta_lnZ</span><span class="p">)</span>
@@ -476,8 +481,8 @@
 </div></div><script type="application/javascript">
             setTimeout(function() {
                 var nbb_cell_id = 3;
-                var nbb_unformatted_code = "# Load\nbase_dir = \"data/retr_evidence\"\ndf_Delta_lnZ, df_Delta_lnZ_err, species_min, model_min = utils.get_evidences(base_dir)\nprint(f\"Minimul log-evidence: ({species_min}, {model_min})\")\ndisplay(df_Delta_lnZ)";
-                var nbb_formatted_code = "# Load\nbase_dir = \"data/retr_evidence\"\ndf_Delta_lnZ, df_Delta_lnZ_err, species_min, model_min = utils.get_evidences(base_dir)\nprint(f\"Minimul log-evidence: ({species_min}, {model_min})\")\ndisplay(df_Delta_lnZ)";
+                var nbb_unformatted_code = "# Load\nbase_dir = \"data/retrieval_evidence\"\ndf_Delta_lnZ, df_Delta_lnZ_err, species_min, model_min = utils.get_evidences(base_dir)\nprint(f\"Minimul log-evidence: ({species_min}, {model_min})\")\ndisplay(df_Delta_lnZ)";
+                var nbb_formatted_code = "# Load\nbase_dir = \"data/retrieval_evidence\"\ndf_Delta_lnZ, df_Delta_lnZ_err, species_min, model_min = utils.get_evidences(base_dir)\nprint(f\"Minimul log-evidence: ({species_min}, {model_min})\")\ndisplay(df_Delta_lnZ)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -518,7 +523,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/retr_evidences_8_0.png" src="../_images/retr_evidences_8_0.png" />
+<img alt="../_images/retrieval_evidence_8_0.png" src="../_images/retrieval_evidence_8_0.png" />
 <script type="application/javascript">
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -568,7 +573,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="tspec_forward_model.html" title="previous page"><span class="section-number">8. </span>Forward model</a>
-    <a class='right-next' id="next-link" href="cloudy_vs_clear.html" title="next page"><span class="section-number">10. </span>Cloudy vs. clear prediction</a>
+    <a class='right-next' id="next-link" href="retrieval_tspec.html" title="next page"><span class="section-number">10. </span>Retrieval transmission spectra</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
