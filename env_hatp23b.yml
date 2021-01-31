@@ -1,4 +1,4 @@
-name: hatp23
+name: hatp23b
 channels:
   - conda-forge
 dependencies:
