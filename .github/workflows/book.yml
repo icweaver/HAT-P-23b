@@ -49,7 +49,7 @@ jobs:
         conda activate hatp23b
         python -m pip install -U pip
         pip install jupyter-book
-        export RCLONE_CONFIG_HATP23_TOKEN=${{ secrets.RCLONE_CONFIG_HATP23_TOKEN }}
+        export RCLONE_CONFIG_HATP23B_TOKEN=${{ secrets.RCLONE_CONFIG_HATP23B_TOKEN }}
         rclone sync -P --config=./rclone.conf hatp23b:ACCESS/Projects/HAT-P-23b/paper_data ./notebooks/data
 
     # Build the book
