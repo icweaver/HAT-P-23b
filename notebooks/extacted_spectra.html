@@ -148,11 +148,6 @@
    11. Detrended WLC corner plots
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="detrended_blcs.html">
-   12. Detrended binned WLCs
-  </a>
- </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -273,7 +268,7 @@
 <div class="cell_output docutils container">
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 2;
+                var nbb_cell_id = 1;
                 var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
                 var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -327,7 +322,7 @@
 <div class="cell_output docutils container">
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 3;
+                var nbb_cell_id = 2;
                 var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
                 var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -344,8 +339,8 @@
 </div>
 </div>
 <div class="section" id="dowload-data">
-<h2><span class="section-number">2.2. </span><a class="reference external" href="https://www.dropbox.com/sh/1wos8mobpc8avlo/AAC2O8V52acy9ES2q2WDtmEOa?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
-<p>This should be placed in a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
+<h2><span class="section-number">2.2. </span><a class="reference external" href="https://www.dropbox.com/sh/f6rqfis0rdd0w1r/AAADJF0JI-YEx1cS9oCiwKP6a?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
+<p>Unzip this into a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
 </div>
 <div class="section" id="plot">
 <h2><span class="section-number">2.3. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
@@ -367,7 +362,7 @@
 <div class="cell_output docutils container">
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 4;
+                var nbb_cell_id = 3;
                 var nbb_unformatted_code = "# Load\ndata_dir = \"data/extracted_spectra\"\n\nwavs_d, wavs_u = np.genfromtxt(f\"{data_dir}/hp23_bins.dat\", unpack=True)\n\nfpaths = sorted(glob.glob(f\"{data_dir}/ut*/LC*.pbz2\"))\ndata_dict = {\n    f\"Transit {i}\": utils.decompress_pickle(fpath)\n    for (i, fpath) in enumerate(fpaths, start=1)\n}";
                 var nbb_formatted_code = "# Load\ndata_dir = \"data/extracted_spectra\"\n\nwavs_d, wavs_u = np.genfromtxt(f\"{data_dir}/hp23_bins.dat\", unpack=True)\n\nfpaths = sorted(glob.glob(f\"{data_dir}/ut*/LC*.pbz2\"))\ndata_dict = {\n    f\"Transit {i}\": utils.decompress_pickle(fpath)\n    for (i, fpath) in enumerate(fpaths, start=1)\n}";
                 var nbb_cells = Jupyter.notebook.get_cells();

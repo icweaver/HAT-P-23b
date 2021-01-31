@@ -148,11 +148,6 @@
    11. Detrended WLC corner plots
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="detrended_blcs.html">
-   12. Detrended binned WLCs
-  </a>
- </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -343,8 +338,8 @@
 </div>
 </div>
 <div class="section" id="dowload-data">
-<h2><span class="section-number">1.2. </span><a class="reference external" href="https://www.dropbox.com/sh/5wovzjxvq3i7zza/AABZV3HsZDcZAfqgwLiq4AHma?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
-<p>This should be placed in a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
+<h2><span class="section-number">1.2. </span><a class="reference external" href="https://www.dropbox.com/sh/10zzp0fsjdijwg7/AADSAOUxQvyc_8EZlnzMzdXSa?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
+<p>Unzip this into a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
 </div>
 <div class="section" id="plot">
 <h2><span class="section-number">1.3. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
@@ -394,8 +389,8 @@
     <span class="p">)</span>
 
     <span class="c1"># Save</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transit</span><span class="si">}</span><span class="s2">_raw_frame&quot;</span>
-    <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../paper/figures/raw_data/</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;raw_frame_</span><span class="si">{</span><span class="n">transit</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../paper/figures/raw_frames/</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -408,8 +403,8 @@
 <script type="application/javascript">
             setTimeout(function() {
                 var nbb_cell_id = 3;
-                var nbb_unformatted_code = "data_dir = \"data/01\"\ndata_dict = {\n    \"transit_1\": {\n        \"path\": f\"{data_dir}/ut160621\",\n        \"ift\": \"1116\",\n        \"sky_ap\": 20,\n    },\n    \"transit_2\": {\n        \"path\": f\"{data_dir}/ut170609\",\n        \"ift\": \"0183\",\n        \"sky_ap\": 25,\n    },\n    \"transit_3\": {\n        \"path\": f\"{data_dir}/ut180603\",\n        \"ift\": \"0076\",\n        \"sky_ap\": 25,\n    },\n    \"transit_4\": {\n        \"path\": f\"{data_dir}/ut180620\",\n        \"ift\": \"4444\",\n        \"sky_ap\": 25,\n    },\n    \"transit_5\": {\n        \"path\": f\"{data_dir}/ut180821\",\n        \"ift\": \"0200\",\n        \"sky_ap\": 25,\n    },\n}\n\nfor transit, transit_info in data_dict.items():\n    dirpath = transit_info[\"path\"]\n    fname = f\"ift{transit_info['ift']}\"\n    sky_ap = transit_info[\"sky_ap\"]\n    fig, im = utils.plot_chips(\n        dirpath,\n        fname,\n        target=\"HATP23\",\n        vmin=0,\n        vmax=2_000,\n        sky_ap=25,\n        spec_ap=12,\n    )\n\n    # Save\n    title = f\"{transit}_raw_frame\"\n    utils.savefig(f\"../paper/figures/raw_data/{title}.pdf\")";
-                var nbb_formatted_code = "data_dir = \"data/01\"\ndata_dict = {\n    \"transit_1\": {\n        \"path\": f\"{data_dir}/ut160621\",\n        \"ift\": \"1116\",\n        \"sky_ap\": 20,\n    },\n    \"transit_2\": {\n        \"path\": f\"{data_dir}/ut170609\",\n        \"ift\": \"0183\",\n        \"sky_ap\": 25,\n    },\n    \"transit_3\": {\n        \"path\": f\"{data_dir}/ut180603\",\n        \"ift\": \"0076\",\n        \"sky_ap\": 25,\n    },\n    \"transit_4\": {\n        \"path\": f\"{data_dir}/ut180620\",\n        \"ift\": \"4444\",\n        \"sky_ap\": 25,\n    },\n    \"transit_5\": {\n        \"path\": f\"{data_dir}/ut180821\",\n        \"ift\": \"0200\",\n        \"sky_ap\": 25,\n    },\n}\n\nfor transit, transit_info in data_dict.items():\n    dirpath = transit_info[\"path\"]\n    fname = f\"ift{transit_info['ift']}\"\n    sky_ap = transit_info[\"sky_ap\"]\n    fig, im = utils.plot_chips(\n        dirpath,\n        fname,\n        target=\"HATP23\",\n        vmin=0,\n        vmax=2_000,\n        sky_ap=25,\n        spec_ap=12,\n    )\n\n    # Save\n    title = f\"{transit}_raw_frame\"\n    utils.savefig(f\"../paper/figures/raw_data/{title}.pdf\")";
+                var nbb_unformatted_code = "data_dir = \"data/raw_frames\"\ndata_dict = {\n    \"transit_1\": {\n        \"path\": f\"{data_dir}/ut160621\",\n        \"ift\": \"1116\",\n        \"sky_ap\": 20,\n    },\n    \"transit_2\": {\n        \"path\": f\"{data_dir}/ut170609\",\n        \"ift\": \"0183\",\n        \"sky_ap\": 25,\n    },\n    \"transit_3\": {\n        \"path\": f\"{data_dir}/ut180603\",\n        \"ift\": \"0076\",\n        \"sky_ap\": 25,\n    },\n    \"transit_4\": {\n        \"path\": f\"{data_dir}/ut180620\",\n        \"ift\": \"4444\",\n        \"sky_ap\": 25,\n    },\n    \"transit_5\": {\n        \"path\": f\"{data_dir}/ut180821\",\n        \"ift\": \"0200\",\n        \"sky_ap\": 25,\n    },\n}\n\nfor transit, transit_info in data_dict.items():\n    dirpath = transit_info[\"path\"]\n    fname = f\"ift{transit_info['ift']}\"\n    sky_ap = transit_info[\"sky_ap\"]\n    fig, im = utils.plot_chips(\n        dirpath,\n        fname,\n        target=\"HATP23\",\n        vmin=0,\n        vmax=2_000,\n        sky_ap=25,\n        spec_ap=12,\n    )\n\n    # Save\n    title = f\"raw_frame_{transit}\"\n    utils.savefig(f\"../paper/figures/raw_frames/{title}.pdf\")";
+                var nbb_formatted_code = "data_dir = \"data/raw_frames\"\ndata_dict = {\n    \"transit_1\": {\"path\": f\"{data_dir}/ut160621\", \"ift\": \"1116\", \"sky_ap\": 20},\n    \"transit_2\": {\"path\": f\"{data_dir}/ut170609\", \"ift\": \"0183\", \"sky_ap\": 25},\n    \"transit_3\": {\"path\": f\"{data_dir}/ut180603\", \"ift\": \"0076\", \"sky_ap\": 25},\n    \"transit_4\": {\"path\": f\"{data_dir}/ut180620\", \"ift\": \"4444\", \"sky_ap\": 25},\n    \"transit_5\": {\"path\": f\"{data_dir}/ut180821\", \"ift\": \"0200\", \"sky_ap\": 25},\n}\n\nfor transit, transit_info in data_dict.items():\n    dirpath = transit_info[\"path\"]\n    fname = f\"ift{transit_info['ift']}\"\n    sky_ap = transit_info[\"sky_ap\"]\n    fig, im = utils.plot_chips(\n        dirpath, fname, target=\"HATP23\", vmin=0, vmax=2_000, sky_ap=25, spec_ap=12\n    )\n\n    # Save\n    title = f\"raw_frame_{transit}\"\n    utils.savefig(f\"../paper/figures/raw_frames/{title}.pdf\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {

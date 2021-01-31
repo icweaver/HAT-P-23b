@@ -148,11 +148,6 @@
    11. Detrended WLC corner plots
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="detrended_blcs.html">
-   12. Detrended binned WLCs
-  </a>
- </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -343,15 +338,15 @@
 </div>
 </div>
 <div class="section" id="dowload-data">
-<h2><span class="section-number">8.2. </span><a class="reference external" href="https://www.dropbox.com/sh/us3nnbh3fyqvnj5/AABbpynfG698kCm67b3AiLxua?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
-<p>This should be placed in a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
+<h2><span class="section-number">8.2. </span><a class="reference external" href="https://www.dropbox.com/sh/doodr03yahhlj4o/AADRR2qYVBhJepKxcp27dH_Da?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
+<p>Unzip this into a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
 </div>
 <div class="section" id="plot">
 <h2><span class="section-number">8.3. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load transmission spectrum data</span>
-<span class="n">base_dir</span> <span class="o">=</span> <span class="s2">&quot;data/tspec_fm&quot;</span>
+<span class="n">base_dir</span> <span class="o">=</span> <span class="s2">&quot;data/tspec_forward_model&quot;</span>
 
 <span class="n">wav</span><span class="p">,</span> <span class="n">tspec_combined</span><span class="p">,</span> <span class="n">tspec_combined_unc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/tspec_c.txt&quot;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span>
@@ -403,9 +398,9 @@
 <img alt="../_images/tspec_forward_model_7_0.png" src="../_images/tspec_forward_model_7_0.png" />
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 7;
-                var nbb_unformatted_code = "# Load transmission spectrum data\nbase_dir = \"data/tspec_fm\"\nwav, tspec_combined, tspec_combined_unc = np.genfromtxt(\n    f\"{base_dir}/tspec_c.txt\", unpack=True\n)\nmean_wlc_depth, mean_wlc_depth_unc = np.genfromtxt(\n    f\"{base_dir}/mean_wlc_depth_c.txt\", unpack=True\n)\n\n# Load forward model data\nwav_fm, flux_fm = np.genfromtxt(\n    f\"{base_dir}/HAT-P-23_DR2_best_fit_model.txt\", unpack=True\n)\n\nfig, ax = plt.subplots(figsize=FIG_WIDE)\n\nax.axhline(mean_wlc_depth, color=\"darkgrey\", zorder=0, ls=\"--\")\n\nax.plot(\n    wav_fm * 1e4,\n    flux_fm * 1e6,\n    c=\"C6\",\n    label=\"local cond. T=2500, g=20, Z=+1.0 C/O=0.25, Haze=0001 Cloud=0.00\",\n)\n\nax.errorbar(\n    wav,\n    tspec_combined,\n    yerr=tspec_combined_unc,\n    c=\"w\",\n    mec=\"k\",\n    fmt=\"o\",\n    zorder=10,\n    label=\"combined transmission spectrum\",\n    ecolor=\"k\",\n    lw=4,\n)\n\nax.legend(fontsize=11)\nax.set_xlim(3_000, 10_000)\nax.set_ylim(12_000, 14_500)\nax.set_xlabel(\"Wavelength (\u00c5)\")\nax.set_ylabel(r\"Transit Depth (ppm)\")\n\nutils.savefig(f\"../paper/figures/tspec_fm/tspec_fm.pdf\")";
-                var nbb_formatted_code = "# Load transmission spectrum data\nbase_dir = \"data/tspec_fm\"\nwav, tspec_combined, tspec_combined_unc = np.genfromtxt(\n    f\"{base_dir}/tspec_c.txt\", unpack=True\n)\nmean_wlc_depth, mean_wlc_depth_unc = np.genfromtxt(\n    f\"{base_dir}/mean_wlc_depth_c.txt\", unpack=True\n)\n\n# Load forward model data\nwav_fm, flux_fm = np.genfromtxt(\n    f\"{base_dir}/HAT-P-23_DR2_best_fit_model.txt\", unpack=True\n)\n\nfig, ax = plt.subplots(figsize=FIG_WIDE)\n\nax.axhline(mean_wlc_depth, color=\"darkgrey\", zorder=0, ls=\"--\")\n\nax.plot(\n    wav_fm * 1e4,\n    flux_fm * 1e6,\n    c=\"C6\",\n    label=\"local cond. T=2500, g=20, Z=+1.0 C/O=0.25, Haze=0001 Cloud=0.00\",\n)\n\nax.errorbar(\n    wav,\n    tspec_combined,\n    yerr=tspec_combined_unc,\n    c=\"w\",\n    mec=\"k\",\n    fmt=\"o\",\n    zorder=10,\n    label=\"combined transmission spectrum\",\n    ecolor=\"k\",\n    lw=4,\n)\n\nax.legend(fontsize=11)\nax.set_xlim(3_000, 10_000)\nax.set_ylim(12_000, 14_500)\nax.set_xlabel(\"Wavelength (\u00c5)\")\nax.set_ylabel(r\"Transit Depth (ppm)\")\n\nutils.savefig(f\"../paper/figures/tspec_fm/tspec_fm.pdf\")";
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "# Load transmission spectrum data\nbase_dir = \"data/tspec_forward_model\"\n\nwav, tspec_combined, tspec_combined_unc = np.genfromtxt(\n    f\"{base_dir}/tspec_c.txt\", unpack=True\n)\nmean_wlc_depth, mean_wlc_depth_unc = np.genfromtxt(\n    f\"{base_dir}/mean_wlc_depth_c.txt\", unpack=True\n)\n\n# Load forward model data\nwav_fm, flux_fm = np.genfromtxt(\n    f\"{base_dir}/HAT-P-23_DR2_best_fit_model.txt\", unpack=True\n)\n\nfig, ax = plt.subplots(figsize=FIG_WIDE)\n\nax.axhline(mean_wlc_depth, color=\"darkgrey\", zorder=0, ls=\"--\")\n\nax.plot(\n    wav_fm * 1e4,\n    flux_fm * 1e6,\n    c=\"C6\",\n    label=\"local cond. T=2500, g=20, Z=+1.0 C/O=0.25, Haze=0001 Cloud=0.00\",\n)\n\nax.errorbar(\n    wav,\n    tspec_combined,\n    yerr=tspec_combined_unc,\n    c=\"w\",\n    mec=\"k\",\n    fmt=\"o\",\n    zorder=10,\n    label=\"combined transmission spectrum\",\n    ecolor=\"k\",\n    lw=4,\n)\n\nax.legend(fontsize=11)\nax.set_xlim(3_000, 10_000)\nax.set_ylim(12_000, 14_500)\nax.set_xlabel(\"Wavelength (\u00c5)\")\nax.set_ylabel(r\"Transit Depth (ppm)\")\n\nutils.savefig(f\"../paper/figures/tspec_forward_model/tspec_forward_model.pdf\")";
+                var nbb_formatted_code = "# Load transmission spectrum data\nbase_dir = \"data/tspec_forward_model\"\n\nwav, tspec_combined, tspec_combined_unc = np.genfromtxt(\n    f\"{base_dir}/tspec_c.txt\", unpack=True\n)\nmean_wlc_depth, mean_wlc_depth_unc = np.genfromtxt(\n    f\"{base_dir}/mean_wlc_depth_c.txt\", unpack=True\n)\n\n# Load forward model data\nwav_fm, flux_fm = np.genfromtxt(\n    f\"{base_dir}/HAT-P-23_DR2_best_fit_model.txt\", unpack=True\n)\n\nfig, ax = plt.subplots(figsize=FIG_WIDE)\n\nax.axhline(mean_wlc_depth, color=\"darkgrey\", zorder=0, ls=\"--\")\n\nax.plot(\n    wav_fm * 1e4,\n    flux_fm * 1e6,\n    c=\"C6\",\n    label=\"local cond. T=2500, g=20, Z=+1.0 C/O=0.25, Haze=0001 Cloud=0.00\",\n)\n\nax.errorbar(\n    wav,\n    tspec_combined,\n    yerr=tspec_combined_unc,\n    c=\"w\",\n    mec=\"k\",\n    fmt=\"o\",\n    zorder=10,\n    label=\"combined transmission spectrum\",\n    ecolor=\"k\",\n    lw=4,\n)\n\nax.legend(fontsize=11)\nax.set_xlim(3_000, 10_000)\nax.set_ylim(12_000, 14_500)\nax.set_xlabel(\"Wavelength (\u00c5)\")\nax.set_ylabel(r\"Transit Depth (ppm)\")\n\nutils.savefig(f\"../paper/figures/tspec_forward_model/tspec_forward_model.pdf\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {

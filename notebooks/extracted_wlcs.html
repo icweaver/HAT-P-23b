@@ -148,11 +148,6 @@
    11. Detrended WLC corner plots
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="detrended_blcs.html">
-   12. Detrended binned WLCs
-  </a>
- </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -278,7 +273,7 @@
 <div class="cell_output docutils container">
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 4;
+                var nbb_cell_id = 1;
                 var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
                 var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -332,7 +327,7 @@
 <div class="cell_output docutils container">
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 5;
+                var nbb_cell_id = 2;
                 var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
                 var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -349,8 +344,8 @@
 </div>
 </div>
 <div class="section" id="dowload-data-same-dataset-used-for-extracted-spectra">
-<h2><span class="section-number">3.2. </span><a class="reference external" href="https://www.dropbox.com/sh/1wos8mobpc8avlo/AAC2O8V52acy9ES2q2WDtmEOa?dl=1">Dowload data</a> (same dataset used for extracted spectra)<a class="headerlink" href="#dowload-data-same-dataset-used-for-extracted-spectra" title="Permalink to this headline">¶</a></h2>
-<p>This should be placed in a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
+<h2><span class="section-number">3.2. </span><a class="reference external" href="https://www.dropbox.com/sh/f6rqfis0rdd0w1r/AAADJF0JI-YEx1cS9oCiwKP6a?dl=1">Dowload data</a> (same dataset used for extracted spectra)<a class="headerlink" href="#dowload-data-same-dataset-used-for-extracted-spectra" title="Permalink to this headline">¶</a></h2>
+<p>Unzip this into a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
 </div>
 <div class="section" id="finish-set-up">
 <h2><span class="section-number">3.3. </span>Finish set-up<a class="headerlink" href="#finish-set-up" title="Permalink to this headline">¶</a></h2>
@@ -363,7 +358,7 @@
 <div class="cell_output docutils container">
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 8;
+                var nbb_cell_id = 3;
                 var nbb_unformatted_code = "! ln -srf data/extracted_spectra data/extracted_wlcs";
                 var nbb_formatted_code = "! ln -srf data/extracted_spectra data/extracted_wlcs";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -429,7 +424,7 @@
 <div class="cell_output docutils container">
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 9;
+                var nbb_cell_id = 4;
                 var nbb_unformatted_code = "# Load\ndata_dir = \"data/extracted_wlcs\"\nLCs_pickle = \"LCs_hp23_bins.pbz2\"\ndata_dict = {\n    \"Transit 1\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut160621_a15_20_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[239, 240, 241, 256, 276, 278, 283, 284, 288:299]\",\n        \"t0\": 2457561.84167,\n    },\n    \"Transit 2\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut170609_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[10]\",\n        \"t0\": 2457914.79167,\n    },\n    \"Transit 3\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180603_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[0:17]\",\n        \"t0\": 2458273.80556,\n    },\n    \"Transit 4\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180620_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[93, 94, 149, 157:171]\",\n        \"t0\": 2458290.78472,\n    },\n    \"Transit 5\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180821_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[4:6, 51, 53, 54, 56:59, 64, 66, 68, 69, 72, 77:80, 87:94, 96:98, 101, 129:131, 133, 174:181]\",\n        \"t0\": 2458352.64028,\n    },\n}";
                 var nbb_formatted_code = "# Load\ndata_dir = \"data/extracted_wlcs\"\nLCs_pickle = \"LCs_hp23_bins.pbz2\"\ndata_dict = {\n    \"Transit 1\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut160621_a15_20_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[239, 240, 241, 256, 276, 278, 283, 284, 288:299]\",\n        \"t0\": 2457561.84167,\n    },\n    \"Transit 2\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut170609_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[10]\",\n        \"t0\": 2457914.79167,\n    },\n    \"Transit 3\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180603_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[0:17]\",\n        \"t0\": 2458273.80556,\n    },\n    \"Transit 4\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180620_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[93, 94, 149, 157:171]\",\n        \"t0\": 2458290.78472,\n    },\n    \"Transit 5\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180821_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[4:6, 51, 53, 54, 56:59, 64, 66, 68, 69, 72, 77:80, 87:94, 96:98, 101, 129:131, 133, 174:181]\",\n        \"t0\": 2458352.64028,\n    },\n}";
                 var nbb_cells = Jupyter.notebook.get_cells();
