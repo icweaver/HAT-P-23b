@@ -1,2 +1,1 @@
 jupyter-book>=0.7.0b
-nb_black

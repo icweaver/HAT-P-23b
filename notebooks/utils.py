@@ -102,7 +102,7 @@ def get_evidences(base_dir):
     df_Delta_lnZ = df_lnZ - df_flat["lnZ"]
     df_Delta_lnZ_err = np.sqrt(df_lnZ_err ** 2 + df_flat["lnZerr"] ** 2)
 
-    return df_Delta_lnZ, df_Delta_lnZ_err, species_min, model_min
+    return df_Delta_lnZ, df_Delta_lnZ_err, species_min, model_min, data_dict
 
 
 def get_phases(t, P, t0):
@@ -132,6 +132,17 @@ def get_result(fpath, key="t0", unc=True):
                 return line[1]
 
     print(f"{key} not found. Check results.dat file.")
+
+
+def get_table_stats(df, ps=[0.16, 0.5, 0.84], columns=None):
+    ps_strs = [f"{p*100:.0f}%" for p in ps]
+    df_stats = df.describe(percentiles=ps).loc[ps_strs]
+    df_latex = pd.DataFrame(columns=df.columns)
+    df_latex.loc["p"] = df_stats.loc[ps_strs[1]]
+    df_latex.loc["p_u"] = df_stats.loc[ps_strs[2]] - df_stats.loc[ps_strs[1]]
+    df_latex.loc["p_d"] = df_stats.loc[ps_strs[1]] - df_stats.loc[ps_strs[0]]
+    latex_strs = df_latex.apply(write_latex_row, axis=0)
+    return pd.DataFrame(latex_strs, columns=columns)
 
 
 def load_pickle(fpath):
@@ -586,6 +597,24 @@ def plot_divided_wlcs(
     return ax
 
 
+def plot_evidence_summary(ax, df):
+    p = df.transpose().plot(
+        ax=ax,
+        kind="bar",
+        width=0.85,
+        lw=0,
+        capsize=3,
+        ecolor="grey",
+        # yerr=df_Delta_lnZ_err.transpose(), # Very small, omitted for visibility
+        legend=False,
+        # xlabel="Species",
+        # ylabel="Relative log-evidence",
+        rot=45,
+        fontsize=12,
+    )
+    return p
+
+
 def plot_inset(
     ax,
     wav,
@@ -657,7 +686,7 @@ def plot_model(
         sample_kwargs = {}
 
     # Plot fill
-    model = model_dict["data"]
+    model = model_dict["tspec"]
     wav, flux_d, flux_u = model["wav"], model["flux_d"], model["flux_u"]
     p = ax.fill_between(wav, flux_d, flux_u, **fill_kwargs)
 
@@ -668,9 +697,9 @@ def plot_model(
 
     # Plot model sampled
     if sample:
-        model_sampled = model_dict["sampled_data"]
+        model_sampled = model_dict["tspec_sampled"]
         wav_sampled, flux_sampled = model_sampled["wav"], model_sampled["flux"]
-        ax.plot(wav_sampled, flux_sampled, "s", mec=0.7*c, c=c)
+        ax.plot(wav_sampled, flux_sampled, "s", mec=0.7 * c, c=c)
 
     return ax
 
@@ -731,14 +760,21 @@ def plot_params():
                 "#956cb4",  # Purple
                 "mediumaquamarine",
                 "#029e73",  # Green
-                "#c44e52",  # Red
+                "slategray",
             ]
         ),
     }
 
 
 def plot_spec_file(
-    ax, fpath=None, data=None, wavs=None, i=1, label=None, median_kwargs=None
+    ax,
+    fpath=None,
+    data=None,
+    wavs=None,
+    i=1,
+    label=None,
+    median_kwargs=None,
+    fill_kwargs=None,
 ):
     """
     plots items in <object>_spec.fits files.
@@ -756,6 +792,9 @@ def plot_spec_file(
     """
     if median_kwargs is None:
         median_kwargs = {}
+
+    if fill_kwargs is None:
+        fill_kwargs = {}
 
     if fpath is not None:
         data = fits_data(fpath)
@@ -786,6 +825,7 @@ def plot_spec_file(
         color=c,
         alpha=0.25,
         lw=0,
+        **fill_kwargs,
     )
     ax.plot(wavs, specs_med, lw=2, color=c)
     return ax, wavs, data

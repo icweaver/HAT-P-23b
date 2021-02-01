@@ -10,7 +10,6 @@ dependencies:
   - async_generator=1.10=py_0
   - attrs=20.3.0=pyhd3eb1b0_0
   - backcall=0.2.0=py_0
-  - black=19.3b0=py_0
   - blas=1.0=mkl
   - bleach=3.2.2=pyhd3eb1b0_0
   - ca-certificates=2021.1.19=h06a4308_0
@@ -68,7 +67,6 @@ dependencies:
   - mkl-service=2.3.0=py39he8ac12f_0
   - mkl_fft=1.0.6=py39h63df603_0
   - mkl_random=1.0.2=py39h63df603_0
-  - nb_black=1.0.7=py_0
   - nbclient=0.5.1=py_0
   - nbformat=5.1.2=pyhd3eb1b0_1
   - ncurses=6.2=he6710b0_1
