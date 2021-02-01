@@ -269,29 +269,11 @@
 <h2><span class="section-number">1.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-<span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 1;
-                var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -328,23 +310,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 </div>
 <div class="section" id="dowload-data">
@@ -410,22 +375,7 @@
 <img alt="../_images/raw_frames_7_2.png" src="../_images/raw_frames_7_2.png" />
 <img alt="../_images/raw_frames_7_3.png" src="../_images/raw_frames_7_3.png" />
 <img alt="../_images/raw_frames_7_4.png" src="../_images/raw_frames_7_4.png" />
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "data_dir = \"data/raw_frames\"\ndata_dict = {\n    \"transit_1\": {\n        \"path\": f\"{data_dir}/ut160621\",\n        \"ift\": \"1116\",\n        \"sky_ap\": 20,\n    },\n    \"transit_2\": {\n        \"path\": f\"{data_dir}/ut170609\",\n        \"ift\": \"0183\",\n        \"sky_ap\": 25,\n    },\n    \"transit_3\": {\n        \"path\": f\"{data_dir}/ut180603\",\n        \"ift\": \"0076\",\n        \"sky_ap\": 25,\n    },\n    \"transit_4\": {\n        \"path\": f\"{data_dir}/ut180620\",\n        \"ift\": \"4444\",\n        \"sky_ap\": 25,\n    },\n    \"transit_5\": {\n        \"path\": f\"{data_dir}/ut180821\",\n        \"ift\": \"0200\",\n        \"sky_ap\": 25,\n    },\n}\n\nfor transit, transit_info in data_dict.items():\n    dirpath = transit_info[\"path\"]\n    fname = f\"ift{transit_info['ift']}\"\n    sky_ap = transit_info[\"sky_ap\"]\n    fig, im = utils.plot_chips(\n        dirpath,\n        fname,\n        target=\"HATP23\",\n        vmin=0,\n        vmax=2_000,\n        sky_ap=25,\n        spec_ap=12,\n    )\n\n    # Save\n    title = f\"raw_frame_{transit}\"\n    utils.savefig(f\"../paper/figures/raw_frames/{title}.pdf\")";
-                var nbb_formatted_code = "data_dir = \"data/raw_frames\"\ndata_dict = {\n    \"transit_1\": {\"path\": f\"{data_dir}/ut160621\", \"ift\": \"1116\", \"sky_ap\": 20},\n    \"transit_2\": {\"path\": f\"{data_dir}/ut170609\", \"ift\": \"0183\", \"sky_ap\": 25},\n    \"transit_3\": {\"path\": f\"{data_dir}/ut180603\", \"ift\": \"0076\", \"sky_ap\": 25},\n    \"transit_4\": {\"path\": f\"{data_dir}/ut180620\", \"ift\": \"4444\", \"sky_ap\": 25},\n    \"transit_5\": {\"path\": f\"{data_dir}/ut180821\", \"ift\": \"0200\", \"sky_ap\": 25},\n}\n\nfor transit, transit_info in data_dict.items():\n    dirpath = transit_info[\"path\"]\n    fname = f\"ift{transit_info['ift']}\"\n    sky_ap = transit_info[\"sky_ap\"]\n    fig, im = utils.plot_chips(\n        dirpath, fname, target=\"HATP23\", vmin=0, vmax=2_000, sky_ap=25, spec_ap=12\n    )\n\n    # Save\n    title = f\"raw_frame_{transit}\"\n    utils.savefig(f\"../paper/figures/raw_frames/{title}.pdf\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+</div>
 </div>
 </div>
 </div>

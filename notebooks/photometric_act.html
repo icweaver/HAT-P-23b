@@ -248,8 +248,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load">
+   5.3. Load
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot">
-   5.3. Plot
+   5.4. Plot
   </a>
  </li>
 </ul>
@@ -269,29 +274,11 @@
 <h2><span class="section-number">5.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-<span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 1;
-                var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -328,31 +315,14 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 </div>
 <div class="section" id="dowload-data">
 <h2><span class="section-number">5.2. </span><a class="reference external" href="https://www.dropbox.com/sh/74sihxztgd82jjz/AADgB_f5RYc3De3IEioUGAfha?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
 <p>Unzip this into a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
 </div>
-<div class="section" id="plot">
-<h2><span class="section-number">5.3. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="load">
+<h2><span class="section-number">5.3. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dirpath</span> <span class="o">=</span> <span class="s2">&quot;data/photometric_act&quot;</span>
@@ -377,14 +347,16 @@
 <span class="n">df_stell_model</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dirpath</span><span class="si">}</span><span class="s2">/HATP23_GP_model_Prot7_v3.csv&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;t_HJD&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;f_err&quot;</span><span class="p">]</span>
 <span class="p">)</span>
-
-<span class="c1"># print(&quot;data&quot;)</span>
-<span class="c1"># display(df_stell_data.head())</span>
-<span class="c1"># print(&quot;model&quot;)</span>
-<span class="c1"># display(df_stell_model.head())</span>
-
-<span class="c1"># Plot</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">FIG_WIDE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot">
+<h2><span class="section-number">5.4. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">FIG_WIDE</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_stell_data</span><span class="p">[</span><span class="s2">&quot;t_HJD&quot;</span><span class="p">],</span> <span class="n">df_stell_data</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">],</span> <span class="s2">&quot;r.&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">mew</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_stell_model</span><span class="p">[</span><span class="s2">&quot;t_HJD&quot;</span><span class="p">],</span> <span class="n">df_stell_model</span><span class="p">[</span><span class="s2">&quot;f&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
@@ -412,29 +384,13 @@
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Date (HJD - 2400000)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Relative flux&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-
 <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../paper/figures/photometric_act/phot_mon_full.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/photometric_act_7_0.png" src="../_images/photometric_act_7_0.png" />
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "dirpath = \"data/photometric_act\"\n\nmid_transit_times = {\n    \"Transit 1\": \"2016-06-22 08:18:00\",\n    \"Transit 2\": \"2017-06-10 07:05:00\",\n    \"Transit 3\": \"2018-06-04 07:24:00\",\n    \"Transit 4\": \"2018-06-21 06:56\",\n    \"Transit 5\": \"2018-08-22 03:30:00\",\n}\n\n# Load processed data\ndf_stell_data = pd.read_csv(\n    f\"{dirpath}/HATP23_lc_norm_v3.csv\",\n    names=[\"t_HJD\", \"t_UT\", \"f\"],\n    parse_dates=[1],\n    infer_datetime_format=True,\n)\n\n# Load model data\ndf_stell_model = pd.read_csv(\n    f\"{dirpath}/HATP23_GP_model_Prot7_v3.csv\", names=[\"t_HJD\", \"f\", \"f_err\"]\n)\n\n# print(\"data\")\n# display(df_stell_data.head())\n# print(\"model\")\n# display(df_stell_model.head())\n\n# Plot\nfig, ax = plt.subplots(figsize=FIG_WIDE)\n\nax.plot(df_stell_data[\"t_HJD\"], df_stell_data[\"f\"], \"r.\", alpha=0.5, mew=0)\nax.plot(df_stell_model[\"t_HJD\"], df_stell_model[\"f\"], color=\"grey\")\nf_d = df_stell_model[\"f\"] - df_stell_model[\"f_err\"]\nf_u = df_stell_model[\"f\"] + df_stell_model[\"f_err\"]\nax.fill_between(df_stell_model[\"t_HJD\"], f_d, f_u, alpha=0.3, lw=0, color=\"grey\")\n\np_kwargs = {\"ls\": \"--\", \"c\": \"darkgrey\", \"lw\": 1.0}\ntrans = transforms.blended_transform_factory(ax.transData, ax.transAxes)\n\nfor transit_name, t0 in mid_transit_times.items():\n    t_mid = Time(t0).jd - 2.4e6\n    ax.axvline(t_mid, **p_kwargs)\n    ax.annotate(\n        transit_name,\n        xy=(t_mid, 0.1),\n        xycoords=trans,\n        ha=\"right\",\n        rotation=90.0,\n        fontsize=12,\n    )\n\n# Save\nax.set_ylim(0.88, 0.98)\nax.set_xlabel(\"Date (HJD - 2400000)\")\nax.set_ylabel(\"Relative flux\")\nfig.tight_layout()\n\nutils.savefig(\"../paper/figures/photometric_act/phot_mon_full.pdf\")";
-                var nbb_formatted_code = "dirpath = \"data/photometric_act\"\n\nmid_transit_times = {\n    \"Transit 1\": \"2016-06-22 08:18:00\",\n    \"Transit 2\": \"2017-06-10 07:05:00\",\n    \"Transit 3\": \"2018-06-04 07:24:00\",\n    \"Transit 4\": \"2018-06-21 06:56\",\n    \"Transit 5\": \"2018-08-22 03:30:00\",\n}\n\n# Load processed data\ndf_stell_data = pd.read_csv(\n    f\"{dirpath}/HATP23_lc_norm_v3.csv\",\n    names=[\"t_HJD\", \"t_UT\", \"f\"],\n    parse_dates=[1],\n    infer_datetime_format=True,\n)\n\n# Load model data\ndf_stell_model = pd.read_csv(\n    f\"{dirpath}/HATP23_GP_model_Prot7_v3.csv\", names=[\"t_HJD\", \"f\", \"f_err\"]\n)\n\n# print(\"data\")\n# display(df_stell_data.head())\n# print(\"model\")\n# display(df_stell_model.head())\n\n# Plot\nfig, ax = plt.subplots(figsize=FIG_WIDE)\n\nax.plot(df_stell_data[\"t_HJD\"], df_stell_data[\"f\"], \"r.\", alpha=0.5, mew=0)\nax.plot(df_stell_model[\"t_HJD\"], df_stell_model[\"f\"], color=\"grey\")\nf_d = df_stell_model[\"f\"] - df_stell_model[\"f_err\"]\nf_u = df_stell_model[\"f\"] + df_stell_model[\"f_err\"]\nax.fill_between(df_stell_model[\"t_HJD\"], f_d, f_u, alpha=0.3, lw=0, color=\"grey\")\n\np_kwargs = {\"ls\": \"--\", \"c\": \"darkgrey\", \"lw\": 1.0}\ntrans = transforms.blended_transform_factory(ax.transData, ax.transAxes)\n\nfor transit_name, t0 in mid_transit_times.items():\n    t_mid = Time(t0).jd - 2.4e6\n    ax.axvline(t_mid, **p_kwargs)\n    ax.annotate(\n        transit_name,\n        xy=(t_mid, 0.1),\n        xycoords=trans,\n        ha=\"right\",\n        rotation=90.0,\n        fontsize=12,\n    )\n\n# Save\nax.set_ylim(0.88, 0.98)\nax.set_xlabel(\"Date (HJD - 2400000)\")\nax.set_ylabel(\"Relative flux\")\nfig.tight_layout()\n\nutils.savefig(\"../paper/figures/photometric_act/phot_mon_full.pdf\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+<img alt="../_images/photometric_act_9_0.png" src="../_images/photometric_act_9_0.png" />
+</div>
 </div>
 </div>
 </div>

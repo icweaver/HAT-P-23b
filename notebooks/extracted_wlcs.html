@@ -253,8 +253,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load">
+   3.4. Load
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot">
-   3.4. Plot
+   3.5. Plot
   </a>
  </li>
 </ul>
@@ -274,29 +279,11 @@
 <h2><span class="section-number">3.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-<span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 1;
-                var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -334,23 +321,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 </div>
 <div class="section" id="dowload-data-same-dataset-used-for-extracted-spectra">
@@ -365,27 +335,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "! ln -srf data/extracted_spectra data/extracted_wlcs";
-                var nbb_formatted_code = "! ln -srf data/extracted_spectra data/extracted_wlcs";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 </div>
-<div class="section" id="plot">
-<h2><span class="section-number">3.4. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="load">
+<h2><span class="section-number">3.4. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load</span>
@@ -431,28 +384,13 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# Load\ndata_dir = \"data/extracted_wlcs\"\nLCs_pickle = \"LCs_hp23_bins.pbz2\"\ndata_dict = {\n    \"Transit 1\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut160621_a15_20_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[239, 240, 241, 256, 276, 278, 283, 284, 288:299]\",\n        \"t0\": 2457561.84167,\n    },\n    \"Transit 2\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut170609_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[10]\",\n        \"t0\": 2457914.79167,\n    },\n    \"Transit 3\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180603_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[0:17]\",\n        \"t0\": 2458273.80556,\n    },\n    \"Transit 4\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180620_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[93, 94, 149, 157:171]\",\n        \"t0\": 2458290.78472,\n    },\n    \"Transit 5\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180821_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[4:6, 51, 53, 54, 56:59, 64, 66, 68, 69, 72, 77:80, 87:94, 96:98, 101, 129:131, 133, 174:181]\",\n        \"t0\": 2458352.64028,\n    },\n}";
-                var nbb_formatted_code = "# Load\ndata_dir = \"data/extracted_wlcs\"\nLCs_pickle = \"LCs_hp23_bins.pbz2\"\ndata_dict = {\n    \"Transit 1\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut160621_a15_20_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[239, 240, 241, 256, 276, 278, 283, 284, 288:299]\",\n        \"t0\": 2457561.84167,\n    },\n    \"Transit 2\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut170609_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[10]\",\n        \"t0\": 2457914.79167,\n    },\n    \"Transit 3\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180603_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[0:17]\",\n        \"t0\": 2458273.80556,\n    },\n    \"Transit 4\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180620_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[93, 94, 149, 157:171]\",\n        \"t0\": 2458290.78472,\n    },\n    \"Transit 5\": {\n        \"data\": utils.decompress_pickle(\n            f\"{data_dir}/ut180821_a15_25_noflat/{LCs_pickle}\"\n        ),\n        \"bad_idxs\": \"[4:6, 51, 53, 54, 56:59, 64, 66, 68, 69, 72, 77:80, 87:94, 96:98, 101, 129:131, 133, 174:181]\",\n        \"t0\": 2458352.64028,\n    },\n}";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
+</div>
+<div class="section" id="plot">
+<h2><span class="section-number">3.5. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
-<span class="n">comps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;comp4&quot;</span><span class="p">,</span> <span class="s2">&quot;comp5&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;comp4&quot;</span><span class="p">,</span> <span class="s2">&quot;comp5&quot;</span><span class="p">]</span>
 <span class="n">ncomps</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">comps</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
@@ -501,10 +439,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/extracted_wlcs_10_0.png" src="../_images/extracted_wlcs_10_0.png" />
+<img alt="../_images/extracted_wlcs_11_0.png" src="../_images/extracted_wlcs_11_0.png" />
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 5;
+                var nbb_cell_id = 10;
                 var nbb_unformatted_code = "# Plot\ncomps = [\"comp4\", \"comp5\"]\nncomps = len(comps)\n\nfig, axes = plt.subplots(\n    len(data_dict), ncomps, sharex=True, sharey=True, figsize=FIG_LARGE\n)\n\nif axes.ndim == 1:\n    axes = axes.reshape(1, axes.size)\ncolors = sns.color_palette()\nfor i, (transit_name, transit_info) in enumerate(data_dict.items()):\n    data = transit_info[\"data\"]\n    t0 = transit_info[\"t0\"]\n\n    for ax, comp in zip(axes[i, :], comps):\n        p = utils.plot_divided_wlcs(\n            ax,\n            data,\n            t0=t0,\n            ferr=0.001,\n            comps_to_use=[comp],\n            bad_idxs_user=transit_info[\"bad_idxs\"],\n            div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mew\": 0.0, \"ms\": 3, \"c\": colors[i]},\n            bad_div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mec\": \"k\", \"ms\": 6, \"c\": \"w\"},\n        )\n\n        ax.annotate(\n            rf\"{transit_name}/{comp}\",\n            xy=(0.05, 0.85),\n            xycoords=\"axes fraction\",\n            fontsize=12,\n            color=colors[i],\n            weight=\"bold\",\n        )\n\n        ax.set_ylim(0.96, 1.04)\n        ax.yaxis.set_ticks([0.96, 0.98, 1.00, 1.02, 1.04])\n\n\nfig.text(0.54, -0.02, \"Time from estimated mid-transit (hours)\", ha=\"center\")\nfig.text(-0.01, 0.5, \"Normalizd flux\", va=\"center\", rotation=\"vertical\")\nfig.tight_layout()\nfig.set_size_inches(FIG_LARGE)\n\nutils.savefig(\"../paper/figures/extracted_wlcs/all_transits_extr_wlcs.pdf\")";
                 var nbb_formatted_code = "# Plot\ncomps = [\"comp4\", \"comp5\"]\nncomps = len(comps)\n\nfig, axes = plt.subplots(\n    len(data_dict), ncomps, sharex=True, sharey=True, figsize=FIG_LARGE\n)\n\nif axes.ndim == 1:\n    axes = axes.reshape(1, axes.size)\ncolors = sns.color_palette()\nfor i, (transit_name, transit_info) in enumerate(data_dict.items()):\n    data = transit_info[\"data\"]\n    t0 = transit_info[\"t0\"]\n\n    for ax, comp in zip(axes[i, :], comps):\n        p = utils.plot_divided_wlcs(\n            ax,\n            data,\n            t0=t0,\n            ferr=0.001,\n            comps_to_use=[comp],\n            bad_idxs_user=transit_info[\"bad_idxs\"],\n            div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mew\": 0.0, \"ms\": 3, \"c\": colors[i]},\n            bad_div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mec\": \"k\", \"ms\": 6, \"c\": \"w\"},\n        )\n\n        ax.annotate(\n            rf\"{transit_name}/{comp}\",\n            xy=(0.05, 0.85),\n            xycoords=\"axes fraction\",\n            fontsize=12,\n            color=colors[i],\n            weight=\"bold\",\n        )\n\n        ax.set_ylim(0.96, 1.04)\n        ax.yaxis.set_ticks([0.96, 0.98, 1.00, 1.02, 1.04])\n\n\nfig.text(0.54, -0.02, \"Time from estimated mid-transit (hours)\", ha=\"center\")\nfig.text(-0.01, 0.5, \"Normalizd flux\", va=\"center\", rotation=\"vertical\")\nfig.tight_layout()\nfig.set_size_inches(FIG_LARGE)\n\nutils.savefig(\"../paper/figures/extracted_wlcs/all_transits_extr_wlcs.pdf\")";
                 var nbb_cells = Jupyter.notebook.get_cells();

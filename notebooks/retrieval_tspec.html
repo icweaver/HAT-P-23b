@@ -242,6 +242,21 @@
    10.1. Notebook setup
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load">
+   10.2. Load
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot">
+   10.3. Plot
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table">
+   10.4. Table
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -259,29 +274,11 @@
 <h2><span class="section-number">10.1. </span>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-<span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 1;
-                var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -319,63 +316,49 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
+</div>
+<div class="section" id="load">
+<h2><span class="section-number">10.2. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load</span>
-<span class="n">base_dir</span> <span class="o">=</span> <span class="s2">&quot;data/retrieval_tspec&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_dir</span> <span class="o">=</span> <span class="s2">&quot;data/retrieval_tspec&quot;</span>
 
+<span class="c1"># Retrievals with lowest and highest log-evidences</span>
 <span class="n">fpaths_dict_extrema</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;TiO (clear)&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_TiO&quot;</span><span class="p">,</span>  <span class="c1"># Best</span>
     <span class="s2">&quot;K (clear)&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_K&quot;</span><span class="p">,</span>  <span class="c1"># Worst</span>
+    <span class="s2">&quot;TiO (clear)&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_TiO&quot;</span><span class="p">,</span>  <span class="c1"># Best</span>
 <span class="p">}</span>
-
-
 <span class="n">data_dict_extrema</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">model_name</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retr_model.txt&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;sampled_data&quot;</span><span class="p">:</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
+        <span class="s2">&quot;tspec&quot;</span><span class="p">:</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retr_model.txt&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;tspec_sampled&quot;</span><span class="p">:</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retr_model_sampled_Magellan_IMACS.txt&quot;</span>
         <span class="p">),</span>
+        <span class="s2">&quot;retrieval&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">load_pickle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retrieval.pkl&quot;</span><span class="p">),</span>
     <span class="p">}</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">model_dir</span><span class="p">)</span> <span class="ow">in</span> <span class="n">fpaths_dict_extrema</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="p">}</span>
 
+<span class="c1"># Additional retreivals to compare overall shape</span>
 <span class="n">fpaths_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;Na+K (clear)&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_Na_K&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Na+K (cloud)&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_NoHet_FitP0_Clouds_NoHaze_NofitR0_Na_K&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Na+K (haze)&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_NoHet_FitP0_NoClouds_Haze_NofitR0_Na_K&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Na+K (spot)&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_Het_FitP0_NoClouds_NoHaze_NofitR0_Na_K&quot;</span><span class="p">,</span>
 <span class="p">}</span>
-
-
 <span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">model_name</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retr_model.txt&quot;</span><span class="p">),</span>
-        <span class="s2">&quot;sampled_data&quot;</span><span class="p">:</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
+        <span class="s2">&quot;tspec&quot;</span><span class="p">:</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retr_model.txt&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;tspec_sampled&quot;</span><span class="p">:</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retr_model_sampled_Magellan_IMACS.txt&quot;</span>
         <span class="p">),</span>
+        <span class="s2">&quot;retrieval&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">load_pickle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retrieval.pkl&quot;</span><span class="p">),</span>
     <span class="p">}</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">model_dir</span><span class="p">)</span> <span class="ow">in</span> <span class="n">fpaths_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="p">}</span>
 
+<span class="c1"># Instrument data</span>
 <span class="n">instrument_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;Magellan_IMACS&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;plot_kwargs&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -393,37 +376,42 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "# Load\nbase_dir = \"data/retrieval_tspec\"\n\nfpaths_dict_extrema = {\n    \"TiO (clear)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_TiO\",  # Best\n    \"K (clear)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_K\",  # Worst\n}\n\n\ndata_dict_extrema = {\n    model_name: {\n        \"data\": ascii.read(f\"{model_dir}/retr_model.txt\"),\n        \"sampled_data\": ascii.read(\n            f\"{model_dir}/retr_model_sampled_Magellan_IMACS.txt\"\n        ),\n    }\n    for (model_name, model_dir) in fpaths_dict_extrema.items()\n}\n\nfpaths_dict = {\n    \"Na+K (clear)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_Na_K\",\n    \"Na+K (cloud)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_Clouds_NoHaze_NofitR0_Na_K\",\n    \"Na+K (haze)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_Haze_NofitR0_Na_K\",\n    \"Na+K (spot)\": f\"{base_dir}/HATP23_E1_Het_FitP0_NoClouds_NoHaze_NofitR0_Na_K\",\n}\n\n\ndata_dict = {\n    model_name: {\n        \"data\": ascii.read(f\"{model_dir}/retr_model.txt\"),\n        \"sampled_data\": ascii.read(\n            f\"{model_dir}/retr_model_sampled_Magellan_IMACS.txt\"\n        ),\n    }\n    for (model_name, model_dir) in fpaths_dict.items()\n}\n\ninstrument_dict = {\n    \"Magellan_IMACS\": {\n        \"plot_kwargs\": {\n            \"c\": \"w\",\n            \"mec\": \"k\",\n            \"fmt\": \"o\",\n            \"ecolor\": \"k\",\n            \"label\": \"Magellan/IMACS\",\n            \"zorder\": 10,\n        },\n        \"data\": ascii.read(f\"{base_dir}/instrument/retr_Magellan_IMACS.txt\"),\n    }\n}";
-                var nbb_formatted_code = "# Load\nbase_dir = \"data/retrieval_tspec\"\n\nfpaths_dict_extrema = {\n    \"TiO (clear)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_TiO\",  # Best\n    \"K (clear)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_K\",  # Worst\n}\n\n\ndata_dict_extrema = {\n    model_name: {\n        \"data\": ascii.read(f\"{model_dir}/retr_model.txt\"),\n        \"sampled_data\": ascii.read(\n            f\"{model_dir}/retr_model_sampled_Magellan_IMACS.txt\"\n        ),\n    }\n    for (model_name, model_dir) in fpaths_dict_extrema.items()\n}\n\nfpaths_dict = {\n    \"Na+K (clear)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_Na_K\",\n    \"Na+K (cloud)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_Clouds_NoHaze_NofitR0_Na_K\",\n    \"Na+K (haze)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_Haze_NofitR0_Na_K\",\n    \"Na+K (spot)\": f\"{base_dir}/HATP23_E1_Het_FitP0_NoClouds_NoHaze_NofitR0_Na_K\",\n}\n\n\ndata_dict = {\n    model_name: {\n        \"data\": ascii.read(f\"{model_dir}/retr_model.txt\"),\n        \"sampled_data\": ascii.read(\n            f\"{model_dir}/retr_model_sampled_Magellan_IMACS.txt\"\n        ),\n    }\n    for (model_name, model_dir) in fpaths_dict.items()\n}\n\ninstrument_dict = {\n    \"Magellan_IMACS\": {\n        \"plot_kwargs\": {\n            \"c\": \"w\",\n            \"mec\": \"k\",\n            \"fmt\": \"o\",\n            \"ecolor\": \"k\",\n            \"label\": \"Magellan/IMACS\",\n            \"zorder\": 10,\n        },\n        \"data\": ascii.read(f\"{base_dir}/instrument/retr_Magellan_IMACS.txt\"),\n    }\n}";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">b9d73a50a3a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="s2">&quot;TiO (clear)&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_TiO&quot;</span><span class="p">,</span>  <span class="c1"># Best</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">}</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">data_dict_extrema</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">model_name</span><span class="p">:</span> <span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="s2">&quot;tspec&quot;</span><span class="p">:</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retr_model.txt&quot;</span><span class="p">),</span>
+
+<span class="nn">&lt;ipython-input-3-8b9d73a50a3a&gt;</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retr_model_sampled_Magellan_IMACS.txt&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="p">),</span>
+<span class="ne">---&gt; </span><span class="mi">14</span>         <span class="s2">&quot;retrieval&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">load_pickle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retrieval.pkl&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="p">}</span>
+<span class="nn">     16     for (model_name, model_dir)</span> in <span class="ni">fpaths_dict_extrema.items</span><span class="nt">()</span>
+
+<span class="nn">~/work/HAT-P-23b/HAT-P-23b/notebooks/utils.py</span> in <span class="ni">load_pickle</span><span class="nt">(fpath)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span> 
+<span class="g g-Whitespace">    </span><span class="mi">148</span> <span class="k">def</span> <span class="nf">load_pickle</span><span class="p">(</span><span class="n">fpath</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">149</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin&quot;</span><span class="p">)</span>  <span class="c1"># Python 2 -&gt; 3</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="k">return</span> <span class="n">data</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/retrieval_tspec/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_K/retrieval.pkl&#39;
+</pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="plot">
+<h2><span class="section-number">10.3. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">FIG_WIDE</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">FIG_WIDE</span><span class="p">)</span>
 
-<span class="c1"># Plot best fit model in bold</span>
-<span class="c1"># &quot;K (clear)&quot;: f&quot;{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_K&quot;,</span>
-<span class="c1"># &quot;TiO (clear)&quot;: f&quot;{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_TiO&quot;,</span>
-<span class="c1"># utils.plot_model(</span>
-<span class="c1">#     ax, data_dict[&quot;TiO (clear)&quot;], model_kwargs={&quot;lw&quot;: 0}, fill_kwargs={&quot;alpha&quot;: 0.5}</span>
-<span class="c1"># )</span>
-
-
-<span class="c1"># Plot sample models</span>
+<span class="c1"># Sample models</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="s2">&quot;C4&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">color</span><span class="p">,</span> <span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">model_dict</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">data_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">plot_model</span><span class="p">(</span>
@@ -434,13 +422,13 @@
         <span class="n">sample_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker&quot;</span><span class="p">:</span> <span class="s2">&quot;o&quot;</span><span class="p">},</span>
     <span class="p">)</span>
 
-<span class="c1"># Plot best and worst models</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;C7&quot;</span><span class="p">,</span> <span class="s2">&quot;darkgrey&quot;</span><span class="p">]</span>
+<span class="c1"># Best and worst models</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;darkgrey&quot;</span><span class="p">,</span> <span class="s2">&quot;C8&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">color</span><span class="p">,</span> <span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">model_dict</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">data_dict_extrema</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">plot_model</span><span class="p">(</span>
         <span class="n">ax</span><span class="p">,</span>
         <span class="n">model_dict</span><span class="p">,</span>
-        <span class="n">model_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lw&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">model_name</span><span class="p">},</span>
+        <span class="n">model_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lw&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">model_name</span><span class="p">},</span>
         <span class="n">fill_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">color</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">},</span>
         <span class="n">sample_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker&quot;</span><span class="p">:</span> <span class="s2">&quot;o&quot;</span><span class="p">},</span>
     <span class="p">)</span>
@@ -449,13 +437,6 @@
 <span class="k">for</span> <span class="p">(</span><span class="n">instrument_name</span><span class="p">,</span> <span class="n">instrument_data</span><span class="p">)</span> <span class="ow">in</span> <span class="n">instrument_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">instrument_name</span> <span class="o">=</span> <span class="n">instrument_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">)</span>
     <span class="n">utils</span><span class="o">.</span><span class="n">plot_instrument</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">instrument_data</span><span class="p">)</span>
-
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">12_400</span><span class="p">,</span> <span class="mi">14_500</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Wavelength $(\mu\mathrm</span><span class="si">{m}</span><span class="s2">)$&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Transit depth (ppm)&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
 
 <span class="c1"># Species</span>
 <span class="n">species</span> <span class="o">=</span> <span class="p">{</span>
@@ -469,32 +450,173 @@
     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">wav</span> <span class="ow">in</span> <span class="n">species</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="p">]</span>
 
-
 <span class="c1"># Save</span>
-<span class="c1"># fig.tight_layout()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">12_400</span><span class="p">,</span> <span class="mi">14_500</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Wavelength $(\mu\mathrm</span><span class="si">{m}</span><span class="s2">)$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Transit depth (ppm)&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
-<span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../paper/figures/retrieval_tspec/retrieval_tspec.pdf&#39;</span><span class="p">)</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../paper/figures/retrieval_tspec/retrieval_tspec.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/retrieval_tspec_5_0.png" src="../_images/retrieval_tspec_5_0.png" />
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# Plot\nfig, ax = plt.subplots(figsize=FIG_WIDE)\n\n# Plot best fit model in bold\n# \"K (clear)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_K\",\n# \"TiO (clear)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_TiO\",\n# utils.plot_model(\n#     ax, data_dict[\"TiO (clear)\"], model_kwargs={\"lw\": 0}, fill_kwargs={\"alpha\": 0.5}\n# )\n\n\n# Plot sample models\ncolors = [\"C0\", \"C1\", \"C2\", \"C4\"]\nfor color, (model_name, model_dict) in zip(colors, data_dict.items()):\n    p = utils.plot_model(\n        ax,\n        model_dict,\n        model_kwargs={\"lw\": 2, \"label\": model_name},\n        fill_kwargs={\"color\": color, \"alpha\": 0.15},\n        sample_kwargs={\"marker\": \"o\"},\n    )\n\n# Plot best and worst models\ncolors = [\"C7\", \"darkgrey\"]\nfor color, (model_name, model_dict) in zip(colors, data_dict_extrema.items()):\n    p = utils.plot_model(\n        ax,\n        model_dict,\n        model_kwargs={\"lw\": 3, \"label\": model_name},\n        fill_kwargs={\"color\": color, \"alpha\": 0.15},\n        sample_kwargs={\"marker\": \"o\"},\n    )\n\n# Instruments\nfor (instrument_name, instrument_data) in instrument_dict.items():\n    instrument_name = instrument_name.replace(\"_\", \"/\")\n    utils.plot_instrument(ax, instrument_data)\n\n\nax.set_xlim(0.5, 0.95)\nax.set_ylim(12_400, 14_500)\nax.set_xlabel(r\"Wavelength $(\\mu\\mathrm{m})$\")\nax.set_ylabel(\"Transit depth (ppm)\")\nax.legend(loc=1, ncol=4, fontsize=11)\n\n# Species\nspecies = {\n    \"Na I-D\": 5892.9,\n    #'H\u03b1':6564.6,\n    \"K I_avg\": 7682.0,\n    \"Na I-8200_avg\": 8189.0,\n}\n[\n    ax.axvline(wav / 10000, lw=0.5, ls=\"--\", color=\"grey\", zorder=0)\n    for name, wav in species.items()\n]\n\n\n# Save\n# fig.tight_layout()\nfig.set_size_inches(FIG_WIDE)\nutils.savefig('../paper/figures/retrieval_tspec/retrieval_tspec.pdf')";
-                var nbb_formatted_code = "# Plot\nfig, ax = plt.subplots(figsize=FIG_WIDE)\n\n# Plot best fit model in bold\n# \"K (clear)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_K\",\n# \"TiO (clear)\": f\"{base_dir}/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_TiO\",\n# utils.plot_model(\n#     ax, data_dict[\"TiO (clear)\"], model_kwargs={\"lw\": 0}, fill_kwargs={\"alpha\": 0.5}\n# )\n\n\n# Plot sample models\ncolors = [\"C0\", \"C1\", \"C2\", \"C4\"]\nfor color, (model_name, model_dict) in zip(colors, data_dict.items()):\n    p = utils.plot_model(\n        ax,\n        model_dict,\n        model_kwargs={\"lw\": 2, \"label\": model_name},\n        fill_kwargs={\"color\": color, \"alpha\": 0.15},\n        sample_kwargs={\"marker\": \"o\"},\n    )\n\n# Plot best and worst models\ncolors = [\"C7\", \"darkgrey\"]\nfor color, (model_name, model_dict) in zip(colors, data_dict_extrema.items()):\n    p = utils.plot_model(\n        ax,\n        model_dict,\n        model_kwargs={\"lw\": 3, \"label\": model_name},\n        fill_kwargs={\"color\": color, \"alpha\": 0.15},\n        sample_kwargs={\"marker\": \"o\"},\n    )\n\n# Instruments\nfor (instrument_name, instrument_data) in instrument_dict.items():\n    instrument_name = instrument_name.replace(\"_\", \"/\")\n    utils.plot_instrument(ax, instrument_data)\n\n\nax.set_xlim(0.5, 0.95)\nax.set_ylim(12_400, 14_500)\nax.set_xlabel(r\"Wavelength $(\\mu\\mathrm{m})$\")\nax.set_ylabel(\"Transit depth (ppm)\")\nax.legend(loc=1, ncol=4, fontsize=11)\n\n# Species\nspecies = {\n    \"Na I-D\": 5892.9,\n    #'H\u03b1':6564.6,\n    \"K I_avg\": 7682.0,\n    \"Na I-8200_avg\": 8189.0,\n}\n[\n    ax.axvline(wav / 10000, lw=0.5, ls=\"--\", color=\"grey\", zorder=0)\n    for name, wav in species.items()\n]\n\n\n# Save\n# fig.tight_layout()\nfig.set_size_inches(FIG_WIDE)\nutils.savefig(\"../paper/figures/retrieval_tspec/retrieval_tspec.pdf\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+<img alt="../_images/retrieval_tspec_7_0.png" src="../_images/retrieval_tspec_7_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="table">
+<h2><span class="section-number">10.4. </span>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">model_name</span><span class="p">,</span> <span class="n">model_data</span> <span class="ow">in</span> <span class="n">data_dict_extrema</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">df_samples</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">model_data</span><span class="p">[</span><span class="s2">&quot;retrieval&quot;</span><span class="p">][</span><span class="s2">&quot;samples&quot;</span><span class="p">])</span>
+    <span class="n">df_stats</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_table_stats</span><span class="p">(</span><span class="n">df_samples</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">model_name</span><span class="p">])</span>
+    <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_stats</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">model_name</span><span class="p">,</span> <span class="n">model_data</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">df_samples</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">model_data</span><span class="p">[</span><span class="s2">&quot;retrieval&quot;</span><span class="p">][</span><span class="s2">&quot;samples&quot;</span><span class="p">])</span>
+    <span class="n">df_stats</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_table_stats</span><span class="p">(</span><span class="n">df_samples</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">model_name</span><span class="p">])</span>
+    <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_stats</span><span class="p">)</span>
+
+<span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Show TiO column first</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span><span class="c1">#.to_clipboard()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TiO (clear)</th>
+      <th>K (clear)</th>
+      <th>Na+K (clear)</th>
+      <th>Na+K (cloud)</th>
+      <th>Na+K (haze)</th>
+      <th>Na+K (spot)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>logP0</th>
+      <td>0.453^{+3.864}_{-4.256}</td>
+      <td>3.416^{+1.865}_{-2.770}</td>
+      <td>1.448^{+3.055}_{-3.120}</td>
+      <td>0.750^{+3.424}_{-2.893}</td>
+      <td>0.531^{+3.464}_{-3.065}</td>
+      <td>-1.311^{+4.327}_{-3.178}</td>
+    </tr>
+    <tr>
+      <th>T</th>
+      <td>1751.066^{+782.909}_{-804.449}</td>
+      <td>620.113^{+327.544}_{-208.875}</td>
+      <td>1938.036^{+652.154}_{-779.129}</td>
+      <td>1827.676^{+713.889}_{-950.206}</td>
+      <td>1878.391^{+709.046}_{-972.777}</td>
+      <td>1393.624^{+1043.456}_{-885.766}</td>
+    </tr>
+    <tr>
+      <th>logTiO</th>
+      <td>-7.116^{+4.000}_{-4.428}</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <th>logK</th>
+      <td>--</td>
+      <td>-2.589^{+1.853}_{-2.742}</td>
+      <td>-19.378^{+8.100}_{-7.350}</td>
+      <td>-18.685^{+8.427}_{-7.660}</td>
+      <td>-18.795^{+8.609}_{-7.427}</td>
+      <td>-18.959^{+8.376}_{-7.199}</td>
+    </tr>
+    <tr>
+      <th>logNa</th>
+      <td>--</td>
+      <td>--</td>
+      <td>-3.985^{+2.824}_{-3.318}</td>
+      <td>-3.929^{+2.754}_{-4.193}</td>
+      <td>-4.787^{+3.341}_{-10.063}</td>
+      <td>-15.466^{+9.382}_{-9.623}</td>
+    </tr>
+    <tr>
+      <th>logsigma_cloud</th>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>-37.705^{+9.910}_{-8.219}</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <th>loga</th>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>-11.050^{+14.314}_{-12.691}</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <th>gamma</th>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>-2.273^{+1.524}_{-1.219}</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <th>Tocc</th>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>5906.755^{+348.598}_{-326.734}</td>
+    </tr>
+    <tr>
+      <th>Thet</th>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>2200.000^{+0.000}_{-0.000}</td>
+    </tr>
+    <tr>
+      <th>Fhet</th>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>0.022^{+0.000}_{-0.000}</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>

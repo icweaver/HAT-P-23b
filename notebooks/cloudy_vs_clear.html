@@ -248,8 +248,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load">
+   11.3. Load
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot">
-   11.3. Plot
+   11.4. Plot
   </a>
  </li>
 </ul>
@@ -269,29 +274,11 @@
 <h2><span class="section-number">11.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-<span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 1;
-                var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -328,31 +315,14 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 </div>
 <div class="section" id="dowload-data">
 <h2><span class="section-number">11.2. </span><a class="reference external" href="https://www.dropbox.com/sh/r1kpecmjvg9zjhm/AACVP-xPzKePexXSG6tl3AKWa?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
 <p>Unzip this into a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
 </div>
-<div class="section" id="plot">
-<h2><span class="section-number">11.3. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="load">
+<h2><span class="section-number">11.3. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_wakeford</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span>
@@ -440,22 +410,7 @@ H2O-J_unc    float64
 dtype: object
 </pre></div>
 </div>
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "df_wakeford = pd.read_table(\n    \"data/cloudy_vs_clear/H2O_J_data.txt\", header=1, sep=\"\\s+\", index_col=\"Name\"\n)\ndisplay(df_wakeford.head())\ndf_wakeford.dtypes";
-                var nbb_formatted_code = "df_wakeford = pd.read_table(\n    \"data/cloudy_vs_clear/H2O_J_data.txt\", header=1, sep=\"\\s+\", index_col=\"Name\"\n)\ndisplay(df_wakeford.head())\ndf_wakeford.dtypes";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -705,22 +660,7 @@ Recent_reference        object
 dtype: object
 </pre></div>
 </div>
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "df_southworth = pd.read_table(\n    \"https://www.astro.keele.ac.uk/jkt/tepcat/allplanets-csv.csv\",\n    sep=r\"\\s*,\\s*\",\n    engine=\"python\",\n    index_col=\"System\",\n)\ndisplay(df_southworth.head())\ndf_southworth.dtypes";
-                var nbb_formatted_code = "df_southworth = pd.read_table(\n    \"https://www.astro.keele.ac.uk/jkt/tepcat/allplanets-csv.csv\",\n    sep=r\"\\s*,\\s*\",\n    engine=\"python\",\n    index_col=\"System\",\n)\ndisplay(df_southworth.head())\ndf_southworth.dtypes";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+</div>
 </div>
 <p>It seems that something went wrong with the conversion of the <code class="docutils literal notranslate"><span class="pre">errdn.6</span></code> column (it should be a float since it corresponds to the lower bound on the uncertainty of <code class="docutils literal notranslate"><span class="pre">g_b</span></code>), so let’s take a look at what happened:</p>
 <div class="cell docutils container">
@@ -747,22 +687,7 @@ dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;K2-060&#39;]
 </pre></div>
 </div>
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "problem_col = \"errdn.6\"\n\n# Collect the name (indexed by System name) of each row that fails the conversion check\nproblem_rows = []\nfor i, s in df_southworth.iterrows():\n    try:\n        float(s[problem_col])\n    except ValueError:\n        print(f\"Could not convert {s[problem_col]} to float at ({i}, {problem_col})\")\n        problem_rows.append(i)\n\nproblem_rows";
-                var nbb_formatted_code = "problem_col = \"errdn.6\"\n\n# Collect the name (indexed by System name) of each row that fails the conversion check\nproblem_rows = []\nfor i, s in df_southworth.iterrows():\n    try:\n        float(s[problem_col])\n    except ValueError:\n        print(f\"Could not convert {s[problem_col]} to float at ({i}, {problem_col})\")\n        problem_rows.append(i)\n\nproblem_rows";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+</div>
 </div>
 <p>It looks like some badly formatted data snuck in to the column for K2-060. It could be that the value should be 2.9 instead of 2..9, but since we already have so much other data, let’s just play it safe and drop this row:</p>
 <div class="cell docutils container">
@@ -771,23 +696,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 6;
-                var nbb_unformatted_code = "df_southworth_cleaned = df_southworth.drop(problem_rows)";
-                var nbb_formatted_code = "df_southworth_cleaned = df_southworth.drop(problem_rows)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 <p>Now we can continue with the producing the final figure:</p>
 <div class="cell docutils container">
@@ -797,24 +705,10 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 7;
-                var nbb_unformatted_code = "logg_wakeford, Teq_wakeford, H2O_J = df_wakeford[[\"logg\", \"T\", \"H2O-J\"]].T.values\ng_pop, Teq_pop = df_southworth_cleaned[[\"g_b\", \"Teq\"]].T.values.astype(float)";
-                var nbb_formatted_code = "logg_wakeford, Teq_wakeford, H2O_J = df_wakeford[[\"logg\", \"T\", \"H2O-J\"]].T.values\ng_pop, Teq_pop = df_southworth_cleaned[[\"g_b\", \"Teq\"]].T.values.astype(float)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
+</div>
+<div class="section" id="plot">
+<h2><span class="section-number">11.4. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -882,34 +776,18 @@ dtype: object
 <span class="n">Teqs</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="p">(</span><span class="n">loggs</span> <span class="o">-</span> <span class="mf">2.4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2100</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">loggs</span><span class="p">,</span> <span class="n">Teqs</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
 
-<span class="c1"># Save fig</span>
+<span class="c1"># Save</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">2.4</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">2_700</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$log(g)$ (dex)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;T$_</span><span class="si">{eq}</span><span class="s2">$ (K)&quot;</span><span class="p">)</span>
-
 <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cloudy_vs_clear_15_0.png" src="../_images/cloudy_vs_clear_15_0.png" />
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 8;
-                var nbb_unformatted_code = "\"\"\"\nUpdated Stevenson+ 16 plot using the H2O-J measurements from \nWakeford+ 2019\n\"\"\"\nfig, ax = plt.subplots(figsize=FIG_WIDE)\n\n# Plot catalog targets\ng_pop_pos_idxs = g_pop > 0.0  # Avoid taking log of invalid nums\nlogg_southworth = np.log10(100 * g_pop[g_pop_pos_idxs])  # log10(SI -> CGS)\nT_eq_southworth = Teq_pop[g_pop_pos_idxs]\nax.plot(\n    logg_southworth,\n    T_eq_southworth,\n    \"o\",\n    color=\"gray\",\n    alpha=0.3,\n    zorder=-10,\n    ms=10,\n    mew=0,\n)\n\n# Plot H2O-J information\npoints = ax.scatter(\n    logg_wakeford,\n    Teq_wakeford,\n    c=H2O_J,\n    marker=\"s\",\n    s=100,\n    edgecolor=\"k\",\n    cmap=\"PuOr\",\n    vmin=0,\n    vmax=2,\n)\ncbar = plt.colorbar(points)\ncbar.set_label(\"H$_{2}$O - J\", fontsize=16, labelpad=30, rotation=270)\n\n# Plot HAT-P-23b for context\ntarg_coords = (3.485, 2027)\nax.scatter(\n    *targ_coords,\n    c=\"#F3F3F3\",\n    marker=\"*\",\n    s=1000,\n    edgecolor=\"k\",\n    cmap=\"PuOr\",\n    vmin=0,\n    vmax=2,\n)\nax.annotate(\n    \"HAT-P-23b\",\n    xy=targ_coords,\n    xytext=(10, 10),\n    textcoords=\"offset points\",\n    # ha = \"left\",\n    fontsize=12,\n    weight=\"bold\",\n)\n\n\n# Plot divide\nm = (300 - 2100) / (3.3 - 2.4)\nloggs = np.linspace(*ax.get_xlim(), 100)\nTeqs = m * (loggs - 2.4) + 2100\nax.plot(loggs, Teqs, ls=\"dashed\", lw=3, color=\"grey\")\n\n# Save fig\nax.set_xlim(2.4, 4.0)\nax.set_ylim(300, 2_700)\nax.set_xlabel(\"$log(g)$ (dex)\")\nax.set_ylabel(\"T$_{eq}$ (K)\")\n\nutils.savefig(\"../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf\")";
-                var nbb_formatted_code = "\"\"\"\nUpdated Stevenson+ 16 plot using the H2O-J measurements from \nWakeford+ 2019\n\"\"\"\nfig, ax = plt.subplots(figsize=FIG_WIDE)\n\n# Plot catalog targets\ng_pop_pos_idxs = g_pop > 0.0  # Avoid taking log of invalid nums\nlogg_southworth = np.log10(100 * g_pop[g_pop_pos_idxs])  # log10(SI -> CGS)\nT_eq_southworth = Teq_pop[g_pop_pos_idxs]\nax.plot(\n    logg_southworth,\n    T_eq_southworth,\n    \"o\",\n    color=\"gray\",\n    alpha=0.3,\n    zorder=-10,\n    ms=10,\n    mew=0,\n)\n\n# Plot H2O-J information\npoints = ax.scatter(\n    logg_wakeford,\n    Teq_wakeford,\n    c=H2O_J,\n    marker=\"s\",\n    s=100,\n    edgecolor=\"k\",\n    cmap=\"PuOr\",\n    vmin=0,\n    vmax=2,\n)\ncbar = plt.colorbar(points)\ncbar.set_label(\"H$_{2}$O - J\", fontsize=16, labelpad=30, rotation=270)\n\n# Plot HAT-P-23b for context\ntarg_coords = (3.485, 2027)\nax.scatter(\n    *targ_coords,\n    c=\"#F3F3F3\",\n    marker=\"*\",\n    s=1000,\n    edgecolor=\"k\",\n    cmap=\"PuOr\",\n    vmin=0,\n    vmax=2,\n)\nax.annotate(\n    \"HAT-P-23b\",\n    xy=targ_coords,\n    xytext=(10, 10),\n    textcoords=\"offset points\",\n    # ha = \"left\",\n    fontsize=12,\n    weight=\"bold\",\n)\n\n\n# Plot divide\nm = (300 - 2100) / (3.3 - 2.4)\nloggs = np.linspace(*ax.get_xlim(), 100)\nTeqs = m * (loggs - 2.4) + 2100\nax.plot(loggs, Teqs, ls=\"dashed\", lw=3, color=\"grey\")\n\n# Save fig\nax.set_xlim(2.4, 4.0)\nax.set_ylim(300, 2_700)\nax.set_xlabel(\"$log(g)$ (dex)\")\nax.set_ylabel(\"T$_{eq}$ (K)\")\n\nutils.savefig(\"../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+<img alt="../_images/cloudy_vs_clear_16_0.png" src="../_images/cloudy_vs_clear_16_0.png" />
+</div>
 </div>
 </div>
 </div>

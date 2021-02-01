@@ -268,29 +268,11 @@
 <h2><span class="section-number">13.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-<span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 1;
-                var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -327,23 +309,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 </div>
 <div class="section" id="dowload-data">
@@ -479,7 +444,6 @@
     <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_LARGE</span><span class="p">)</span>
     <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;detrended_binned_lcs_&quot;</span> <span class="o">+</span> <span class="n">title</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
-
     <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../paper/figures/detrended_binned_lcs/</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -490,22 +454,7 @@
 <img alt="../_images/detrended_binned_lcs_7_2.png" src="../_images/detrended_binned_lcs_7_2.png" />
 <img alt="../_images/detrended_binned_lcs_7_3.png" src="../_images/detrended_binned_lcs_7_3.png" />
 <img alt="../_images/detrended_binned_lcs_7_4.png" src="../_images/detrended_binned_lcs_7_4.png" />
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "data_dir = \"data/detrended_binned_lcs\"\ndirpaths = sorted(glob.glob(f\"{data_dir}/hp*\"))\ndirpath_dict = {\n    f\"Transit {i}\": dirpath for (i, dirpath) in enumerate(dirpaths, start=1)\n}\n\nfor title, GPT_dir in dirpath_dict.items():\n    wbin_paths = sorted(glob.glob(f\"{GPT_dir}/wavelength/wbin*\"), key=utils.wbin_num)\n    PCA_list = []\n    for wbin_path in wbin_paths:\n        PCA_paths = glob.glob(f\"{wbin_path}/PCA*\")\n        PCAs = [path.split(\"/\")[-1] for path in PCA_paths]\n        PCA_list.append(PCAs)\n\n    common_PCAs = set(PCA_list[0])\n    for s in PCA_list[1:]:\n        common_PCAs.intersection_update(s)\n\n    PCA_max = max(common_PCAs, key=lambda s: int(s.split(\"_\")[-1]))\n    PCA_num = int(PCA_max.split(\"_\")[-1])\n    # print(f\"max common PCA = {PCA_num}\")\n\n    # Getting t0 from WLC data\n    fpath = f\"{GPT_dir}/white-light/results.dat\"\n    t0 = float(utils.get_result(fpath, key=\"t0\", unc=False))\n    P = float(utils.get_result(fpath, key=\"P\", unc=False))\n\n    # Get wavelength bins\n    fpath = f\"{GPT_dir}/transpec.csv\"\n    wbins = np.loadtxt(fpath, skiprows=1, usecols=[0, 1], delimiter=\",\")\n\n    # Glob doesn't automatically sort, but instead follows the local filesystem\"s\n    # rules, which can be very system dependent.\n    # To avoid potential cross-platform issues, I just sort based on an explicit\n    # rule that is passed to `sorted`. In this case, the rule is:\n    # sort based on the <num> part in wbin<num> of each file path.\n    dirpath = f\"{GPT_dir}/wavelength\"\n    detrended_files = f\"{dirpath}/wbin*/PCA_{PCA_num}/detrended_lc.dat\"\n    fpaths = sorted(glob.glob(detrended_files), key=utils.wbin_num)\n\n    # Store final data in <# of wavelength bins> x <length of timeseries> arrays\n    detfluxes, models, resids = [], [], []\n    for fpath in fpaths:\n        time, detflux, detfluxerr, model = np.loadtxt(fpath, unpack=True)\n        detfluxes.append(detflux)\n        models.append(model)\n        resids.append(detflux - model + 1)\n    detfluxes = np.array(detfluxes).T\n    models = np.array(models).T\n    resids = np.array(resids).T\n    phase = utils.get_phases(time, P, t0)\n    time_rel = phase\n\n    ###################################\n    # Plot detrended flux and residuals\n    ###################################\n    # Plot configs\n    N = detfluxes.shape[1]  # Number of wavelength bins\n    colors = np.array(sns.color_palette(\"Spectral_r\", N))\n\n    offset = 0.01  # Spacing betweem binned lcs\n    # Optional bins to highlight\n    species = {\n        \"Na I-D\": 5892.9,\n        # \"H\u03b1\":6564.6,\n        \"K I\": 7682.0,\n        \"Na I-8200\": 8189.0,\n    }\n    scatter_plot_kwargs = {\n        \"marker\": \".\",\n        \"lw\": 0,\n        \"mew\": 0,  # Make non-zero to show marker outlines\n    }\n    annotate_kwargs = {\n        \"fontsize\": 8,\n        \"horizontalalignment\": \"right\",\n        \"path_effects\": [PathEffects.withStroke(linewidth=2, foreground=\"w\")],\n    }\n    annotate_rms_kwargs = {\n        \"fontsize\": 8,\n        \"horizontalalignment\": \"left\",\n        \"path_effects\": [PathEffects.withStroke(linewidth=2, foreground=\"w\")],\n    }\n\n    fig, axes = plt.subplots(1, 2, figsize=(FIG_LARGE), sharex=True, sharey=True)\n    ax_left, ax_right = axes.flatten()\n\n    # Detrended flux\n    ax_left.set_title(\"Detrended flux\")\n    p_det = utils.plot_binned(\n        ax_left,\n        time_rel,\n        detfluxes,\n        wbins,\n        offset,\n        colors,\n        plot_kwargs=scatter_plot_kwargs,\n        models=models,\n    )\n\n    # Residual flux\n    ax_right.set_title(\"Residuals\")\n    baselines = np.ones_like(resids)\n    p_res = utils.plot_binned(\n        ax_right,\n        time_rel,\n        resids,\n        wbins,\n        offset,\n        colors,\n        plot_kwargs=scatter_plot_kwargs,\n        models=baselines,\n        annotate=True,\n        annotate_kwargs=annotate_kwargs,\n        annotate_rms_kwargs=annotate_rms_kwargs,\n        species=species,\n    )\n\n    # Save\n    ax_left.set_ylabel(\"Normalized flux + offset\")\n    fig.text(0.52, 0, \"Phase\", ha=\"left\")\n    ax_left.set_xlim(-0.12, 0.12)\n    fig.tight_layout()\n    fig.set_size_inches(FIG_LARGE)\n    title = \"detrended_binned_lcs_\" + title.lower().replace(\" \", \"_\")\n\n    utils.savefig(f\"../paper/figures/detrended_binned_lcs/{title}.pdf\")";
-                var nbb_formatted_code = "data_dir = \"data/detrended_binned_lcs\"\ndirpaths = sorted(glob.glob(f\"{data_dir}/hp*\"))\ndirpath_dict = {\n    f\"Transit {i}\": dirpath for (i, dirpath) in enumerate(dirpaths, start=1)\n}\n\nfor title, GPT_dir in dirpath_dict.items():\n    wbin_paths = sorted(glob.glob(f\"{GPT_dir}/wavelength/wbin*\"), key=utils.wbin_num)\n    PCA_list = []\n    for wbin_path in wbin_paths:\n        PCA_paths = glob.glob(f\"{wbin_path}/PCA*\")\n        PCAs = [path.split(\"/\")[-1] for path in PCA_paths]\n        PCA_list.append(PCAs)\n\n    common_PCAs = set(PCA_list[0])\n    for s in PCA_list[1:]:\n        common_PCAs.intersection_update(s)\n\n    PCA_max = max(common_PCAs, key=lambda s: int(s.split(\"_\")[-1]))\n    PCA_num = int(PCA_max.split(\"_\")[-1])\n    # print(f\"max common PCA = {PCA_num}\")\n\n    # Getting t0 from WLC data\n    fpath = f\"{GPT_dir}/white-light/results.dat\"\n    t0 = float(utils.get_result(fpath, key=\"t0\", unc=False))\n    P = float(utils.get_result(fpath, key=\"P\", unc=False))\n\n    # Get wavelength bins\n    fpath = f\"{GPT_dir}/transpec.csv\"\n    wbins = np.loadtxt(fpath, skiprows=1, usecols=[0, 1], delimiter=\",\")\n\n    # Glob doesn't automatically sort, but instead follows the local filesystem\"s\n    # rules, which can be very system dependent.\n    # To avoid potential cross-platform issues, I just sort based on an explicit\n    # rule that is passed to `sorted`. In this case, the rule is:\n    # sort based on the <num> part in wbin<num> of each file path.\n    dirpath = f\"{GPT_dir}/wavelength\"\n    detrended_files = f\"{dirpath}/wbin*/PCA_{PCA_num}/detrended_lc.dat\"\n    fpaths = sorted(glob.glob(detrended_files), key=utils.wbin_num)\n\n    # Store final data in <# of wavelength bins> x <length of timeseries> arrays\n    detfluxes, models, resids = [], [], []\n    for fpath in fpaths:\n        time, detflux, detfluxerr, model = np.loadtxt(fpath, unpack=True)\n        detfluxes.append(detflux)\n        models.append(model)\n        resids.append(detflux - model + 1)\n    detfluxes = np.array(detfluxes).T\n    models = np.array(models).T\n    resids = np.array(resids).T\n    phase = utils.get_phases(time, P, t0)\n    time_rel = phase\n\n    ###################################\n    # Plot detrended flux and residuals\n    ###################################\n    # Plot configs\n    N = detfluxes.shape[1]  # Number of wavelength bins\n    colors = np.array(sns.color_palette(\"Spectral_r\", N))\n\n    offset = 0.01  # Spacing betweem binned lcs\n    # Optional bins to highlight\n    species = {\n        \"Na I-D\": 5892.9,\n        # \"H\u03b1\":6564.6,\n        \"K I\": 7682.0,\n        \"Na I-8200\": 8189.0,\n    }\n    scatter_plot_kwargs = {\n        \"marker\": \".\",\n        \"lw\": 0,\n        \"mew\": 0,  # Make non-zero to show marker outlines\n    }\n    annotate_kwargs = {\n        \"fontsize\": 8,\n        \"horizontalalignment\": \"right\",\n        \"path_effects\": [PathEffects.withStroke(linewidth=2, foreground=\"w\")],\n    }\n    annotate_rms_kwargs = {\n        \"fontsize\": 8,\n        \"horizontalalignment\": \"left\",\n        \"path_effects\": [PathEffects.withStroke(linewidth=2, foreground=\"w\")],\n    }\n\n    fig, axes = plt.subplots(1, 2, figsize=(FIG_LARGE), sharex=True, sharey=True)\n    ax_left, ax_right = axes.flatten()\n\n    # Detrended flux\n    ax_left.set_title(\"Detrended flux\")\n    p_det = utils.plot_binned(\n        ax_left,\n        time_rel,\n        detfluxes,\n        wbins,\n        offset,\n        colors,\n        plot_kwargs=scatter_plot_kwargs,\n        models=models,\n    )\n\n    # Residual flux\n    ax_right.set_title(\"Residuals\")\n    baselines = np.ones_like(resids)\n    p_res = utils.plot_binned(\n        ax_right,\n        time_rel,\n        resids,\n        wbins,\n        offset,\n        colors,\n        plot_kwargs=scatter_plot_kwargs,\n        models=baselines,\n        annotate=True,\n        annotate_kwargs=annotate_kwargs,\n        annotate_rms_kwargs=annotate_rms_kwargs,\n        species=species,\n    )\n\n    # Save\n    ax_left.set_ylabel(\"Normalized flux + offset\")\n    fig.text(0.52, 0, \"Phase\", ha=\"left\")\n    ax_left.set_xlim(-0.12, 0.12)\n    fig.tight_layout()\n    fig.set_size_inches(FIG_LARGE)\n    title = \"detrended_binned_lcs_\" + title.lower().replace(\" \", \"_\")\n\n    utils.savefig(f\"../paper/figures/detrended_binned_lcs/{title}.pdf\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+</div>
 </div>
 </div>
 </div>

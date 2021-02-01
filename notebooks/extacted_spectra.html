@@ -248,8 +248,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load">
+   2.3. Load
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot">
-   2.3. Plot
+   2.4. Plot
   </a>
  </li>
 </ul>
@@ -269,29 +274,11 @@
 <h2><span class="section-number">2.1. </span>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-<span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 1;
-                var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -329,35 +316,17 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 </div>
 <div class="section" id="dowload-data">
 <h2><span class="section-number">2.2. </span><a class="reference external" href="https://www.dropbox.com/sh/f6rqfis0rdd0w1r/AAADJF0JI-YEx1cS9oCiwKP6a?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
 <p>Unzip this into a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
 </div>
-<div class="section" id="plot">
-<h2><span class="section-number">2.3. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="load">
+<h2><span class="section-number">2.3. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load</span>
-<span class="n">data_dir</span> <span class="o">=</span> <span class="s2">&quot;data/extracted_spectra&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="s2">&quot;data/extracted_spectra&quot;</span>
 
 <span class="n">wavs_d</span><span class="p">,</span> <span class="n">wavs_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/hp23_bins.dat&quot;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -369,28 +338,13 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "# Load\ndata_dir = \"data/extracted_spectra\"\n\nwavs_d, wavs_u = np.genfromtxt(f\"{data_dir}/hp23_bins.dat\", unpack=True)\n\nfpaths = sorted(glob.glob(f\"{data_dir}/ut*/LC*.pbz2\"))\ndata_dict = {\n    f\"Transit {i}\": utils.decompress_pickle(fpath)\n    for (i, fpath) in enumerate(fpaths, start=1)\n}";
-                var nbb_formatted_code = "# Load\ndata_dir = \"data/extracted_spectra\"\n\nwavs_d, wavs_u = np.genfromtxt(f\"{data_dir}/hp23_bins.dat\", unpack=True)\n\nfpaths = sorted(glob.glob(f\"{data_dir}/ut*/LC*.pbz2\"))\ndata_dict = {\n    f\"Transit {i}\": utils.decompress_pickle(fpath)\n    for (i, fpath) in enumerate(fpaths, start=1)\n}";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
+</div>
+<div class="section" id="plot">
+<h2><span class="section-number">2.4. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
-<span class="n">object_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HATP23b&quot;</span><span class="p">,</span> <span class="s2">&quot;comp4&quot;</span><span class="p">,</span> <span class="s2">&quot;comp5&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">object_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HATP23b&quot;</span><span class="p">,</span> <span class="s2">&quot;comp4&quot;</span><span class="p">,</span> <span class="s2">&quot;comp5&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">transit</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">spec</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;spectra&quot;</span><span class="p">]</span>
     <span class="n">wavs</span> <span class="o">=</span> <span class="n">spec</span><span class="p">[</span><span class="s2">&quot;wavelengths&quot;</span><span class="p">]</span>
@@ -399,7 +353,7 @@
     <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;darkgrey&quot;</span>
     <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="s2">&quot;HATP23b&quot;</span><span class="p">:</span>
-            <span class="n">median_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;C5&quot;</span><span class="p">}</span>
+            <span class="n">median_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;C8&quot;</span><span class="p">}</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">median_kwargs</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;grey&quot;</span>
@@ -410,6 +364,7 @@
                 <span class="n">wavs</span><span class="o">=</span><span class="n">wavs</span><span class="p">,</span>
                 <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
                 <span class="n">median_kwargs</span><span class="o">=</span><span class="n">median_kwargs</span><span class="p">,</span>
+                <span class="c1"># fill_kwargs=fill_kwargs,</span>
             <span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
@@ -422,32 +377,31 @@
     <span class="n">species</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Na I-D&quot;</span><span class="p">:</span> <span class="mf">5892.9</span><span class="p">,</span> <span class="s2">&quot;K I_avg&quot;</span><span class="p">:</span> <span class="mf">7682.0</span><span class="p">,</span> <span class="s2">&quot;Na I-8200_avg&quot;</span><span class="p">:</span> <span class="mf">8189.0</span><span class="p">}</span>
     <span class="p">[</span><span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">wav</span> <span class="ow">in</span> <span class="n">species</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
 
+
+    <span class="c1"># Save</span>
     <span class="n">title</span> <span class="o">=</span> <span class="n">transit</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Wavelength (Å)&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Normalized Flux&quot;</span><span class="p">)</span>
     <span class="c1"># ax.set_title(title)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">4_000</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">)</span>
-
-    <span class="c1"># Save</span>
     <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_extr_spec&quot;</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
-
     <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../paper/figures/extracted_spectra/</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/extacted_spectra_8_0.png" src="../_images/extacted_spectra_8_0.png" />
-<img alt="../_images/extacted_spectra_8_1.png" src="../_images/extacted_spectra_8_1.png" />
-<img alt="../_images/extacted_spectra_8_2.png" src="../_images/extacted_spectra_8_2.png" />
-<img alt="../_images/extacted_spectra_8_3.png" src="../_images/extacted_spectra_8_3.png" />
-<img alt="../_images/extacted_spectra_8_4.png" src="../_images/extacted_spectra_8_4.png" />
+<img alt="../_images/extacted_spectra_9_0.png" src="../_images/extacted_spectra_9_0.png" />
+<img alt="../_images/extacted_spectra_9_1.png" src="../_images/extacted_spectra_9_1.png" />
+<img alt="../_images/extacted_spectra_9_2.png" src="../_images/extacted_spectra_9_2.png" />
+<img alt="../_images/extacted_spectra_9_3.png" src="../_images/extacted_spectra_9_3.png" />
+<img alt="../_images/extacted_spectra_9_4.png" src="../_images/extacted_spectra_9_4.png" />
 <script type="application/javascript">
             setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# Plot\nobject_names = [\"HATP23b\", \"comp4\", \"comp5\"]\nfor transit, data in data_dict.items():\n    spec = data[\"spectra\"]\n    wavs = spec[\"wavelengths\"]\n\n    fig, ax = plt.subplots(figsize=FIG_WIDE)\n    c = \"darkgrey\"\n    for name, data in sorted(spec.items()):\n        if name in \"HATP23b\":\n            median_kwargs = {\"c\": \"C5\"}\n        else:\n            median_kwargs = None\n            c = \"grey\"\n        if name in object_names:\n            p, wav, flux = utils.plot_spec_file(\n                ax,\n                data=data,\n                wavs=wavs,\n                label=name,\n                median_kwargs=median_kwargs,\n            )\n    ax.legend(loc=1, fontsize=12)\n\n    # Bins\n    for i, (w_d, w_u) in enumerate(zip(wavs_d, wavs_u)):\n        c = \"k\" if i % 2 == 0 else \"darkgrey\"\n        ax.axvspan(w_d, w_u, alpha=0.25, color=c, lw=0)\n\n    # Species\n    species = {\"Na I-D\": 5892.9, \"K I_avg\": 7682.0, \"Na I-8200_avg\": 8189.0}\n    [ax.axvline(wav, ls=\"--\", lw=1, color=\"grey\") for name, wav in species.items()]\n\n    title = transit\n    ax.set_xlabel(\"Wavelength (\u00c5)\")\n    ax.set_ylabel(\"Normalized Flux\")\n    # ax.set_title(title)\n    ax.set_xlim(4_000, 10_000)\n\n    # Save\n    title = title.lower().replace(\" \", \"_\") + \"_extr_spec\"\n    fig.tight_layout()\n    fig.set_size_inches(FIG_WIDE)\n\n    utils.savefig(f\"../paper/figures/extracted_spectra/{title}.pdf\")";
-                var nbb_formatted_code = "# Plot\nobject_names = [\"HATP23b\", \"comp4\", \"comp5\"]\nfor transit, data in data_dict.items():\n    spec = data[\"spectra\"]\n    wavs = spec[\"wavelengths\"]\n\n    fig, ax = plt.subplots(figsize=FIG_WIDE)\n    c = \"darkgrey\"\n    for name, data in sorted(spec.items()):\n        if name in \"HATP23b\":\n            median_kwargs = {\"c\": \"C5\"}\n        else:\n            median_kwargs = None\n            c = \"grey\"\n        if name in object_names:\n            p, wav, flux = utils.plot_spec_file(\n                ax, data=data, wavs=wavs, label=name, median_kwargs=median_kwargs\n            )\n    ax.legend(loc=1, fontsize=12)\n\n    # Bins\n    for i, (w_d, w_u) in enumerate(zip(wavs_d, wavs_u)):\n        c = \"k\" if i % 2 == 0 else \"darkgrey\"\n        ax.axvspan(w_d, w_u, alpha=0.25, color=c, lw=0)\n\n    # Species\n    species = {\"Na I-D\": 5892.9, \"K I_avg\": 7682.0, \"Na I-8200_avg\": 8189.0}\n    [ax.axvline(wav, ls=\"--\", lw=1, color=\"grey\") for name, wav in species.items()]\n\n    title = transit\n    ax.set_xlabel(\"Wavelength (\u00c5)\")\n    ax.set_ylabel(\"Normalized Flux\")\n    # ax.set_title(title)\n    ax.set_xlim(4_000, 10_000)\n\n    # Save\n    title = title.lower().replace(\" \", \"_\") + \"_extr_spec\"\n    fig.tight_layout()\n    fig.set_size_inches(FIG_WIDE)\n\n    utils.savefig(f\"../paper/figures/extracted_spectra/{title}.pdf\")";
+                var nbb_cell_id = 21;
+                var nbb_unformatted_code = "object_names = [\"HATP23b\", \"comp4\", \"comp5\"]\nfor transit, data in data_dict.items():\n    spec = data[\"spectra\"]\n    wavs = spec[\"wavelengths\"]\n\n    fig, ax = plt.subplots(figsize=FIG_WIDE)\n    c = \"darkgrey\"\n    for name, data in sorted(spec.items()):\n        if name in \"HATP23b\":\n            median_kwargs = {\"c\": \"C8\"}\n        else:\n            median_kwargs = None\n            c = \"grey\"\n        if name in object_names:\n            p, wav, flux = utils.plot_spec_file(\n                ax,\n                data=data,\n                wavs=wavs,\n                label=name,\n                median_kwargs=median_kwargs,\n                # fill_kwargs=fill_kwargs,\n            )\n    ax.legend(loc=1, fontsize=12)\n\n    # Bins\n    for i, (w_d, w_u) in enumerate(zip(wavs_d, wavs_u)):\n        c = \"k\" if i % 2 == 0 else \"darkgrey\"\n        ax.axvspan(w_d, w_u, alpha=0.25, color=c, lw=0)\n\n    # Species\n    species = {\"Na I-D\": 5892.9, \"K I_avg\": 7682.0, \"Na I-8200_avg\": 8189.0}\n    [ax.axvline(wav, ls=\"--\", lw=1, color=\"grey\") for name, wav in species.items()]\n\n    title = transit\n    ax.set_xlabel(\"Wavelength (\u00c5)\")\n    ax.set_ylabel(\"Normalized Flux\")\n    # ax.set_title(title)\n    ax.set_xlim(4_000, 10_000)\n\n    # Save\n    title = title.lower().replace(\" \", \"_\") + \"_extr_spec\"\n    fig.tight_layout()\n    fig.set_size_inches(FIG_WIDE)\n\n    utils.savefig(f\"../paper/figures/extracted_spectra/{title}.pdf\")";
+                var nbb_formatted_code = "object_names = [\"HATP23b\", \"comp4\", \"comp5\"]\nfor transit, data in data_dict.items():\n    spec = data[\"spectra\"]\n    wavs = spec[\"wavelengths\"]\n\n    fig, ax = plt.subplots(figsize=FIG_WIDE)\n    c = \"darkgrey\"\n    for name, data in sorted(spec.items()):\n        if name in \"HATP23b\":\n            median_kwargs = {\"c\": \"C8\"}\n        else:\n            median_kwargs = None\n            c = \"grey\"\n        if name in object_names:\n            p, wav, flux = utils.plot_spec_file(\n                ax,\n                data=data,\n                wavs=wavs,\n                label=name,\n                median_kwargs=median_kwargs,\n                # fill_kwargs=fill_kwargs,\n            )\n    ax.legend(loc=1, fontsize=12)\n\n    # Bins\n    for i, (w_d, w_u) in enumerate(zip(wavs_d, wavs_u)):\n        c = \"k\" if i % 2 == 0 else \"darkgrey\"\n        ax.axvspan(w_d, w_u, alpha=0.25, color=c, lw=0)\n\n    # Species\n    species = {\"Na I-D\": 5892.9, \"K I_avg\": 7682.0, \"Na I-8200_avg\": 8189.0}\n    [ax.axvline(wav, ls=\"--\", lw=1, color=\"grey\") for name, wav in species.items()]\n\n    title = transit\n    ax.set_xlabel(\"Wavelength (\u00c5)\")\n    ax.set_ylabel(\"Normalized Flux\")\n    # ax.set_title(title)\n    ax.set_xlim(4_000, 10_000)\n\n    # Save\n    title = title.lower().replace(\" \", \"_\") + \"_extr_spec\"\n    fig.tight_layout()\n    fig.set_size_inches(FIG_WIDE)\n\n    utils.savefig(f\"../paper/figures/extracted_spectra/{title}.pdf\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {

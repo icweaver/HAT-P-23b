@@ -269,29 +269,11 @@
 <h2><span class="section-number">4.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-<span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 1;
-                var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -329,23 +311,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport bz2\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 </div>
 <div class="section" id="dowload-data">
@@ -397,15 +362,14 @@
         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">rms</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">1.1</span> <span class="o">*</span> <span class="n">phase</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">24</span><span class="p">,</span> <span class="mf">0.58</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="n">trans</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span>
     <span class="p">)</span>
 
+    <span class="c1"># Save</span>
     <span class="n">ax_top</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
     <span class="n">ax_bottom</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Phase&quot;</span><span class="p">)</span>
     <span class="n">ax_top</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Normalized flux&quot;</span><span class="p">)</span>
     <span class="n">ax_bottom</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;ppm&quot;</span><span class="p">)</span>
-
     <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
     <span class="n">title</span> <span class="o">=</span> <span class="n">transit_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_detr_wlcs&quot;</span>
-
     <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../paper/figures/detrended_wlcs/</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -416,22 +380,7 @@
 <img alt="../_images/detrended_wlcs_7_2.png" src="../_images/detrended_wlcs_7_2.png" />
 <img alt="../_images/detrended_wlcs_7_3.png" src="../_images/detrended_wlcs_7_3.png" />
 <img alt="../_images/detrended_wlcs_7_4.png" src="../_images/detrended_wlcs_7_4.png" />
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "data_dir = \"data/detrended_wlcs\"\nfpaths = sorted(glob.glob(f\"{data_dir}/hp*/white-light\"))\nfpath_dict = {f\"Transit {i}\": fpath for (i, fpath) in enumerate(fpaths, start=1)}\nPCA = \"PCA_2\"  # Total number of principal components\n\nfor i, (transit_name, dirpath) in enumerate(fpath_dict.items()):\n    fig, axes = plt.subplots(2, 1, sharex=True, gridspec_kw={\"height_ratios\": [5, 1]})\n    ax_top, ax_bottom = axes\n\n    # Get t0, P\n    fpath_t0 = f\"{dirpath}/results.dat\"\n    df_results = pd.read_table(fpath_t0, sep=\"\\s+\", index_col=0, escapechar=\"#\")\n    t0, P = df_results.loc[[\"t0\", \"P\"]][\"Value\"]\n\n    fpath = f\"{dirpath}/{PCA}/detrended_lc.dat\"\n\n    # Detrended data\n    t, detflux, detflux_err, model = np.genfromtxt(fpath, unpack=True)\n    phase = utils.get_phases(t, P, t0)\n    ax_top.plot(phase * 24, detflux, \"o\", label=transit_name, c=f\"C{i}\", mew=0)\n    c_dark = 0.5 * np.array(mpl.colors.to_rgba(f\"C{i}\")[:3])\n\n    # Full model\n    t_full, f_full = np.genfromtxt(f\"{dirpath}/full_model_{PCA}.dat\").T\n    phase_full = utils.get_phases(t_full, P, t0)\n    p = ax_top.plot(phase_full * 24, f_full, color=c_dark, lw=2, zorder=10)\n\n    # Residuals\n    c = 2 * c_dark\n    resids = detflux - model\n    ax_bottom.plot(phase * 24, resids * 1e6, \".\", mew=0, color=c)\n    trans = transforms.blended_transform_factory(\n        ax_bottom.transData, ax_bottom.transAxes\n    )\n    ax_bottom.axhline(0, lw=2, c=c_dark)\n\n    rms = np.std(resids * 1e6)\n    ax_bottom.annotate(\n        f\"{int(rms)}\", xy=(1.1 * phase[-1] * 24, 0.58), xycoords=trans, fontsize=12\n    )\n\n    ax_top.set_xlim(-3, 3)\n    ax_bottom.set_xlabel(\"Phase\")\n    ax_top.set_ylabel(\"Normalized flux\")\n    ax_bottom.set_ylabel(\"ppm\")\n\n    fig.tight_layout()\n    fig.set_size_inches(FIG_WIDE)\n    title = transit_name.lower().replace(\" \", \"_\") + \"_detr_wlcs\"\n\n    utils.savefig(f\"../paper/figures/detrended_wlcs/{title}.pdf\")";
-                var nbb_formatted_code = "data_dir = \"data/detrended_wlcs\"\nfpaths = sorted(glob.glob(f\"{data_dir}/hp*/white-light\"))\nfpath_dict = {f\"Transit {i}\": fpath for (i, fpath) in enumerate(fpaths, start=1)}\nPCA = \"PCA_2\"  # Total number of principal components\n\nfor i, (transit_name, dirpath) in enumerate(fpath_dict.items()):\n    fig, axes = plt.subplots(2, 1, sharex=True, gridspec_kw={\"height_ratios\": [5, 1]})\n    ax_top, ax_bottom = axes\n\n    # Get t0, P\n    fpath_t0 = f\"{dirpath}/results.dat\"\n    df_results = pd.read_table(fpath_t0, sep=\"\\s+\", index_col=0, escapechar=\"#\")\n    t0, P = df_results.loc[[\"t0\", \"P\"]][\"Value\"]\n\n    fpath = f\"{dirpath}/{PCA}/detrended_lc.dat\"\n\n    # Detrended data\n    t, detflux, detflux_err, model = np.genfromtxt(fpath, unpack=True)\n    phase = utils.get_phases(t, P, t0)\n    ax_top.plot(phase * 24, detflux, \"o\", label=transit_name, c=f\"C{i}\", mew=0)\n    c_dark = 0.5 * np.array(mpl.colors.to_rgba(f\"C{i}\")[:3])\n\n    # Full model\n    t_full, f_full = np.genfromtxt(f\"{dirpath}/full_model_{PCA}.dat\").T\n    phase_full = utils.get_phases(t_full, P, t0)\n    p = ax_top.plot(phase_full * 24, f_full, color=c_dark, lw=2, zorder=10)\n\n    # Residuals\n    c = 2 * c_dark\n    resids = detflux - model\n    ax_bottom.plot(phase * 24, resids * 1e6, \".\", mew=0, color=c)\n    trans = transforms.blended_transform_factory(\n        ax_bottom.transData, ax_bottom.transAxes\n    )\n    ax_bottom.axhline(0, lw=2, c=c_dark)\n\n    rms = np.std(resids * 1e6)\n    ax_bottom.annotate(\n        f\"{int(rms)}\", xy=(1.1 * phase[-1] * 24, 0.58), xycoords=trans, fontsize=12\n    )\n\n    ax_top.set_xlim(-3, 3)\n    ax_bottom.set_xlabel(\"Phase\")\n    ax_top.set_ylabel(\"Normalized flux\")\n    ax_bottom.set_ylabel(\"ppm\")\n\n    fig.tight_layout()\n    fig.set_size_inches(FIG_WIDE)\n    title = transit_name.lower().replace(\" \", \"_\") + \"_detr_wlcs\"\n\n    utils.savefig(f\"../paper/figures/detrended_wlcs/{title}.pdf\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+</div>
 </div>
 </div>
 </div>

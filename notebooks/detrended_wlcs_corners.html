@@ -253,8 +253,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load">
+   12.4. Load
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot">
-   12.4. Plot
+   12.5. Plot
   </a>
  </li>
 </ul>
@@ -274,29 +279,11 @@
 <h2><span class="section-number">12.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-<span class="o">%</span><span class="k">load_ext</span> autoreload
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 1;
-                var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_formatted_code = "%load_ext nb_black\n%load_ext autoreload\n%autoreload 2";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -333,23 +320,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_formatted_code = "import glob as glob\nimport matplotlib as mpl\nimport matplotlib.patheffects as PathEffects\nimport matplotlib.pyplot as plt\nimport matplotlib.transforms as transforms\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nimport corner\nimport json\nimport pathlib\nimport pickle\nimport utils\nimport warnings\n\nfrom astropy import constants as const\nfrom astropy import units as uni\nfrom astropy.io import ascii, fits\nfrom astropy.time import Time\nfrom mpl_toolkits.axes_grid1 import ImageGrid\n\n# Default figure dimensions\nFIG_WIDE = (11, 5)\nFIG_LARGE = (8, 11)\n\n# Figure style\nsns.set(style=\"ticks\", palette=\"colorblind\", color_codes=True, context=\"talk\")\nparams = utils.plot_params()\nplt.rcParams.update(params)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 </div>
 <div class="section" id="dowload-data-same-dataset-used-for-detrended-wlcs">
@@ -365,27 +335,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "# Link dirs\n! ln -srf data/detrended_wlcs data/detrended_wlcs_corners";
-                var nbb_formatted_code = "# Link dirs\n! ln -srf data/detrended_wlcs data/detrended_wlcs_corners";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
 </div>
 </div>
-<div class="section" id="plot">
-<h2><span class="section-number">12.4. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="load">
+<h2><span class="section-number">12.4. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load</span>
@@ -399,9 +352,16 @@
     <span class="sa">f</span><span class="s2">&quot;Transit </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">load_pickle</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">fpath</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fpaths</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="p">}</span>
-
-<span class="c1"># Plot</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Initialize figure</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot">
+<h2><span class="section-number">12.5. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Initialize figure</span>
 <span class="k">for</span> <span class="n">t_i</span><span class="p">,</span> <span class="p">(</span><span class="n">transit_name</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
     <span class="c1"># Load</span>
     <span class="k">if</span> <span class="s2">&quot;rho&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -483,23 +443,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/detrended_wlcs_corners_9_0.png" src="../_images/detrended_wlcs_corners_9_0.png" />
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# Load\ndata_dir = \"data/detrended_wlcs_corners\"\nfpath_truths = f\"{data_dir}/truth.json\"\nwith open(fpath_truths) as f:\n    params_dict = json.load(f)\n\nfpaths = sorted(glob.glob(f\"{data_dir}/hp*/white-light/BMA_posteriors.pkl\"))\ndata_dict = {\n    f\"Transit {i}\": utils.load_pickle(fpath)\n    for (i, fpath) in enumerate(fpaths, start=1)\n}\n\n# Plot\nfig = None  # Initialize figure\nfor t_i, (transit_name, data) in enumerate(data_dict.items()):\n    # Load\n    if \"rho\" not in data.keys():\n        G = const.G.cgs.value\n        aR = data[\"aR\"]\n        P = data[\"P\"]\n        data[\"rho\"] = 3.0 * np.pi * aR ** 3 / (G * (P * 86400.0) ** 2)\n    samples = pd.DataFrame({k: v for (k, v) in data.items() if \"xc\" not in k})[\n        params_dict.keys()\n    ]\n\n    mins = np.min(np.array([samples.min(), samples.min()]), axis=0)\n    maxs = np.min(np.array([samples.max(), samples.max()]), axis=0)\n    ranges = list(zip(mins, maxs))\n\n    # Plot\n    fig, axes = utils.plot_corner(\n        samples, fpath_truths, c=f\"C{t_i}\", fig=fig, ranges=ranges\n    )\n\n    # Custom titles\n    ps = [0.16, 0.5, 0.84]\n    ps_strs = [f\"{p*100:.0f}%\" for p in ps]\n    df_stats = samples.describe(percentiles=ps).loc[ps_strs]\n    df_latex = pd.DataFrame(columns=df_stats.columns)\n    df_latex.loc[\"p\"] = df_stats.loc[\"50%\"]\n    df_latex.loc[\"p_u\"] = df_stats.loc[\"84%\"] - df_stats.loc[\"50%\"]\n    df_latex.loc[\"p_d\"] = df_stats.loc[\"50%\"] - df_stats.loc[\"16%\"]\n\n    titles = df_latex.apply(utils.write_latex_row, axis=0).to_list()\n\n    ndim = samples.shape[1]\n    axes = np.array(fig.axes).reshape((ndim, ndim))\n    for i, (param_key, param_data) in enumerate(params_dict.items()):\n        ax = axes[i, i]  # select 1d hist\n        ax.annotate(\n            f\"${titles[i]}$\",\n            xy=(0.0, 1.1 + t_i / 4.0),\n            xycoords=\"axes fraction\",\n            ha=\"left\",\n            color=f\"C{t_i}\",\n            fontsize=14,\n        )\n\n# Label custom titles\nfor i, (param_key, param_data) in enumerate(params_dict.items()):\n    ax = axes[i, i]  # select 1d hist\n    ax.annotate(\n        f\"{param_data['symbol']}\",\n        xy=(0.5, 1.1 + (t_i + 1) / 4.0),\n        xycoords=\"axes fraction\",\n        ha=\"center\",\n        # color=\"w\",\n    )\n    p_mean, p_u, p_d = param_data[\"truth\"]  # Unpack mean +/-\n    ax.axvspan(p_mean - p_u, p_mean + p_u, alpha=0.75, color=\"grey\", lw=0, zorder=0)\n    ax.axvline(p_mean, color=\"w\")\n\n# True values\ntruths = [v[\"truth\"][0] for v in params_dict.values()]\nndim = len(truths)\nfor yi in range(ndim):\n    for xi in range(yi):\n        ax = axes[yi, xi]\n        ax.plot(truths[xi], truths[yi], \"P\", ms=10, mec=\"grey\", mfc=\"w\")\n\n# Custom legend\nhandles, labels = [], []\nfor transit_name in list(data_dict.keys()):\n    (dummy,) = plt.plot([], [], \"D\", ms=12, mfc=\"none\", mew=2, label=transit_name)\n    handles.append(dummy)\n    labels.append(transit_name)\nfig.legend(handles, labels, loc=1, fontsize=18, ncol=len(data_dict) + 1)\n\n# Save\nfig.set_size_inches(14, 14)\nutils.savefig(f\"../paper/figures/detrended_wlcs_corners/corner_wlcs.pdf\")";
-                var nbb_formatted_code = "# Load\ndata_dir = \"data/detrended_wlcs_corners\"\nfpath_truths = f\"{data_dir}/truth.json\"\nwith open(fpath_truths) as f:\n    params_dict = json.load(f)\n\nfpaths = sorted(glob.glob(f\"{data_dir}/hp*/white-light/BMA_posteriors.pkl\"))\ndata_dict = {\n    f\"Transit {i}\": utils.load_pickle(fpath)\n    for (i, fpath) in enumerate(fpaths, start=1)\n}\n\n# Plot\nfig = None  # Initialize figure\nfor t_i, (transit_name, data) in enumerate(data_dict.items()):\n    # Load\n    if \"rho\" not in data.keys():\n        G = const.G.cgs.value\n        aR = data[\"aR\"]\n        P = data[\"P\"]\n        data[\"rho\"] = 3.0 * np.pi * aR ** 3 / (G * (P * 86400.0) ** 2)\n    samples = pd.DataFrame({k: v for (k, v) in data.items() if \"xc\" not in k})[\n        params_dict.keys()\n    ]\n\n    mins = np.min(np.array([samples.min(), samples.min()]), axis=0)\n    maxs = np.min(np.array([samples.max(), samples.max()]), axis=0)\n    ranges = list(zip(mins, maxs))\n\n    # Plot\n    fig, axes = utils.plot_corner(\n        samples, fpath_truths, c=f\"C{t_i}\", fig=fig, ranges=ranges\n    )\n\n    # Custom titles\n    ps = [0.16, 0.5, 0.84]\n    ps_strs = [f\"{p*100:.0f}%\" for p in ps]\n    df_stats = samples.describe(percentiles=ps).loc[ps_strs]\n    df_latex = pd.DataFrame(columns=df_stats.columns)\n    df_latex.loc[\"p\"] = df_stats.loc[\"50%\"]\n    df_latex.loc[\"p_u\"] = df_stats.loc[\"84%\"] - df_stats.loc[\"50%\"]\n    df_latex.loc[\"p_d\"] = df_stats.loc[\"50%\"] - df_stats.loc[\"16%\"]\n\n    titles = df_latex.apply(utils.write_latex_row, axis=0).to_list()\n\n    ndim = samples.shape[1]\n    axes = np.array(fig.axes).reshape((ndim, ndim))\n    for i, (param_key, param_data) in enumerate(params_dict.items()):\n        ax = axes[i, i]  # select 1d hist\n        ax.annotate(\n            f\"${titles[i]}$\",\n            xy=(0.0, 1.1 + t_i / 4.0),\n            xycoords=\"axes fraction\",\n            ha=\"left\",\n            color=f\"C{t_i}\",\n            fontsize=14,\n        )\n\n# Label custom titles\nfor i, (param_key, param_data) in enumerate(params_dict.items()):\n    ax = axes[i, i]  # select 1d hist\n    ax.annotate(\n        f\"{param_data['symbol']}\",\n        xy=(0.5, 1.1 + (t_i + 1) / 4.0),\n        xycoords=\"axes fraction\",\n        ha=\"center\",\n        # color=\"w\",\n    )\n    p_mean, p_u, p_d = param_data[\"truth\"]  # Unpack mean +/-\n    ax.axvspan(p_mean - p_u, p_mean + p_u, alpha=0.75, color=\"grey\", lw=0, zorder=0)\n    ax.axvline(p_mean, color=\"w\")\n\n# True values\ntruths = [v[\"truth\"][0] for v in params_dict.values()]\nndim = len(truths)\nfor yi in range(ndim):\n    for xi in range(yi):\n        ax = axes[yi, xi]\n        ax.plot(truths[xi], truths[yi], \"P\", ms=10, mec=\"grey\", mfc=\"w\")\n\n# Custom legend\nhandles, labels = [], []\nfor transit_name in list(data_dict.keys()):\n    (dummy,) = plt.plot([], [], \"D\", ms=12, mfc=\"none\", mew=2, label=transit_name)\n    handles.append(dummy)\n    labels.append(transit_name)\nfig.legend(handles, labels, loc=1, fontsize=18, ncol=len(data_dict) + 1)\n\n# Save\nfig.set_size_inches(14, 14)\nutils.savefig(f\"../paper/figures/detrended_wlcs_corners/corner_wlcs.pdf\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+<img alt="../_images/detrended_wlcs_corners_11_0.png" src="../_images/detrended_wlcs_corners_11_0.png" />
+</div>
 </div>
 </div>
 </div>
