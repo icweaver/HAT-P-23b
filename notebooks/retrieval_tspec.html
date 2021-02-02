@@ -375,34 +375,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">b9d73a50a3a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="s2">&quot;TiO (clear)&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_TiO&quot;</span><span class="p">,</span>  <span class="c1"># Best</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">}</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">data_dict_extrema</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">model_name</span><span class="p">:</span> <span class="p">{</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="s2">&quot;tspec&quot;</span><span class="p">:</span> <span class="n">ascii</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retr_model.txt&quot;</span><span class="p">),</span>
-
-<span class="nn">&lt;ipython-input-3-8b9d73a50a3a&gt;</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retr_model_sampled_Magellan_IMACS.txt&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="p">),</span>
-<span class="ne">---&gt; </span><span class="mi">14</span>         <span class="s2">&quot;retrieval&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">load_pickle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_dir</span><span class="si">}</span><span class="s2">/retrieval.pkl&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="p">}</span>
-<span class="nn">     16     for (model_name, model_dir)</span> in <span class="ni">fpaths_dict_extrema.items</span><span class="nt">()</span>
-
-<span class="nn">~/work/HAT-P-23b/HAT-P-23b/notebooks/utils.py</span> in <span class="ni">load_pickle</span><span class="nt">(fpath)</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span> 
-<span class="g g-Whitespace">    </span><span class="mi">148</span> <span class="k">def</span> <span class="nf">load_pickle</span><span class="p">(</span><span class="n">fpath</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">149</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin&quot;</span><span class="p">)</span>  <span class="c1"># Python 2 -&gt; 3</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="k">return</span> <span class="n">data</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/retrieval_tspec/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_K/retrieval.pkl&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="plot">

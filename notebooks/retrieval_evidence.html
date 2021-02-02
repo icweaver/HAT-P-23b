@@ -355,47 +355,235 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">47</span><span class="n">c0121b74da</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">model_min_fixed</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">data_dict_fixed</span><span class="p">,</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="p">)</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_evidences</span><span class="p">(</span><span class="n">base_dir_fixed_R0</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> 
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">base_dir_fit_R0</span> <span class="o">=</span> <span class="s2">&quot;data/retrieval_evidence/spot_lower_fit_R0&quot;</span>
-
-<span class="nn">~/work/HAT-P-23b/HAT-P-23b/notebooks/utils.py</span> in <span class="ni">get_evidences</span><span class="nt">(base_dir)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="p">}</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span> 
-<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span>         <span class="n">sp</span><span class="p">:</span> <span class="p">{</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>             <span class="n">model_name</span><span class="p">:</span> <span class="n">load_pickle</span><span class="p">(</span>
-
-<span class="nn">~/work/HAT-P-23b/HAT-P-23b/notebooks/utils.py</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span> 
-<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span>
-<span class="ne">---&gt; </span><span class="mi">77</span>         <span class="n">sp</span><span class="p">:</span> <span class="p">{</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>             <span class="n">model_name</span><span class="p">:</span> <span class="n">load_pickle</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span>                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_</span><span class="si">{</span><span class="n">model_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">sp</span><span class="si">}</span><span class="s2">/retrieval.pkl&quot;</span>
-
-<span class="nn">~/work/HAT-P-23b/HAT-P-23b/notebooks/utils.py</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span>         <span class="n">sp</span><span class="p">:</span> <span class="p">{</span>
-<span class="ne">---&gt; </span><span class="mi">78</span>             <span class="n">model_name</span><span class="p">:</span> <span class="n">load_pickle</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span>                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HATP23_E1_</span><span class="si">{</span><span class="n">model_id</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">sp</span><span class="si">}</span><span class="s2">/retrieval.pkl&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span>             <span class="p">)</span>
-
-<span class="nn">~/work/HAT-P-23b/HAT-P-23b/notebooks/utils.py</span> in <span class="ni">load_pickle</span><span class="nt">(fpath)</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span> 
-<span class="g g-Whitespace">    </span><span class="mi">148</span> <span class="k">def</span> <span class="nf">load_pickle</span><span class="p">(</span><span class="n">fpath</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">149</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin&quot;</span><span class="p">)</span>  <span class="c1"># Python 2 -&gt; 3</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="k">return</span> <span class="n">data</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/retrieval_evidence/spot_lower_fixed_R0/HATP23_E1_NoHet_FitP0_NoClouds_NoHaze_NofitR0_Na/retrieval.pkl&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fixed R0
+Minimul log-evidence: (K, clear)
 </pre></div>
 </div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Na</th>
+      <th>K</th>
+      <th>TiO</th>
+      <th>Na_K</th>
+      <th>Na_TiO</th>
+      <th>K_TiO</th>
+      <th>Na_K_TiO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>clear</th>
+      <td>4.228008</td>
+      <td>0.000000</td>
+      <td>6.470431</td>
+      <td>3.961596</td>
+      <td>5.965399</td>
+      <td>5.906551</td>
+      <td>5.620903</td>
+    </tr>
+    <tr>
+      <th>clear+cloud</th>
+      <td>3.631123</td>
+      <td>1.485933</td>
+      <td>5.398483</td>
+      <td>3.179458</td>
+      <td>5.170945</td>
+      <td>4.996205</td>
+      <td>4.870079</td>
+    </tr>
+    <tr>
+      <th>clear+haze</th>
+      <td>3.684933</td>
+      <td>2.223177</td>
+      <td>5.362364</td>
+      <td>3.221512</td>
+      <td>5.124867</td>
+      <td>4.944949</td>
+      <td>4.720639</td>
+    </tr>
+    <tr>
+      <th>clear+cloud+haze</th>
+      <td>2.848549</td>
+      <td>1.737777</td>
+      <td>4.479787</td>
+      <td>2.382097</td>
+      <td>4.248182</td>
+      <td>4.153051</td>
+      <td>3.856953</td>
+    </tr>
+    <tr>
+      <th>clear+spot</th>
+      <td>4.241980</td>
+      <td>3.812417</td>
+      <td>4.241815</td>
+      <td>3.685709</td>
+      <td>3.997720</td>
+      <td>3.751752</td>
+      <td>3.506001</td>
+    </tr>
+    <tr>
+      <th>clear+spot+cloud</th>
+      <td>3.174436</td>
+      <td>2.867850</td>
+      <td>3.291967</td>
+      <td>2.695057</td>
+      <td>3.033652</td>
+      <td>2.801135</td>
+      <td>2.538111</td>
+    </tr>
+    <tr>
+      <th>clear+spot+haze</th>
+      <td>3.034682</td>
+      <td>2.817973</td>
+      <td>3.120746</td>
+      <td>2.614493</td>
+      <td>2.828451</td>
+      <td>2.655219</td>
+      <td>2.427965</td>
+    </tr>
+    <tr>
+      <th>clear+spot+cloud+haze</th>
+      <td>2.159865</td>
+      <td>1.938158</td>
+      <td>2.208348</td>
+      <td>1.660904</td>
+      <td>1.910795</td>
+      <td>1.798888</td>
+      <td>1.529130</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit R0
+Minimul log-evidence: (K, clear+spot+cloud)
+</pre></div>
 </div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Na</th>
+      <th>K</th>
+      <th>TiO</th>
+      <th>Na_K</th>
+      <th>Na_TiO</th>
+      <th>K_TiO</th>
+      <th>Na_K_TiO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>clear</th>
+      <td>2.540187</td>
+      <td>0.807536</td>
+      <td>4.636170</td>
+      <td>2.453314</td>
+      <td>4.717220</td>
+      <td>4.569445</td>
+      <td>4.227604</td>
+    </tr>
+    <tr>
+      <th>clear+cloud</th>
+      <td>2.156500</td>
+      <td>0.728322</td>
+      <td>4.013794</td>
+      <td>1.529097</td>
+      <td>3.802738</td>
+      <td>3.610931</td>
+      <td>3.519387</td>
+    </tr>
+    <tr>
+      <th>clear+haze</th>
+      <td>2.299625</td>
+      <td>1.878195</td>
+      <td>3.867348</td>
+      <td>1.792175</td>
+      <td>3.723402</td>
+      <td>3.702487</td>
+      <td>3.249522</td>
+    </tr>
+    <tr>
+      <th>clear+cloud+haze</th>
+      <td>1.651863</td>
+      <td>1.373049</td>
+      <td>3.299506</td>
+      <td>1.265989</td>
+      <td>2.969531</td>
+      <td>2.887848</td>
+      <td>2.801454</td>
+    </tr>
+    <tr>
+      <th>clear+spot</th>
+      <td>1.986855</td>
+      <td>0.227077</td>
+      <td>4.224842</td>
+      <td>1.598080</td>
+      <td>4.058254</td>
+      <td>3.906182</td>
+      <td>3.609893</td>
+    </tr>
+    <tr>
+      <th>clear+spot+cloud</th>
+      <td>1.344115</td>
+      <td>0.000000</td>
+      <td>3.385048</td>
+      <td>0.939643</td>
+      <td>3.150525</td>
+      <td>3.149587</td>
+      <td>2.869141</td>
+    </tr>
+    <tr>
+      <th>clear+spot+haze</th>
+      <td>1.525325</td>
+      <td>1.085760</td>
+      <td>3.312821</td>
+      <td>1.228557</td>
+      <td>3.072417</td>
+      <td>2.925748</td>
+      <td>2.601322</td>
+    </tr>
+    <tr>
+      <th>clear+spot+cloud+haze</th>
+      <td>0.812119</td>
+      <td>0.648131</td>
+      <td>2.378183</td>
+      <td>0.471873</td>
+      <td>2.203181</td>
+      <td>2.177578</td>
+      <td>1.657147</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="plot">
