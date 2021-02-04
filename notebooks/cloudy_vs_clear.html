@@ -781,12 +781,73 @@ dtype: object
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">2_700</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$log(g)$ (dex)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;T$_</span><span class="si">{eq}</span><span class="s2">$ (K)&quot;</span><span class="p">)</span>
-<span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;</span><span class="p">)</span>
+<span class="c1">#utils.savefig(&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/mango/Projects/tac_3/cloudy_vs_clear.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cloudy_vs_clear_16_0.png" src="../_images/cloudy_vs_clear_16_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">5</span><span class="n">f44ee93531b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="c1">#utils.savefig(&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">73</span> <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/mango/Projects/tac_3/cloudy_vs_clear.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/pyplot.py</span> in <span class="ni">savefig</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span> <span class="k">def</span> <span class="nf">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>     <span class="n">fig</span> <span class="o">=</span> <span class="n">gcf</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">859</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">860</span>     <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>   <span class="c1"># need this if &#39;transparent=True&#39; to reset colors</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span>     <span class="k">return</span> <span class="n">res</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/figure.py</span> in <span class="ni">savefig</span><span class="nt">(self, fname, transparent, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2309</span>                 <span class="n">patch</span><span class="o">.</span><span class="n">set_edgecolor</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2310</span> 
+<span class="ne">-&gt; </span><span class="mi">2311</span>         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2312</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2313</span>         <span class="k">if</span> <span class="n">transparent</span><span class="p">:</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/backend_bases.py</span> in <span class="ni">print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2208</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2209</span>             <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2210</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">print_method</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2211</span>                     <span class="n">filename</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2212</span>                     <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">,</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/backend_bases.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1637</span>             <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1638</span> 
+<span class="ne">-&gt; </span><span class="mi">1639</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1640</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1641</span>     <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py</span> in <span class="ni">print_png</span><span class="nt">(self, filename_or_obj, metadata, pil_kwargs, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">509</span><span class="s2">         FigureCanvasAgg.draw(self)</span>
+<span class="ne">--&gt; </span><span class="mi">510</span><span class="s2">         mpl.image.imsave(</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span><span class="s2">             filename_or_obj, self.buffer_rgba(), format=&quot;png&quot;, origin=&quot;upper&quot;,</span>
+<span class="g g-Whitespace">    </span><span class="mi">512</span><span class="s2">             dpi=self.figure.dpi, metadata=metadata, pil_kwargs=pil_kwargs)</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/image.py</span> in <span class="ni">imsave</span><span class="nt">(fname, arr, vmin, vmax, cmap, format, origin, dpi, metadata, pil_kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1603</span><span class="s2">         pil_kwargs.setdefault(&quot;format&quot;, format)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1604</span><span class="s2">         pil_kwargs.setdefault(&quot;dpi&quot;, (dpi, dpi))</span>
+<span class="ne">-&gt; </span><span class="mi">1605</span><span class="s2">         image.save(fname, **pil_kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1606</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1607</span><span class="s2"> </span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/PIL/Image.py</span> in <span class="ni">save</span><span class="nt">(self, fp, format, **params)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2159</span><span class="s2">                 fp = builtins.open(filename, &quot;r+b&quot;)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2160</span><span class="s2">             else:</span>
+<span class="ne">-&gt; </span><span class="mi">2161</span><span class="s2">                 fp = builtins.open(filename, &quot;w+b&quot;)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2162</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">2163</span><span class="s2">         try:</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/home/mango/Projects/tac_3/cloudy_vs_clear.png&#39;
+</pre></div>
+</div>
+<img alt="../_images/cloudy_vs_clear_16_1.png" src="../_images/cloudy_vs_clear_16_1.png" />
 </div>
 </div>
 </div>

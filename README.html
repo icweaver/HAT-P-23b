@@ -231,6 +231,30 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quickstart">
+   Quickstart
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#environment-setup">
+   Environment setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#issues">
+   Issues
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -240,7 +264,26 @@
                 
   <div class="section" id="access-an-optical-transmission-spectrum-of-the-high-gravity-hot-jupiter-hat-p-23b">
 <h1>ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b<a class="headerlink" href="#access-an-optical-transmission-spectrum-of-the-high-gravity-hot-jupiter-hat-p-23b" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
+<p>This site hosts the collection of Jupyter notebooks used to produce each figure in the paper. All of the data used by each notebook is available <a class="reference external" href="https://www.dropbox.com/sh/ikyxx0at9xifo9s/AABXhaI-K4Jf4QK6FQZR0gDua?dl=0">here</a>. Individual datasets for each notebook can also be downloaded directly from within the notebooks themselves.</p>
+</div>
+<div class="section" id="environment-setup">
+<h2>Environment setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">¶</a></h2>
+<p>The main <a class="reference external" href="https://github.com/icweaver/HAT-P-23b">repo</a> also hosts a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file and an <code class="docutils literal notranslate"><span class="pre">env_hatp23b.yml</span></code> file for reproducing the Python environment used with either pip or conda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">env_hatp23b</span><span class="o">.</span><span class="n">yml</span><span class="p">;</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">hatp23b</span>
+</pre></div>
+</div>
+<p>This repo also hosts a <a class="reference external" href="https://github.com/icweaver/HAT-P-23b/blob/main/notebooks/utils.py"><code class="docutils literal notranslate"><span class="pre">utils.py</span></code></a> helper script used by all notebooks, containing utility post-processing and plotting functions.</p>
+</div>
+<div class="section" id="issues">
+<h2>Issues<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h2>
+<p>Please post any issues you find <a class="reference external" href="https://github.com/icweaver/HAT-P-23b/issues">here</a></p>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 

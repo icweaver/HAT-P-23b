@@ -322,6 +322,67 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> qt5
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">64557277</span><span class="n">dbff</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;qt5&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2325</span>                 <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2326</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2327</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2328</span>             <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">   </span><span class="mi">2329</span> 
+
+<span class="nn">&lt;decorator-gen-101&gt;</span> in <span class="ni">matplotlib</span><span class="nt">(self, line)</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/IPython/core/magic.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(f, *a, **k)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="c1"># but it&#39;s overkill for just that one bit of state.</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">def</span> <span class="nf">magic_deco</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">call</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> 
+<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/IPython/core/magics/pylab.py</span> in <span class="ni">matplotlib</span><span class="nt">(self, line)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available matplotlib backends: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">backends_list</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">99</span>             <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">enable_matplotlib</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_show_matplotlib_backend</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> 
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">enable_matplotlib</span><span class="nt">(self, gui)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3504</span>                 <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">find_gui_and_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pylab_gui_select</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3505</span> 
+<span class="ne">-&gt; </span><span class="mi">3506</span>         <span class="n">pt</span><span class="o">.</span><span class="n">activate_matplotlib</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3507</span>         <span class="n">pt</span><span class="o">.</span><span class="n">configure_inline_support</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3508</span> 
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/IPython/core/pylabtools.py</span> in <span class="ni">activate_matplotlib</span><span class="nt">(backend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span> 
+<span class="ne">--&gt; </span><span class="mi">322</span>     <span class="n">plt</span><span class="o">.</span><span class="n">switch_backend</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span> 
+<span class="g g-Whitespace">    </span><span class="mi">324</span>     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">_needmain</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/pyplot.py</span> in <span class="ni">switch_backend</span><span class="nt">(newbackend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span>         <span class="k">if</span> <span class="p">(</span><span class="n">current_framework</span> <span class="ow">and</span> <span class="n">required_framework</span>
+<span class="g g-Whitespace">    </span><span class="mi">283</span>                 <span class="ow">and</span> <span class="n">current_framework</span> <span class="o">!=</span> <span class="n">required_framework</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">284</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>                 <span class="s2">&quot;Cannot load backend </span><span class="si">{!r}</span><span class="s2"> which requires the </span><span class="si">{!r}</span><span class="s2"> interactive &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span>                 <span class="s2">&quot;framework, as </span><span class="si">{!r}</span><span class="s2"> is currently running&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+
+<span class="ne">ImportError</span>: Cannot load backend &#39;Qt5Agg&#39; which requires the &#39;qt5&#39; interactive framework, as &#39;headless&#39; is currently running
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="dowload-data-same-dataset-used-for-extracted-spectra">
 <h2><span class="section-number">3.2. </span><a class="reference external" href="https://www.dropbox.com/sh/f6rqfis0rdd0w1r/AAADJF0JI-YEx1cS9oCiwKP6a?dl=1">Dowload data</a> (same dataset used for extracted spectra)<a class="headerlink" href="#dowload-data-same-dataset-used-for-extracted-spectra" title="Permalink to this headline">¶</a></h2>
@@ -349,35 +410,35 @@
         <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">decompress_pickle</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/ut160621_a15_20_noflat/</span><span class="si">{</span><span class="n">LCs_pickle</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="p">),</span>
-        <span class="s2">&quot;bad_idxs&quot;</span><span class="p">:</span> <span class="s2">&quot;[239, 240, 241, 256, 276, 278, 283, 284, 288:299]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bad_idxs_user&quot;</span><span class="p">:</span> <span class="s2">&quot;[239, 240, 241, 256, 276, 278, 283, 284, 288:299]&quot;</span><span class="p">,</span>
         <span class="s2">&quot;t0&quot;</span><span class="p">:</span> <span class="mf">2457561.84167</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Transit 2&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">decompress_pickle</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/ut170609_a15_25_noflat/</span><span class="si">{</span><span class="n">LCs_pickle</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="p">),</span>
-        <span class="s2">&quot;bad_idxs&quot;</span><span class="p">:</span> <span class="s2">&quot;[10]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bad_idxs_user&quot;</span><span class="p">:</span> <span class="s2">&quot;[10]&quot;</span><span class="p">,</span>
         <span class="s2">&quot;t0&quot;</span><span class="p">:</span> <span class="mf">2457914.79167</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Transit 3&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">decompress_pickle</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/ut180603_a15_25_noflat/</span><span class="si">{</span><span class="n">LCs_pickle</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="p">),</span>
-        <span class="s2">&quot;bad_idxs&quot;</span><span class="p">:</span> <span class="s2">&quot;[0:17]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bad_idxs_user&quot;</span><span class="p">:</span> <span class="s2">&quot;[0:17]&quot;</span><span class="p">,</span>
         <span class="s2">&quot;t0&quot;</span><span class="p">:</span> <span class="mf">2458273.80556</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Transit 4&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">decompress_pickle</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/ut180620_a15_25_noflat/</span><span class="si">{</span><span class="n">LCs_pickle</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="p">),</span>
-        <span class="s2">&quot;bad_idxs&quot;</span><span class="p">:</span> <span class="s2">&quot;[93, 94, 149, 157:171]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bad_idxs_user&quot;</span><span class="p">:</span> <span class="s2">&quot;[93, 94, 149, 157:171]&quot;</span><span class="p">,</span>
         <span class="s2">&quot;t0&quot;</span><span class="p">:</span> <span class="mf">2458290.78472</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s2">&quot;Transit 5&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">utils</span><span class="o">.</span><span class="n">decompress_pickle</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/ut180821_a15_25_noflat/</span><span class="si">{</span><span class="n">LCs_pickle</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="p">),</span>
-        <span class="s2">&quot;bad_idxs&quot;</span><span class="p">:</span> <span class="s2">&quot;[4:6, 51, 53, 54, 56:59, 64, 66, 68, 69, 72, 77:80, 87:94, 96:98, 101, 129:131, 133, 174:181]&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bad_idxs_user&quot;</span><span class="p">:</span> <span class="s2">&quot;[4:6, 51, 53, 54, 56:59, 64, 66, 68, 69, 72, 77:80, 87:94, 96:98, 101, 108:119, 120, 129:131, 133, 174:181]&quot;</span><span class="p">,</span>
         <span class="s2">&quot;t0&quot;</span><span class="p">:</span> <span class="mf">2458352.64028</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">}</span>
@@ -404,17 +465,18 @@
     <span class="n">data</span> <span class="o">=</span> <span class="n">transit_info</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
     <span class="n">t0</span> <span class="o">=</span> <span class="n">transit_info</span><span class="p">[</span><span class="s2">&quot;t0&quot;</span><span class="p">]</span>
 
+    <span class="n">bad_idxs_both_comps</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:],</span> <span class="n">comps</span><span class="p">):</span>
-        <span class="n">p</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">plot_divided_wlcs</span><span class="p">(</span>
+        <span class="n">p</span><span class="p">,</span> <span class="n">bad_idxs</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">plot_divided_wlcs</span><span class="p">(</span>
             <span class="n">ax</span><span class="p">,</span>
             <span class="n">data</span><span class="p">,</span>
             <span class="n">t0</span><span class="o">=</span><span class="n">t0</span><span class="p">,</span>
             <span class="n">ferr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
             <span class="n">comps_to_use</span><span class="o">=</span><span class="p">[</span><span class="n">comp</span><span class="p">],</span>
-            <span class="n">bad_idxs_user</span><span class="o">=</span><span class="n">transit_info</span><span class="p">[</span><span class="s2">&quot;bad_idxs&quot;</span><span class="p">],</span>
             <span class="n">div_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;fmt&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;lw&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mew&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;ms&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]},</span>
             <span class="n">bad_div_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;fmt&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;lw&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mec&quot;</span><span class="p">:</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="s2">&quot;ms&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;w&quot;</span><span class="p">},</span>
         <span class="p">)</span>
+        <span class="n">bad_idxs_both_comps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bad_idxs</span><span class="p">)</span>
 
         <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
             <span class="sa">rf</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transit_name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">comp</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
@@ -427,35 +489,109 @@
 
         <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.96</span><span class="p">,</span> <span class="mf">1.04</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([</span><span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="mf">1.04</span><span class="p">])</span>
-
+    
+    <span class="c1"># Highlight outliers</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">transit_name</span><span class="p">)</span>
+    <span class="n">super_bad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">union1d</span><span class="p">(</span><span class="n">bad_idxs_both_comps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bad_idxs_both_comps</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">super_bad</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">setxor1d</span><span class="p">(</span><span class="n">super_bad</span><span class="p">,</span> <span class="n">utils</span><span class="o">.</span><span class="n">_bad_idxs</span><span class="p">(</span><span class="n">transit_info</span><span class="p">[</span><span class="s2">&quot;bad_idxs_user&quot;</span><span class="p">])))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:],</span> <span class="n">comps</span><span class="p">):</span>
+        <span class="n">utils</span><span class="o">.</span><span class="n">plot_divided_wlcs</span><span class="p">(</span>
+            <span class="n">ax</span><span class="p">,</span>
+            <span class="n">data</span><span class="p">,</span>
+            <span class="n">t0</span><span class="o">=</span><span class="n">t0</span><span class="p">,</span>
+            <span class="n">ferr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+            <span class="n">comps_to_use</span><span class="o">=</span><span class="p">[</span><span class="n">comp</span><span class="p">],</span>
+            <span class="n">bad_idxs_user</span> <span class="o">=</span> <span class="n">transit_info</span><span class="p">[</span><span class="s2">&quot;bad_idxs_user&quot;</span><span class="p">],</span>
+            <span class="c1">#bad_idxs_user = super_bad,</span>
+            <span class="c1">#bad_idxs_user=np.setxor1d(super_bad, utils._bad_idxs(transit_info[&quot;bad_idxs_user&quot;])),</span>
+            <span class="n">div_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;fmt&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;lw&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mew&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;ms&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]},</span>
+            <span class="n">bad_div_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;fmt&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;lw&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mec&quot;</span><span class="p">:</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="s2">&quot;ms&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;w&quot;</span><span class="p">},</span>
+    <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.54</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="s2">&quot;Time from estimated mid-transit (hours)&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;Normalizd flux&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_LARGE</span><span class="p">)</span>
 
-<span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../paper/figures/extracted_wlcs/all_transits_extr_wlcs.pdf&quot;</span><span class="p">)</span>
+<span class="c1">#utils.savefig(&quot;../paper/figures/extracted_wlcs/all_transits_extr_wlcs.pdf&quot;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/mango/Desktop/div_wlcs_rem.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/extracted_wlcs_11_0.png" src="../_images/extracted_wlcs_11_0.png" />
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 10;
-                var nbb_unformatted_code = "# Plot\ncomps = [\"comp4\", \"comp5\"]\nncomps = len(comps)\n\nfig, axes = plt.subplots(\n    len(data_dict), ncomps, sharex=True, sharey=True, figsize=FIG_LARGE\n)\n\nif axes.ndim == 1:\n    axes = axes.reshape(1, axes.size)\ncolors = sns.color_palette()\nfor i, (transit_name, transit_info) in enumerate(data_dict.items()):\n    data = transit_info[\"data\"]\n    t0 = transit_info[\"t0\"]\n\n    for ax, comp in zip(axes[i, :], comps):\n        p = utils.plot_divided_wlcs(\n            ax,\n            data,\n            t0=t0,\n            ferr=0.001,\n            comps_to_use=[comp],\n            bad_idxs_user=transit_info[\"bad_idxs\"],\n            div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mew\": 0.0, \"ms\": 3, \"c\": colors[i]},\n            bad_div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mec\": \"k\", \"ms\": 6, \"c\": \"w\"},\n        )\n\n        ax.annotate(\n            rf\"{transit_name}/{comp}\",\n            xy=(0.05, 0.85),\n            xycoords=\"axes fraction\",\n            fontsize=12,\n            color=colors[i],\n            weight=\"bold\",\n        )\n\n        ax.set_ylim(0.96, 1.04)\n        ax.yaxis.set_ticks([0.96, 0.98, 1.00, 1.02, 1.04])\n\n\nfig.text(0.54, -0.02, \"Time from estimated mid-transit (hours)\", ha=\"center\")\nfig.text(-0.01, 0.5, \"Normalizd flux\", va=\"center\", rotation=\"vertical\")\nfig.tight_layout()\nfig.set_size_inches(FIG_LARGE)\n\nutils.savefig(\"../paper/figures/extracted_wlcs/all_transits_extr_wlcs.pdf\")";
-                var nbb_formatted_code = "# Plot\ncomps = [\"comp4\", \"comp5\"]\nncomps = len(comps)\n\nfig, axes = plt.subplots(\n    len(data_dict), ncomps, sharex=True, sharey=True, figsize=FIG_LARGE\n)\n\nif axes.ndim == 1:\n    axes = axes.reshape(1, axes.size)\ncolors = sns.color_palette()\nfor i, (transit_name, transit_info) in enumerate(data_dict.items()):\n    data = transit_info[\"data\"]\n    t0 = transit_info[\"t0\"]\n\n    for ax, comp in zip(axes[i, :], comps):\n        p = utils.plot_divided_wlcs(\n            ax,\n            data,\n            t0=t0,\n            ferr=0.001,\n            comps_to_use=[comp],\n            bad_idxs_user=transit_info[\"bad_idxs\"],\n            div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mew\": 0.0, \"ms\": 3, \"c\": colors[i]},\n            bad_div_kwargs={\"fmt\": \".\", \"lw\": 0.5, \"mec\": \"k\", \"ms\": 6, \"c\": \"w\"},\n        )\n\n        ax.annotate(\n            rf\"{transit_name}/{comp}\",\n            xy=(0.05, 0.85),\n            xycoords=\"axes fraction\",\n            fontsize=12,\n            color=colors[i],\n            weight=\"bold\",\n        )\n\n        ax.set_ylim(0.96, 1.04)\n        ax.yaxis.set_ticks([0.96, 0.98, 1.00, 1.02, 1.04])\n\n\nfig.text(0.54, -0.02, \"Time from estimated mid-transit (hours)\", ha=\"center\")\nfig.text(-0.01, 0.5, \"Normalizd flux\", va=\"center\", rotation=\"vertical\")\nfig.tight_layout()\nfig.set_size_inches(FIG_LARGE)\n\nutils.savefig(\"../paper/figures/extracted_wlcs/all_transits_extr_wlcs.pdf\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transit 1
+array([239, 240, 241, 256, 274, 275, 276, 277, 278, 279, 280, 281, 282,
+       283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295,
+       296, 297, 298])
+[274 275 277 279 280 281 282 285 286 287 299]
+
+Transit 2
+array([ 1, 10])
+[1]
+
+Transit 3
+array([ 1,  2,  3,  4,  5,  6,  7, 11])
+[ 0  8  9 10 12 13 14 15 16 17]
+
+Transit 4
+array([ 93,  94, 149, 162, 163, 164, 165, 166, 167, 168, 169, 170])
+[157 158 159 160 161 171]
+
+Transit 5
+array([  1,   2,   3,   4,   5,   6,  51,  52,  55,  56,  59,  64,  65,
+        66,  67,  68,  72,  87,  88,  89,  90,  91,  92,  93,  94,  95,
+        96,  97,  98,  99, 100, 101, 108, 109, 110, 111, 112, 113, 114,
+       120, 127, 128, 129, 130, 131, 132, 133, 166, 167, 168, 169, 170,
+       171, 172, 173, 174, 175, 176, 177, 178, 179, 180])
+[  1   2   3  52  53  54  55  57  58  65  67  69  77  78  79  80  95  99
+ 100 115 116 117 118 119 127 128 132 166 167 168 169 170 171 172 173 181]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">239</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">276</span><span class="p">,</span> <span class="mi">277</span><span class="p">,</span> <span class="mi">278</span><span class="p">,</span> <span class="mi">283</span><span class="p">,</span> <span class="mi">284</span><span class="p">,</span> <span class="mi">285</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="mi">296</span><span class="p">,</span> <span class="mi">298</span><span class="p">])</span>
+<span class="n">u1</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">_bad_idxs</span><span class="p">(</span><span class="s2">&quot;[239, 240, 241, 256, 276, 278, 283, 284, 288:299]&quot;</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">setxor1d</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">u1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([277, 285, 288, 289, 291, 292, 293, 294, 295, 297, 299])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">u2</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">_bad_idxs</span><span class="p">(</span><span class="s2">&quot;[10]&quot;</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">setxor1d</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span> <span class="n">u2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<span class="n">u3</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">_bad_idxs</span><span class="p">(</span><span class="s2">&quot;[0:17]&quot;</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">setxor1d</span><span class="p">(</span><span class="n">c3</span><span class="p">,</span> <span class="n">u3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0,  2,  3,  7,  8,  9, 10, 12, 13, 14, 15, 16, 17])
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
