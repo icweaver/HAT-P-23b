@@ -567,11 +567,24 @@ def plot_divided_wlcs(
         for i in range(1, len(flux_div) - 1):
             diff_left = np.abs(flux_div[i] - flux_div[i - 1])
             diff_right = np.abs(flux_div[i] - flux_div[i + 1])
-            if (diff_left > 2 * ferr) and (diff_right > 2 * ferr):
+            if ((diff_left > 2 * ferr) and (diff_right > 2 * ferr)) or airmass[i] >= 2:
                 bad_idxs.append(i)
+        #print(cName, bad_idxs)
 
+        #ax.plot(
+        #    (time[bad_idxs] - t0) * 24.0,
+        #    flux_div[bad_idxs],
+        #    #yerr=ferr,
+        #    "k.",
+        #    ms=15,
+        #    zorder=10,
+        #    #**bad_div_kwargs,
+        #)
         if bad_idxs_user is not None:
-            bad_idxs_user = _bad_idxs(bad_idxs_user)
+            if isinstance(bad_idxs_user, str):
+                bad_idxs_user = _bad_idxs(bad_idxs_user)
+
+            #print(bad_idxs_user)
             ax.errorbar(
                 (time[bad_idxs_user] - t0) * 24.0,
                 flux_div[bad_idxs_user],
@@ -579,12 +592,12 @@ def plot_divided_wlcs(
                 zorder=10,
                 **bad_div_kwargs,
             )
-            bad_idxs = set(bad_idxs_user).union(set(bad_idxs))
-            bad_idxs = list(bad_idxs)
+            #bad_idxs = set(bad_idxs_user).union(set(bad_idxs))
+            #bad_idxs = list(bad_idxs)
 
         idxs = np.arange(len(flux_div))
-        flux_div_used = flux_div[idxs != bad_idxs_user]
-        idxs_used = idxs[idxs != bad_idxs_user]
+        flux_div_used = flux_div#[idxs != bad_idxs_user]
+        idxs_used = idxs#[idxs != bad_idxs_user]
         ax.errorbar(
             (time[idxs_used] - t0) * 24.0,
             flux_div_used,
@@ -592,9 +605,8 @@ def plot_divided_wlcs(
             label=cName,
             **div_kwargs,
         )
-        high_am = airmass > 2
 
-    return ax
+    return ax, bad_idxs
 
 
 def plot_evidence_summary(ax, df):
