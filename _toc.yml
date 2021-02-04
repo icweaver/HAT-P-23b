@@ -2,9 +2,7 @@ file: README
 numbered: true
 
 sections:
-- file: notebooks/raw_frames
-- file: notebooks/extacted_spectra
-- file: notebooks/extracted_wlcs
+- file: notebooks/extracted_spectra
 - file: notebooks/detrended_wlcs
 - file: notebooks/photometric_act
 - file: notebooks/tspec_full
@@ -13,5 +11,7 @@ sections:
 - file: notebooks/retrieval_evidence
 - file: notebooks/retrieval_tspec
 - file: notebooks/cloudy_vs_clear
+- file: notebooks/raw_frames
+- file: notebooks/extracted_wlcs
 - file: notebooks/detrended_wlcs_corners
 - file: notebooks/detrended_binned_lcs
