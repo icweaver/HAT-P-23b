@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10. Retrieval transmission spectra &#8212; ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</title>
+    <title>8. Retrieval transmission spectra &#8212; ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11. Cloudy vs. clear prediction" href="cloudy_vs_clear.html" />
-    <link rel="prev" title="9. Retrieval evidences" href="retrieval_evidence.html" />
+    <link rel="next" title="9. Cloudy vs. clear prediction" href="cloudy_vs_clear.html" />
+    <link rel="prev" title="7. Retrieval evidences" href="retrieval_evidence.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -94,58 +94,58 @@
 </ul>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="raw_frames.html">
-   1. 2D Spectra
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="extacted_spectra.html">
-   2. Extracted spectra
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="extracted_wlcs.html">
-   3. Extracted WLCs
+  <a class="reference internal" href="extracted_spectra.html">
+   1. Extracted spectra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="detrended_wlcs.html">
-   4. GP+PCA detrended WLCs
+   2. GP+PCA detrended WLCs
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="photometric_act.html">
-   5. Photometric monitoring
+   3. Photometric monitoring
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_full.html">
-   6. Transmission spectra: full
+   4. Transmission spectra: full
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_species.html">
-   7. Transmission spectra: species
+   5. Transmission spectra: species
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_forward_model.html">
-   8. Forward model
+   6. Forward model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="retrieval_evidence.html">
-   9. Retrieval evidences
+   7. Retrieval evidences
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   10. Retrieval transmission spectra
+   8. Retrieval transmission spectra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="cloudy_vs_clear.html">
-   11. Cloudy vs. clear prediction
+   9. Cloudy vs. clear prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw_frames.html">
+   10. 2D Spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extracted_wlcs.html">
+   11. Extracted WLCs
   </a>
  </li>
  <li class="toctree-l1">
@@ -239,22 +239,22 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notebook-setup">
-   10.1. Notebook setup
+   8.1. Notebook setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load">
-   10.2. Load
+   8.2. Load
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot">
-   10.3. Plot
+   8.3. Plot
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table">
-   10.4. Table
+   8.4. Table
   </a>
  </li>
 </ul>
@@ -269,9 +269,9 @@
               <div>
                 
   <div class="section" id="retrieval-transmission-spectra">
-<h1><span class="section-number">10. </span>Retrieval transmission spectra<a class="headerlink" href="#retrieval-transmission-spectra" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">8. </span>Retrieval transmission spectra<a class="headerlink" href="#retrieval-transmission-spectra" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="notebook-setup">
-<h2><span class="section-number">10.1. </span>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.1. </span>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
@@ -319,7 +319,7 @@
 </div>
 </div>
 <div class="section" id="load">
-<h2><span class="section-number">10.2. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_dir</span> <span class="o">=</span> <span class="s2">&quot;data/retrieval_tspec&quot;</span>
@@ -378,7 +378,7 @@
 </div>
 </div>
 <div class="section" id="plot">
-<h2><span class="section-number">10.3. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.3. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">FIG_WIDE</span><span class="p">)</span>
@@ -440,7 +440,7 @@
 </div>
 </div>
 <div class="section" id="table">
-<h2><span class="section-number">10.4. </span>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.4. </span>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -621,8 +621,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="retrieval_evidence.html" title="previous page"><span class="section-number">9. </span>Retrieval evidences</a>
-    <a class='right-next' id="next-link" href="cloudy_vs_clear.html" title="next page"><span class="section-number">11. </span>Cloudy vs. clear prediction</a>
+    <a class='left-prev' id="prev-link" href="retrieval_evidence.html" title="previous page"><span class="section-number">7. </span>Retrieval evidences</a>
+    <a class='right-next' id="next-link" href="cloudy_vs_clear.html" title="next page"><span class="section-number">9. </span>Cloudy vs. clear prediction</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

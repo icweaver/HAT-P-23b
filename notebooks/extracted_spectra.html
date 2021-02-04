@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Extracted spectra &#8212; ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</title>
+    <title>1. Extracted spectra &#8212; ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Extracted WLCs" href="extracted_wlcs.html" />
-    <link rel="prev" title="1. 2D Spectra" href="raw_frames.html" />
+    <link rel="next" title="2. GP+PCA detrended WLCs" href="detrended_wlcs.html" />
+    <link rel="prev" title="ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b" href="../README.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,59 +93,59 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="raw_frames.html">
-   1. 2D Spectra
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Extracted spectra
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="extracted_wlcs.html">
-   3. Extracted WLCs
+   1. Extracted spectra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="detrended_wlcs.html">
-   4. GP+PCA detrended WLCs
+   2. GP+PCA detrended WLCs
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="photometric_act.html">
-   5. Photometric monitoring
+   3. Photometric monitoring
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_full.html">
-   6. Transmission spectra: full
+   4. Transmission spectra: full
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_species.html">
-   7. Transmission spectra: species
+   5. Transmission spectra: species
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_forward_model.html">
-   8. Forward model
+   6. Forward model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="retrieval_evidence.html">
-   9. Retrieval evidences
+   7. Retrieval evidences
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="retrieval_tspec.html">
-   10. Retrieval transmission spectra
+   8. Retrieval transmission spectra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="cloudy_vs_clear.html">
-   11. Cloudy vs. clear prediction
+   9. Cloudy vs. clear prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw_frames.html">
+   10. 2D Spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extracted_wlcs.html">
+   11. Extracted WLCs
   </a>
  </li>
  <li class="toctree-l1">
@@ -194,7 +194,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/extacted_spectra.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebooks/extracted_spectra.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -239,22 +239,22 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notebook-setup">
-   2.1. Notebook setup
+   1.1. Notebook setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dowload-data">
-   2.2. Dowload data
+   1.2. Dowload data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load">
-   2.3. Load
+   1.3. Load
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot">
-   2.4. Plot
+   1.4. Plot
   </a>
  </li>
 </ul>
@@ -269,9 +269,9 @@
               <div>
                 
   <div class="section" id="extracted-spectra">
-<h1><span class="section-number">2. </span>Extracted spectra<a class="headerlink" href="#extracted-spectra" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Extracted spectra<a class="headerlink" href="#extracted-spectra" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="notebook-setup">
-<h2><span class="section-number">2.1. </span>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>Notebook setup<a class="headerlink" href="#notebook-setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
@@ -319,11 +319,11 @@
 </div>
 </div>
 <div class="section" id="dowload-data">
-<h2><span class="section-number">2.2. </span><a class="reference external" href="https://www.dropbox.com/sh/f6rqfis0rdd0w1r/AAADJF0JI-YEx1cS9oCiwKP6a?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span><a class="reference external" href="https://www.dropbox.com/sh/f6rqfis0rdd0w1r/AAADJF0JI-YEx1cS9oCiwKP6a?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
 <p>Unzip this into a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
 </div>
 <div class="section" id="load">
-<h2><span class="section-number">2.3. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="s2">&quot;data/extracted_spectra&quot;</span>
@@ -341,7 +341,7 @@
 </div>
 </div>
 <div class="section" id="plot">
-<h2><span class="section-number">2.4. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">object_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HATP23b&quot;</span><span class="p">,</span> <span class="s2">&quot;comp4&quot;</span><span class="p">,</span> <span class="s2">&quot;comp5&quot;</span><span class="p">]</span>
@@ -392,27 +392,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/extacted_spectra_9_0.png" src="../_images/extacted_spectra_9_0.png" />
-<img alt="../_images/extacted_spectra_9_1.png" src="../_images/extacted_spectra_9_1.png" />
-<img alt="../_images/extacted_spectra_9_2.png" src="../_images/extacted_spectra_9_2.png" />
-<img alt="../_images/extacted_spectra_9_3.png" src="../_images/extacted_spectra_9_3.png" />
-<img alt="../_images/extacted_spectra_9_4.png" src="../_images/extacted_spectra_9_4.png" />
-<script type="application/javascript">
-            setTimeout(function() {
-                var nbb_cell_id = 21;
-                var nbb_unformatted_code = "object_names = [\"HATP23b\", \"comp4\", \"comp5\"]\nfor transit, data in data_dict.items():\n    spec = data[\"spectra\"]\n    wavs = spec[\"wavelengths\"]\n\n    fig, ax = plt.subplots(figsize=FIG_WIDE)\n    c = \"darkgrey\"\n    for name, data in sorted(spec.items()):\n        if name in \"HATP23b\":\n            median_kwargs = {\"c\": \"C8\"}\n        else:\n            median_kwargs = None\n            c = \"grey\"\n        if name in object_names:\n            p, wav, flux = utils.plot_spec_file(\n                ax,\n                data=data,\n                wavs=wavs,\n                label=name,\n                median_kwargs=median_kwargs,\n                # fill_kwargs=fill_kwargs,\n            )\n    ax.legend(loc=1, fontsize=12)\n\n    # Bins\n    for i, (w_d, w_u) in enumerate(zip(wavs_d, wavs_u)):\n        c = \"k\" if i % 2 == 0 else \"darkgrey\"\n        ax.axvspan(w_d, w_u, alpha=0.25, color=c, lw=0)\n\n    # Species\n    species = {\"Na I-D\": 5892.9, \"K I_avg\": 7682.0, \"Na I-8200_avg\": 8189.0}\n    [ax.axvline(wav, ls=\"--\", lw=1, color=\"grey\") for name, wav in species.items()]\n\n    title = transit\n    ax.set_xlabel(\"Wavelength (\u00c5)\")\n    ax.set_ylabel(\"Normalized Flux\")\n    # ax.set_title(title)\n    ax.set_xlim(4_000, 10_000)\n\n    # Save\n    title = title.lower().replace(\" \", \"_\") + \"_extr_spec\"\n    fig.tight_layout()\n    fig.set_size_inches(FIG_WIDE)\n\n    utils.savefig(f\"../paper/figures/extracted_spectra/{title}.pdf\")";
-                var nbb_formatted_code = "object_names = [\"HATP23b\", \"comp4\", \"comp5\"]\nfor transit, data in data_dict.items():\n    spec = data[\"spectra\"]\n    wavs = spec[\"wavelengths\"]\n\n    fig, ax = plt.subplots(figsize=FIG_WIDE)\n    c = \"darkgrey\"\n    for name, data in sorted(spec.items()):\n        if name in \"HATP23b\":\n            median_kwargs = {\"c\": \"C8\"}\n        else:\n            median_kwargs = None\n            c = \"grey\"\n        if name in object_names:\n            p, wav, flux = utils.plot_spec_file(\n                ax,\n                data=data,\n                wavs=wavs,\n                label=name,\n                median_kwargs=median_kwargs,\n                # fill_kwargs=fill_kwargs,\n            )\n    ax.legend(loc=1, fontsize=12)\n\n    # Bins\n    for i, (w_d, w_u) in enumerate(zip(wavs_d, wavs_u)):\n        c = \"k\" if i % 2 == 0 else \"darkgrey\"\n        ax.axvspan(w_d, w_u, alpha=0.25, color=c, lw=0)\n\n    # Species\n    species = {\"Na I-D\": 5892.9, \"K I_avg\": 7682.0, \"Na I-8200_avg\": 8189.0}\n    [ax.axvline(wav, ls=\"--\", lw=1, color=\"grey\") for name, wav in species.items()]\n\n    title = transit\n    ax.set_xlabel(\"Wavelength (\u00c5)\")\n    ax.set_ylabel(\"Normalized Flux\")\n    # ax.set_title(title)\n    ax.set_xlim(4_000, 10_000)\n\n    # Save\n    title = title.lower().replace(\" \", \"_\") + \"_extr_spec\"\n    fig.tight_layout()\n    fig.set_size_inches(FIG_WIDE)\n\n    utils.savefig(f\"../paper/figures/extracted_spectra/{title}.pdf\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            </script></div>
+<img alt="../_images/extracted_spectra_9_0.png" src="../_images/extracted_spectra_9_0.png" />
+<img alt="../_images/extracted_spectra_9_1.png" src="../_images/extracted_spectra_9_1.png" />
+<img alt="../_images/extracted_spectra_9_2.png" src="../_images/extracted_spectra_9_2.png" />
+<img alt="../_images/extracted_spectra_9_3.png" src="../_images/extracted_spectra_9_3.png" />
+<img alt="../_images/extracted_spectra_9_4.png" src="../_images/extracted_spectra_9_4.png" />
+</div>
 </div>
 </div>
 </div>
@@ -445,8 +430,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="raw_frames.html" title="previous page"><span class="section-number">1. </span>2D Spectra</a>
-    <a class='right-next' id="next-link" href="extracted_wlcs.html" title="next page"><span class="section-number">3. </span>Extracted WLCs</a>
+    <a class='left-prev' id="prev-link" href="../README.html" title="previous page">ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</a>
+    <a class='right-next' id="next-link" href="detrended_wlcs.html" title="next page"><span class="section-number">2. </span>GP+PCA detrended WLCs</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

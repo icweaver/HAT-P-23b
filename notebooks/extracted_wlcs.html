@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Extracted WLCs &#8212; ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</title>
+    <title>11. Extracted WLCs &#8212; ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. GP+PCA detrended WLCs" href="detrended_wlcs.html" />
-    <link rel="prev" title="2. Extracted spectra" href="extacted_spectra.html" />
+    <link rel="next" title="12. Detrended WLC corner plots" href="detrended_wlcs_corners.html" />
+    <link rel="prev" title="10. 2D Spectra" href="raw_frames.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -94,58 +94,58 @@
 </ul>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="raw_frames.html">
-   1. 2D Spectra
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="extacted_spectra.html">
-   2. Extracted spectra
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   3. Extracted WLCs
+  <a class="reference internal" href="extracted_spectra.html">
+   1. Extracted spectra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="detrended_wlcs.html">
-   4. GP+PCA detrended WLCs
+   2. GP+PCA detrended WLCs
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="photometric_act.html">
-   5. Photometric monitoring
+   3. Photometric monitoring
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_full.html">
-   6. Transmission spectra: full
+   4. Transmission spectra: full
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_species.html">
-   7. Transmission spectra: species
+   5. Transmission spectra: species
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_forward_model.html">
-   8. Forward model
+   6. Forward model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="retrieval_evidence.html">
-   9. Retrieval evidences
+   7. Retrieval evidences
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="retrieval_tspec.html">
-   10. Retrieval transmission spectra
+   8. Retrieval transmission spectra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="cloudy_vs_clear.html">
-   11. Cloudy vs. clear prediction
+   9. Cloudy vs. clear prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw_frames.html">
+   10. 2D Spectra
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   11. Extracted WLCs
   </a>
  </li>
  <li class="toctree-l1">
@@ -239,27 +239,27 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
-   3.1. Setup
+   11.1. Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dowload-data-same-dataset-used-for-extracted-spectra">
-   3.2. Dowload data (same dataset used for extracted spectra)
+   11.2. Dowload data (same dataset used for extracted spectra)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#finish-set-up">
-   3.3. Finish set-up
+   11.3. Finish set-up
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load">
-   3.4. Load
+   11.4. Load
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot">
-   3.5. Plot
+   11.5. Plot
   </a>
  </li>
 </ul>
@@ -274,9 +274,9 @@
               <div>
                 
   <div class="section" id="extracted-wlcs">
-<h1><span class="section-number">3. </span>Extracted WLCs<a class="headerlink" href="#extracted-wlcs" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">11. </span>Extracted WLCs<a class="headerlink" href="#extracted-wlcs" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="setup">
-<h2><span class="section-number">3.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
@@ -322,74 +322,13 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> qt5
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">64557277</span><span class="n">dbff</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;qt5&#39;</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2325</span>                 <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2326</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2327</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2328</span>             <span class="k">return</span> <span class="n">result</span>
-<span class="g g-Whitespace">   </span><span class="mi">2329</span> 
-
-<span class="nn">&lt;decorator-gen-101&gt;</span> in <span class="ni">matplotlib</span><span class="nt">(self, line)</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/IPython/core/magic.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(f, *a, **k)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="c1"># but it&#39;s overkill for just that one bit of state.</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">def</span> <span class="nf">magic_deco</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">call</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span> 
-<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/IPython/core/magics/pylab.py</span> in <span class="ni">matplotlib</span><span class="nt">(self, line)</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available matplotlib backends: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">backends_list</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">99</span>             <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">enable_matplotlib</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_show_matplotlib_backend</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gui</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> 
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">enable_matplotlib</span><span class="nt">(self, gui)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3504</span>                 <span class="n">gui</span><span class="p">,</span> <span class="n">backend</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">find_gui_and_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pylab_gui_select</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3505</span> 
-<span class="ne">-&gt; </span><span class="mi">3506</span>         <span class="n">pt</span><span class="o">.</span><span class="n">activate_matplotlib</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3507</span>         <span class="n">pt</span><span class="o">.</span><span class="n">configure_inline_support</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3508</span> 
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/IPython/core/pylabtools.py</span> in <span class="ni">activate_matplotlib</span><span class="nt">(backend)</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="g g-Whitespace">    </span><span class="mi">321</span> 
-<span class="ne">--&gt; </span><span class="mi">322</span>     <span class="n">plt</span><span class="o">.</span><span class="n">switch_backend</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span> 
-<span class="g g-Whitespace">    </span><span class="mi">324</span>     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="o">.</span><span class="n">_needmain</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/pyplot.py</span> in <span class="ni">switch_backend</span><span class="nt">(newbackend)</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>         <span class="k">if</span> <span class="p">(</span><span class="n">current_framework</span> <span class="ow">and</span> <span class="n">required_framework</span>
-<span class="g g-Whitespace">    </span><span class="mi">283</span>                 <span class="ow">and</span> <span class="n">current_framework</span> <span class="o">!=</span> <span class="n">required_framework</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">284</span>             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">285</span>                 <span class="s2">&quot;Cannot load backend </span><span class="si">{!r}</span><span class="s2"> which requires the </span><span class="si">{!r}</span><span class="s2"> interactive &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">286</span>                 <span class="s2">&quot;framework, as </span><span class="si">{!r}</span><span class="s2"> is currently running&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-
-<span class="ne">ImportError</span>: Cannot load backend &#39;Qt5Agg&#39; which requires the &#39;qt5&#39; interactive framework, as &#39;headless&#39; is currently running
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="dowload-data-same-dataset-used-for-extracted-spectra">
-<h2><span class="section-number">3.2. </span><a class="reference external" href="https://www.dropbox.com/sh/f6rqfis0rdd0w1r/AAADJF0JI-YEx1cS9oCiwKP6a?dl=1">Dowload data</a> (same dataset used for extracted spectra)<a class="headerlink" href="#dowload-data-same-dataset-used-for-extracted-spectra" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.2. </span><a class="reference external" href="https://www.dropbox.com/sh/f6rqfis0rdd0w1r/AAADJF0JI-YEx1cS9oCiwKP6a?dl=1">Dowload data</a> (same dataset used for extracted spectra)<a class="headerlink" href="#dowload-data-same-dataset-used-for-extracted-spectra" title="Permalink to this headline">¶</a></h2>
 <p>Unzip this into a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
 </div>
 <div class="section" id="finish-set-up">
-<h2><span class="section-number">3.3. </span>Finish set-up<a class="headerlink" href="#finish-set-up" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.3. </span>Finish set-up<a class="headerlink" href="#finish-set-up" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> ln -srf data/extracted_spectra data/extracted_wlcs
@@ -399,7 +338,7 @@
 </div>
 </div>
 <div class="section" id="load">
-<h2><span class="section-number">3.4. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.4. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load</span>
@@ -448,7 +387,7 @@
 </div>
 </div>
 <div class="section" id="plot">
-<h2><span class="section-number">3.5. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.5. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;comp4&quot;</span><span class="p">,</span> <span class="s2">&quot;comp5&quot;</span><span class="p">]</span>
@@ -491,11 +430,11 @@
         <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([</span><span class="mf">0.96</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="mf">1.04</span><span class="p">])</span>
     
     <span class="c1"># Highlight outliers</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">transit_name</span><span class="p">)</span>
-    <span class="n">super_bad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">union1d</span><span class="p">(</span><span class="n">bad_idxs_both_comps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bad_idxs_both_comps</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">super_bad</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">setxor1d</span><span class="p">(</span><span class="n">super_bad</span><span class="p">,</span> <span class="n">utils</span><span class="o">.</span><span class="n">_bad_idxs</span><span class="p">(</span><span class="n">transit_info</span><span class="p">[</span><span class="s2">&quot;bad_idxs_user&quot;</span><span class="p">])))</span>
-    <span class="nb">print</span><span class="p">()</span>
+    <span class="c1">#print(transit_name)</span>
+    <span class="c1">#super_bad = np.union1d(bad_idxs_both_comps[0], bad_idxs_both_comps[1])</span>
+    <span class="c1">#print(repr(super_bad))</span>
+    <span class="c1">#print(np.setxor1d(super_bad, utils._bad_idxs(transit_info[&quot;bad_idxs_user&quot;])))</span>
+    <span class="c1">#print()</span>
     <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:],</span> <span class="n">comps</span><span class="p">):</span>
         <span class="n">utils</span><span class="o">.</span><span class="n">plot_divided_wlcs</span><span class="p">(</span>
             <span class="n">ax</span><span class="p">,</span>
@@ -515,40 +454,12 @@
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_LARGE</span><span class="p">)</span>
 
-<span class="c1">#utils.savefig(&quot;../paper/figures/extracted_wlcs/all_transits_extr_wlcs.pdf&quot;)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/mango/Desktop/div_wlcs_rem.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../paper/figures/extracted_wlcs/all_transits_extr_wlcs.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transit 1
-array([239, 240, 241, 256, 274, 275, 276, 277, 278, 279, 280, 281, 282,
-       283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295,
-       296, 297, 298])
-[274 275 277 279 280 281 282 285 286 287 299]
-
-Transit 2
-array([ 1, 10])
-[1]
-
-Transit 3
-array([ 1,  2,  3,  4,  5,  6,  7, 11])
-[ 0  8  9 10 12 13 14 15 16 17]
-
-Transit 4
-array([ 93,  94, 149, 162, 163, 164, 165, 166, 167, 168, 169, 170])
-[157 158 159 160 161 171]
-
-Transit 5
-array([  1,   2,   3,   4,   5,   6,  51,  52,  55,  56,  59,  64,  65,
-        66,  67,  68,  72,  87,  88,  89,  90,  91,  92,  93,  94,  95,
-        96,  97,  98,  99, 100, 101, 108, 109, 110, 111, 112, 113, 114,
-       120, 127, 128, 129, 130, 131, 132, 133, 166, 167, 168, 169, 170,
-       171, 172, 173, 174, 175, 176, 177, 178, 179, 180])
-[  1   2   3  52  53  54  55  57  58  65  67  69  77  78  79  80  95  99
- 100 115 116 117 118 119 127 128 132 166 167 168 169 170 171 172 173 181]
-</pre></div>
-</div>
+<img alt="../_images/extracted_wlcs_11_0.png" src="../_images/extracted_wlcs_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -624,8 +535,8 @@ array([  1,   2,   3,   4,   5,   6,  51,  52,  55,  56,  59,  64,  65,
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="extacted_spectra.html" title="previous page"><span class="section-number">2. </span>Extracted spectra</a>
-    <a class='right-next' id="next-link" href="detrended_wlcs.html" title="next page"><span class="section-number">4. </span>GP+PCA detrended WLCs</a>
+    <a class='left-prev' id="prev-link" href="raw_frames.html" title="previous page"><span class="section-number">10. </span>2D Spectra</a>
+    <a class='right-next' id="next-link" href="detrended_wlcs_corners.html" title="next page"><span class="section-number">12. </span>Detrended WLC corner plots</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

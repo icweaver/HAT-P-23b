@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11. Cloudy vs. clear prediction &#8212; ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</title>
+    <title>9. Cloudy vs. clear prediction &#8212; ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12. Detrended WLC corner plots" href="detrended_wlcs_corners.html" />
-    <link rel="prev" title="10. Retrieval transmission spectra" href="retrieval_tspec.html" />
+    <link rel="next" title="10. 2D Spectra" href="raw_frames.html" />
+    <link rel="prev" title="8. Retrieval transmission spectra" href="retrieval_tspec.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -94,58 +94,58 @@
 </ul>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="raw_frames.html">
-   1. 2D Spectra
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="extacted_spectra.html">
-   2. Extracted spectra
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="extracted_wlcs.html">
-   3. Extracted WLCs
+  <a class="reference internal" href="extracted_spectra.html">
+   1. Extracted spectra
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="detrended_wlcs.html">
-   4. GP+PCA detrended WLCs
+   2. GP+PCA detrended WLCs
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="photometric_act.html">
-   5. Photometric monitoring
+   3. Photometric monitoring
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_full.html">
-   6. Transmission spectra: full
+   4. Transmission spectra: full
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_species.html">
-   7. Transmission spectra: species
+   5. Transmission spectra: species
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tspec_forward_model.html">
-   8. Forward model
+   6. Forward model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="retrieval_evidence.html">
-   9. Retrieval evidences
+   7. Retrieval evidences
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="retrieval_tspec.html">
-   10. Retrieval transmission spectra
+   8. Retrieval transmission spectra
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   11. Cloudy vs. clear prediction
+   9. Cloudy vs. clear prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw_frames.html">
+   10. 2D Spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extracted_wlcs.html">
+   11. Extracted WLCs
   </a>
  </li>
  <li class="toctree-l1">
@@ -239,22 +239,22 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
-   11.1. Setup
+   9.1. Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dowload-data">
-   11.2. Dowload data
+   9.2. Dowload data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load">
-   11.3. Load
+   9.3. Load
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot">
-   11.4. Plot
+   9.4. Plot
   </a>
  </li>
 </ul>
@@ -269,9 +269,9 @@
               <div>
                 
   <div class="section" id="cloudy-vs-clear-prediction">
-<h1><span class="section-number">11. </span>Cloudy vs. clear prediction<a class="headerlink" href="#cloudy-vs-clear-prediction" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Cloudy vs. clear prediction<a class="headerlink" href="#cloudy-vs-clear-prediction" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="setup">
-<h2><span class="section-number">11.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
@@ -318,11 +318,11 @@
 </div>
 </div>
 <div class="section" id="dowload-data">
-<h2><span class="section-number">11.2. </span><a class="reference external" href="https://www.dropbox.com/sh/r1kpecmjvg9zjhm/AACVP-xPzKePexXSG6tl3AKWa?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span><a class="reference external" href="https://www.dropbox.com/sh/r1kpecmjvg9zjhm/AACVP-xPzKePexXSG6tl3AKWa?dl=1">Dowload data</a><a class="headerlink" href="#dowload-data" title="Permalink to this headline">¶</a></h2>
 <p>Unzip this into a folder named <code class="docutils literal notranslate"><span class="pre">data</span></code> in the same level as this notebook</p>
 </div>
 <div class="section" id="load">
-<h2><span class="section-number">11.3. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_wakeford</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span>
@@ -708,7 +708,7 @@ dtype: object
 </div>
 </div>
 <div class="section" id="plot">
-<h2><span class="section-number">11.4. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.4. </span>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -781,73 +781,13 @@ dtype: object
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">2_700</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$log(g)$ (dex)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;T$_</span><span class="si">{eq}</span><span class="s2">$ (K)&quot;</span><span class="p">)</span>
-<span class="c1">#utils.savefig(&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/mango/Projects/tac_3/cloudy_vs_clear.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">5</span><span class="n">f44ee93531b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="c1">#utils.savefig(&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">73</span> <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/mango/Projects/tac_3/cloudy_vs_clear.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/pyplot.py</span> in <span class="ni">savefig</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">857</span> <span class="k">def</span> <span class="nf">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span>     <span class="n">fig</span> <span class="o">=</span> <span class="n">gcf</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">859</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">860</span>     <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>   <span class="c1"># need this if &#39;transparent=True&#39; to reset colors</span>
-<span class="g g-Whitespace">    </span><span class="mi">861</span>     <span class="k">return</span> <span class="n">res</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/figure.py</span> in <span class="ni">savefig</span><span class="nt">(self, fname, transparent, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2309</span>                 <span class="n">patch</span><span class="o">.</span><span class="n">set_edgecolor</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2310</span> 
-<span class="ne">-&gt; </span><span class="mi">2311</span>         <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2312</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2313</span>         <span class="k">if</span> <span class="n">transparent</span><span class="p">:</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/backend_bases.py</span> in <span class="ni">print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2208</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2209</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2210</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">print_method</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2211</span>                     <span class="n">filename</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2212</span>                     <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">,</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/backend_bases.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1637</span>             <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1638</span> 
-<span class="ne">-&gt; </span><span class="mi">1639</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1640</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1641</span>     <span class="k">return</span> <span class="n">wrapper</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py</span> in <span class="ni">print_png</span><span class="nt">(self, filename_or_obj, metadata, pil_kwargs, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span><span class="s2">         FigureCanvasAgg.draw(self)</span>
-<span class="ne">--&gt; </span><span class="mi">510</span><span class="s2">         mpl.image.imsave(</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span><span class="s2">             filename_or_obj, self.buffer_rgba(), format=&quot;png&quot;, origin=&quot;upper&quot;,</span>
-<span class="g g-Whitespace">    </span><span class="mi">512</span><span class="s2">             dpi=self.figure.dpi, metadata=metadata, pil_kwargs=pil_kwargs)</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/matplotlib/image.py</span> in <span class="ni">imsave</span><span class="nt">(fname, arr, vmin, vmax, cmap, format, origin, dpi, metadata, pil_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1603</span><span class="s2">         pil_kwargs.setdefault(&quot;format&quot;, format)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1604</span><span class="s2">         pil_kwargs.setdefault(&quot;dpi&quot;, (dpi, dpi))</span>
-<span class="ne">-&gt; </span><span class="mi">1605</span><span class="s2">         image.save(fname, **pil_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1606</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1607</span><span class="s2"> </span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/site-packages/PIL/Image.py</span> in <span class="ni">save</span><span class="nt">(self, fp, format, **params)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2159</span><span class="s2">                 fp = builtins.open(filename, &quot;r+b&quot;)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2160</span><span class="s2">             else:</span>
-<span class="ne">-&gt; </span><span class="mi">2161</span><span class="s2">                 fp = builtins.open(filename, &quot;w+b&quot;)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2162</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">2163</span><span class="s2">         try:</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/home/mango/Projects/tac_3/cloudy_vs_clear.png&#39;
-</pre></div>
-</div>
-<img alt="../_images/cloudy_vs_clear_16_1.png" src="../_images/cloudy_vs_clear_16_1.png" />
+<img alt="../_images/cloudy_vs_clear_16_0.png" src="../_images/cloudy_vs_clear_16_0.png" />
 </div>
 </div>
 </div>
@@ -881,8 +821,8 @@ dtype: object
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="retrieval_tspec.html" title="previous page"><span class="section-number">10. </span>Retrieval transmission spectra</a>
-    <a class='right-next' id="next-link" href="detrended_wlcs_corners.html" title="next page"><span class="section-number">12. </span>Detrended WLC corner plots</a>
+    <a class='left-prev' id="prev-link" href="retrieval_tspec.html" title="previous page"><span class="section-number">8. </span>Retrieval transmission spectra</a>
+    <a class='right-next' id="next-link" href="raw_frames.html" title="next page"><span class="section-number">10. </span>2D Spectra</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
