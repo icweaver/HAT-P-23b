@@ -2,6 +2,7 @@ import glob as glob
 import matplotlib as mpl
 import matplotlib.patheffects as PathEffects
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mtick
 import matplotlib.transforms as transforms
 import numpy as np
 import pandas as pd
@@ -75,9 +76,7 @@ def get_evidences(base_dir):
 
     data_dict = {
         sp: {
-            model_name: load_pickle(
-                f"{base_dir}/HATP23_E1_{model_id}_{sp}/retrieval.pkl"
-            )
+            model_name: load_pickle(f"{base_dir}/HATP23_E1_{model_id}_{sp}/retrieval.pkl")
             for (model_name, model_id) in model_names_dict.items()
         }
         for sp in species
@@ -141,7 +140,7 @@ def get_table_stats(df, ps=[0.16, 0.5, 0.84], columns=None):
     df_latex.loc["p"] = df_stats.loc[ps_strs[1]]
     df_latex.loc["p_u"] = df_stats.loc[ps_strs[2]] - df_stats.loc[ps_strs[1]]
     df_latex.loc["p_d"] = df_stats.loc[ps_strs[1]] - df_stats.loc[ps_strs[0]]
-    latex_strs = df_latex.apply(write_latex_row, axis=0)
+    latex_strs = df_latex.apply(write_latex_row2, axis=0)
     return pd.DataFrame(latex_strs, columns=columns)
 
 
@@ -248,17 +247,13 @@ def plot_binned(
                 **plot_kwargs,
             )
             if models is not None:
-                ax.plot(
-                    idxs_used, models[:, i] + offs, c=0.6 * colors[i], lw=2
-                )
+                ax.plot(idxs_used, models[:, i] + offs, c=0.6 * colors[i], lw=2)
 
         if annotate:
             # trans = transforms.blended_transform_factory(
             #            ax.transAxes, ax.transData
             #        )
-            trans = transforms.blended_transform_factory(
-                ax.transData, ax.transData
-            )
+            trans = transforms.blended_transform_factory(ax.transData, ax.transData)
             # Annotate wavelength bins
             ann = ax.annotate(
                 wav_bin,
@@ -289,9 +284,7 @@ def plot_binned(
     return ax
 
 
-def plot_chips(
-    dirpath, fpathame, target="", vmin=0, vmax=2_000, spec_ap=0, sky_ap=0
-):
+def plot_chips(dirpath, fpathame, target="", vmin=0, vmax=2_000, spec_ap=0, sky_ap=0):
     # This plots the chips by numbers:
     #
     # 1 2 3 4
@@ -368,25 +361,18 @@ def plot_chips(
         else:
             dxsec, dysec = biassec(datasec)
         if otype == "ift":
-            oscan_data = d[
-                (oysec[0] - 1) : oysec[1], (oxsec[0] - 1) : oxsec[1]
-            ]
+            oscan_data = d[(oysec[0] - 1) : oysec[1], (oxsec[0] - 1) : oxsec[1]]
             overscan = np.median(oscan_data)
             if overscan == 0:
                 overscan = zero_oscan(oscan_data)
-            newdata = (
-                d[(dysec[0] - 1) : dysec[1], (dxsec[0] - 1) : dxsec[1]]
-                - overscan
-            )
+            newdata = d[(dysec[0] - 1) : dysec[1], (dxsec[0] - 1) : dxsec[1]] - overscan
         else:
             d = d.transpose()
             oscan_data = d[oxsec[0] - 1 : oxsec[1], oysec[0] - 1 : oysec[1]]
             overscan = np.median(oscan_data)
             if overscan == 0:
                 overscan = zero_oscan(oscan_data)
-            newdata = (
-                d[dxsec[0] - 1 : dxsec[1], dysec[0] - 1 : dysec[1]] - overscan
-            )
+            newdata = d[dxsec[0] - 1 : dxsec[1], dysec[0] - 1 : dysec[1]] - overscan
         # overscan = np.median(d[:,2048:2112])
         # newdata = d[:4095,0:2048] - overscan
         if (c == "c5") or (c == "c6") or (c == "c7") or (c == "c8"):
@@ -507,7 +493,7 @@ def plot_corner(
         title_kwargs={"ha": "left", "x": -0.03},
         # quantiles=[0.16, 0.5, 0.84],
         use_math_text=True,
-        labelpad=0.4,
+        labelpad=0.7,
         fig=fig,
         weights=weights,
         range=ranges,
@@ -569,9 +555,9 @@ def plot_divided_wlcs(
             diff_right = np.abs(flux_div[i] - flux_div[i + 1])
             if ((diff_left > 2 * ferr) and (diff_right > 2 * ferr)) or airmass[i] >= 2:
                 bad_idxs.append(i)
-        #print(cName, bad_idxs)
+        # print(cName, bad_idxs)
 
-        #ax.plot(
+        # ax.plot(
         #    (time[bad_idxs] - t0) * 24.0,
         #    flux_div[bad_idxs],
         #    #yerr=ferr,
@@ -579,12 +565,12 @@ def plot_divided_wlcs(
         #    ms=15,
         #    zorder=10,
         #    #**bad_div_kwargs,
-        #)
+        # )
         if bad_idxs_user is not None:
             if isinstance(bad_idxs_user, str):
                 bad_idxs_user = _bad_idxs(bad_idxs_user)
 
-            #print(bad_idxs_user)
+            # print(bad_idxs_user)
             ax.errorbar(
                 (time[bad_idxs_user] - t0) * 24.0,
                 flux_div[bad_idxs_user],
@@ -592,12 +578,12 @@ def plot_divided_wlcs(
                 zorder=10,
                 **bad_div_kwargs,
             )
-            #bad_idxs = set(bad_idxs_user).union(set(bad_idxs))
-            #bad_idxs = list(bad_idxs)
+            # bad_idxs = set(bad_idxs_user).union(set(bad_idxs))
+            # bad_idxs = list(bad_idxs)
 
         idxs = np.arange(len(flux_div))
-        flux_div_used = flux_div#[idxs != bad_idxs_user]
-        idxs_used = idxs#[idxs != bad_idxs_user]
+        flux_div_used = flux_div  # [idxs != bad_idxs_user]
+        idxs_used = idxs  # [idxs != bad_idxs_user]
         ax.errorbar(
             (time[idxs_used] - t0) * 24.0,
             flux_div_used,
@@ -761,6 +747,8 @@ def plot_params():
         "ytick.direction": "out",
         "ytick.major.size": 5,
         "ytick.minor.visible": False,
+        # tick labels
+        "axes.formatter.useoffset": False,
         # pallete
         "axes.prop_cycle": mpl.cycler(
             color=[
@@ -846,8 +834,7 @@ def plot_spec_file(
 def plot_tspec_IMACS(ax, base_dir):
     data_dirs = sorted(glob.glob(f"{base_dir}/hp*"))
     data_dict = {
-        f"Transit {i}": data_dir
-        for (i, data_dir) in enumerate(data_dirs, start=1)
+        f"Transit {i}": data_dir for (i, data_dir) in enumerate(data_dirs, start=1)
     }
 
     # Use first entry for wavelength
@@ -861,9 +848,7 @@ def plot_tspec_IMACS(ax, base_dir):
     for transit, dirpath in data_dict.items():
         # WLCs
         fpath = f"{dirpath}/white-light/results.dat"
-        results = pd.read_table(
-            fpath, sep="\s+", escapechar="#", index_col="Variable"
-        )
+        results = pd.read_table(fpath, sep="\s+", escapechar="#", index_col="Variable")
         p, p_u, p_d = results.loc["p"]
         wlc_depth = p ** 2 * 1e6
         wlc_depth_u = p_u ** 2 * 1e6
@@ -872,13 +857,9 @@ def plot_tspec_IMACS(ax, base_dir):
 
         # Tspec
         fpath = f"{dirpath}/transpec.csv"
-        df_tspec = pd.read_csv(fpath)[
-            ["Depth (ppm)", "Depthup (ppm)", "DepthDown (ppm)"]
-        ]
+        df_tspec = pd.read_csv(fpath)[["Depth (ppm)", "Depthup (ppm)", "DepthDown (ppm)"]]
 
-        if (transit == "Transit 1" and "full" in dirpath) or (
-            "species" in dirpath
-        ):
+        if (transit == "Transit 1" and "full" in dirpath) or ("species" in dirpath):
             tspec, tspec_u, tspec_d = df_tspec.values.T
         else:
             tspec, tspec_u, tspec_d = df_tspec.values[1:-1, :].T
@@ -896,9 +877,7 @@ def plot_tspec_IMACS(ax, base_dir):
     # wlc_offsets *= 0
     print(f"offsets: {wlc_offsets}")
     print(f"offsets (% mean wlc depth): {wlc_offsets*100/mean_wlc_depth}")
-    tspec_stats = np.array(
-        tspec_stats
-    )  # transits x (depth, u, d) x wavelength
+    tspec_stats = np.array(tspec_stats)  # transits x (depth, u, d) x wavelength
     print(tspec_stats.shape)
     tspec_stats[:, 0, :] -= wlc_offsets[np.newaxis].T
 
@@ -987,10 +966,10 @@ def plot_tspec_IMACS(ax, base_dir):
     tspec_table["Wavelength (Å)"] = df_wavs.apply(write_latex_wav, axis=1)
     # Transmission spectra
     for transit, df_tspec in tspec_tables.items():
-        tspec_table[transit] = df_tspec.apply(write_latex_row, axis=1)
+        tspec_table[transit] = df_tspec.apply(write_latex_row_sig_fig, axis=1)
     data = np.array([tspec_combined, tspec_combined_unc]).T
     df_combined = pd.DataFrame(data, columns=["Combined", "Unc"])
-    tspec_table["Combined"] = df_combined.apply(write_latex_single, axis=1)
+    tspec_table["Combined"] = df_combined.apply(write_latex_single_sig_fig, axis=1)
     # Save data
     table_suffix = "c" if "full" in dirpath else "s"
     out_path_tspec = f"{base_dir}/tspec_{table_suffix}.csv"
@@ -1109,9 +1088,7 @@ def weighted_mean_uneven_errors(k, k_up, k_low, model=1):
         sigma[i + 1] = (k_up[i] + k_low[i]) / 2.0  # eqn 1
         alpha[i + 1] = (k_up[i] - k_low[i]) / 2.0  # eqn 1
         if model == 1:
-            V[i + 1] = (
-                sigma[i + 1] ** 2 + (1 - 2 / np.pi) * alpha[i + 1] ** 2
-            )  # eqn 18
+            V[i + 1] = sigma[i + 1] ** 2 + (1 - 2 / np.pi) * alpha[i + 1] ** 2  # eqn 18
             b[i + 1] = (k_up[i] - k_low[i]) / np.sqrt(2 * np.pi)  # eqn 17
         if model == 2:
             V[i + 1] = sigma[i + 1] ** 2 + 2 * alpha[i + 1] ** 2  # eqn 18
@@ -1129,7 +1106,19 @@ def weighted_mean_uneven_errors(k, k_up, k_low, model=1):
 
 def write_latex_row(row):
     v, vu, vd = row
-    return f"{v:.3f}^{{+{vu:.3f}}}_{{-{vd:.3f}}}"
+    return f"{v:.3f}^{{+{vu:.1e}}}_{{-{vd:.1e}}}"
+
+def write_latex_row2(row):
+    v, vu, vd = row
+    return f"{v:.1f}^{{+{vu:.0f}}}_{{-{vd:.0f}}}"
+
+def write_latex_row_sig_fig(row, x_digits=-2, xu_digits=-2, xd_digits=-2):
+    x, xu, xd = row
+    v = int(round(x, x_digits))
+    vu = int(round(xu, xu_digits))
+    vd = int(round(xd, xd_digits))
+    return f"{v}^{{+{vu}}}_{{-{vd}}}"
+    #return f"{v:.3g}^{{+{vu:.2g}}}_{{-{vd:.2g}}}"
 
 
 def write_latex2(val, unc):
@@ -1139,6 +1128,12 @@ def write_latex2(val, unc):
 def write_latex_single(row):
     v, v_unc = row
     return f"{v:.3f} \pm {v_unc:.3f}"
+
+def write_latex_single_sig_fig(row, x_digits=-2, x_unc_digits=-2):
+    x, x_unc = row
+    v = int(round(x, x_digits))
+    v_unc = int(round(x_unc, x_unc_digits))
+    return f"{v} \pm {v_unc}"
 
 
 def write_latex_wav(row):
