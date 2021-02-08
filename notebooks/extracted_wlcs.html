@@ -462,48 +462,6 @@
 <img alt="../_images/extracted_wlcs_11_0.png" src="../_images/extracted_wlcs_11_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">239</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">276</span><span class="p">,</span> <span class="mi">277</span><span class="p">,</span> <span class="mi">278</span><span class="p">,</span> <span class="mi">283</span><span class="p">,</span> <span class="mi">284</span><span class="p">,</span> <span class="mi">285</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="mi">296</span><span class="p">,</span> <span class="mi">298</span><span class="p">])</span>
-<span class="n">u1</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">_bad_idxs</span><span class="p">(</span><span class="s2">&quot;[239, 240, 241, 256, 276, 278, 283, 284, 288:299]&quot;</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">setxor1d</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">u1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([277, 285, 288, 289, 291, 292, 293, 294, 295, 297, 299])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
-<span class="n">u2</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">_bad_idxs</span><span class="p">(</span><span class="s2">&quot;[10]&quot;</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">setxor1d</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span> <span class="n">u2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
-<span class="n">u3</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">_bad_idxs</span><span class="p">(</span><span class="s2">&quot;[0:17]&quot;</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">setxor1d</span><span class="p">(</span><span class="n">c3</span><span class="p">,</span> <span class="n">u3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0,  2,  3,  7,  8,  9, 10, 12, 13, 14, 15, 16, 17])
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 

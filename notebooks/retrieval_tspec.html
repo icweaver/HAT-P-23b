@@ -455,7 +455,24 @@
     <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_stats</span><span class="p">)</span>
 
 <span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">dfs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Show TiO column first</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span><span class="c1">#.to_clipboard()</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;logP0&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;\log P_0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;logTiO&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;\log\text{ TiO}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;logK&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;\log\text{ K}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;logNa&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;\log\text{ Na}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;logsigma_cloud&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;\log\sigma_\text</span><span class="si">{cloud}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;loga&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;\log a&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;\gamma&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Tocc&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;T_\text</span><span class="si">{star}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Thet&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;T_\text</span><span class="si">{spot}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Fhet&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;f_\text</span><span class="si">{spot}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">dfs</span><span class="c1">#.to_clipboard()</span>
 </pre></div>
 </div>
 </div>
@@ -488,103 +505,103 @@
   </thead>
   <tbody>
     <tr>
-      <th>logP0</th>
-      <td>0.453^{+3.864}_{-4.256}</td>
-      <td>3.416^{+1.865}_{-2.770}</td>
-      <td>1.448^{+3.055}_{-3.120}</td>
-      <td>0.750^{+3.424}_{-2.893}</td>
-      <td>0.531^{+3.464}_{-3.065}</td>
-      <td>-1.311^{+4.327}_{-3.178}</td>
+      <th>\log P_0</th>
+      <td>0.5^{+4}_{-4}</td>
+      <td>3.4^{+2}_{-3}</td>
+      <td>1.4^{+3}_{-3}</td>
+      <td>0.8^{+3}_{-3}</td>
+      <td>0.5^{+3}_{-3}</td>
+      <td>-1.3^{+4}_{-3}</td>
     </tr>
     <tr>
       <th>T</th>
-      <td>1751.066^{+782.909}_{-804.449}</td>
-      <td>620.113^{+327.544}_{-208.875}</td>
-      <td>1938.036^{+652.154}_{-779.129}</td>
-      <td>1827.676^{+713.889}_{-950.206}</td>
-      <td>1878.391^{+709.046}_{-972.777}</td>
-      <td>1393.624^{+1043.456}_{-885.766}</td>
+      <td>1751.1^{+783}_{-804}</td>
+      <td>620.1^{+328}_{-209}</td>
+      <td>1938.0^{+652}_{-779}</td>
+      <td>1827.7^{+714}_{-950}</td>
+      <td>1878.4^{+709}_{-973}</td>
+      <td>1393.6^{+1043}_{-886}</td>
     </tr>
     <tr>
-      <th>logTiO</th>
-      <td>-7.116^{+4.000}_{-4.428}</td>
+      <th>\log\text{ TiO}</th>
+      <td>-7.1^{+4}_{-4}</td>
       <td>--</td>
       <td>--</td>
       <td>--</td>
-      <td>--</td>
-      <td>--</td>
-    </tr>
-    <tr>
-      <th>logK</th>
-      <td>--</td>
-      <td>-2.589^{+1.853}_{-2.742}</td>
-      <td>-19.378^{+8.100}_{-7.350}</td>
-      <td>-18.685^{+8.427}_{-7.660}</td>
-      <td>-18.795^{+8.609}_{-7.427}</td>
-      <td>-18.959^{+8.376}_{-7.199}</td>
-    </tr>
-    <tr>
-      <th>logNa</th>
-      <td>--</td>
-      <td>--</td>
-      <td>-3.985^{+2.824}_{-3.318}</td>
-      <td>-3.929^{+2.754}_{-4.193}</td>
-      <td>-4.787^{+3.341}_{-10.063}</td>
-      <td>-15.466^{+9.382}_{-9.623}</td>
-    </tr>
-    <tr>
-      <th>logsigma_cloud</th>
-      <td>--</td>
-      <td>--</td>
-      <td>--</td>
-      <td>-37.705^{+9.910}_{-8.219}</td>
       <td>--</td>
       <td>--</td>
     </tr>
     <tr>
-      <th>loga</th>
+      <th>\log\text{ K}</th>
+      <td>--</td>
+      <td>-2.6^{+2}_{-3}</td>
+      <td>-19.4^{+8}_{-7}</td>
+      <td>-18.7^{+8}_{-8}</td>
+      <td>-18.8^{+9}_{-7}</td>
+      <td>-19.0^{+8}_{-7}</td>
+    </tr>
+    <tr>
+      <th>\log\text{ Na}</th>
+      <td>--</td>
+      <td>--</td>
+      <td>-4.0^{+3}_{-3}</td>
+      <td>-3.9^{+3}_{-4}</td>
+      <td>-4.8^{+3}_{-10}</td>
+      <td>-15.5^{+9}_{-10}</td>
+    </tr>
+    <tr>
+      <th>\log\sigma_\text{cloud}</th>
       <td>--</td>
       <td>--</td>
       <td>--</td>
+      <td>-37.7^{+10}_{-8}</td>
       <td>--</td>
-      <td>-11.050^{+14.314}_{-12.691}</td>
       <td>--</td>
     </tr>
     <tr>
-      <th>gamma</th>
+      <th>\log a</th>
       <td>--</td>
       <td>--</td>
       <td>--</td>
       <td>--</td>
-      <td>-2.273^{+1.524}_{-1.219}</td>
+      <td>-11.0^{+14}_{-13}</td>
       <td>--</td>
     </tr>
     <tr>
-      <th>Tocc</th>
+      <th>\gamma</th>
       <td>--</td>
       <td>--</td>
       <td>--</td>
       <td>--</td>
+      <td>-2.3^{+2}_{-1}</td>
       <td>--</td>
-      <td>5906.755^{+348.598}_{-326.734}</td>
     </tr>
     <tr>
-      <th>Thet</th>
+      <th>T_\text{star}</th>
       <td>--</td>
       <td>--</td>
       <td>--</td>
       <td>--</td>
       <td>--</td>
-      <td>2200.000^{+0.000}_{-0.000}</td>
+      <td>5906.8^{+349}_{-327}</td>
     </tr>
     <tr>
-      <th>Fhet</th>
+      <th>T_\text{spot}</th>
       <td>--</td>
       <td>--</td>
       <td>--</td>
       <td>--</td>
       <td>--</td>
-      <td>0.022^{+0.000}_{-0.000}</td>
+      <td>2200.0^{+0}_{-0}</td>
+    </tr>
+    <tr>
+      <th>f_\text{spot}</th>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>0.0^{+0}_{-0}</td>
     </tr>
   </tbody>
 </table>
