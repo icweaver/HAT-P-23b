@@ -62,7 +62,7 @@ def decompress_pickle(fname):
 def get_evidences(base_dir):
     fit_R0 = "fitR0" if "fit_R0" in base_dir else "NofitR0"
 
-    species = ["Na", "K", "TiO", "Na_K", "Na_TiO", "K_TiO", "Na_K_TiO"]
+    species = ["Na", "K", "TiO", "Na_K", "Na_TiO", "K_TiO", "Na_K_TiO", "H2O"]#, "H2O"]
     model_names_dict = {
         "clear": f"NoHet_FitP0_NoClouds_NoHaze_{fit_R0}",
         "clear+cloud": f"NoHet_FitP0_Clouds_NoHaze_{fit_R0}",
@@ -1042,9 +1042,9 @@ def plot_tspec_IMACS(ax, base_dir):
     return ax
 
 
-def savefig(fpath):
+def savefig(fpath, **kwargs):
     pathlib.Path(fpath).parents[0].mkdir(parents=True, exist_ok=True)
-    plt.savefig(fpath, bbox_inches="tight")
+    plt.savefig(fpath, bbox_inches="tight", **kwargs)
 
 
 def wbin_num(fpath):
