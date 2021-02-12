@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="13. Detrended binned WLCs" href="detrended_binned_lcs.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/access.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="extracted_spectra.html">
+   1. Extracted spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="detrended_wlcs.html">
+   2. GP+PCA detrended WLCs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="photometric_act.html">
+   3. Photometric monitoring
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tspec_full.html">
+   4. Transmission spectra: full
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tspec_species.html">
+   5. Transmission spectra: species
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tspec_forward_model.html">
+   6. Forward model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="retrieval_evidence.html">
+   7. Retrieval evidences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="retrieval_tspec.html">
+   8. Retrieval transmission spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cloudy_vs_clear.html">
+   9. Cloudy vs. clear prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw_frames.html">
+   10. 2D Spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extracted_wlcs.html">
+   11. Extracted WLCs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="detrended_wlcs_corners.html">
+   12. Detrended WLC corner plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="detrended_binned_lcs.html">
+   13. Detrended binned WLCs
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/tspec_forward_model_corner.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/icweaver/HAT-P-23b"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="simple nav section-nav flex-column">
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Full version working</span>
+<span class="kn">import</span> <span class="nn">pdb</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">utils</span>
+
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">netCDF4</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># import pyexcel</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">griddata</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">AutoMinorLocator</span>
+
+<span class="c1"># Default figure dimensions</span>
+<span class="n">FIG_WIDE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">FIG_LARGE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="c1"># Figure style</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;colorblind&quot;</span><span class="p">,</span> <span class="n">color_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;talk&quot;</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">plot_params</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### This program needs mainly 2 input files one containing chi-sq values for each model in the grid and other containing model names. These files will be generated by fitting program.</span>
+<span class="c1">### user input parameters</span>
+<span class="n">planet_chisq_path</span> <span class="o">=</span> <span class="s2">&quot;data/tspec_forward_model_corner/&quot;</span>  <span class="c1">### location of calculated chi-sq_values</span>
+<span class="n">planet</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HAT-P-23&quot;</span><span class="p">]</span>  <span class="c1">## planet name</span>
+<span class="c1"># planet_fig = [&#39;HAT-P-41&#39;] ## Planet name for the title on plot</span>
+<span class="c1"># temp = np.array([1315]) ### Temperature from tepcat</span>
+<span class="c1">######################</span>
+
+<span class="k">for</span> <span class="n">pnt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1">### Planet Loop Starts here</span>
+
+    <span class="n">planet_grid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">planet</span><span class="p">[</span><span class="n">pnt</span><span class="p">])</span>
+
+    <span class="n">chi_squared_stat3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">planet_chisq_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">planet_grid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_iso_chi_square_local_GAIA_DR2.out&quot;</span><span class="p">),</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">offset_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">planet_chisq_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">planet_grid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_iso_offsetarray_local_GAIA_DR2.out&quot;</span><span class="p">),</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">model_name</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">planet_chisq_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">planet_grid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_iso_model_name_local_GAIA_DR2.out&quot;</span><span class="p">),</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+        <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">min_chi3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">chi_squared_stat3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">min_index_chi3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">chi_squared_stat3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">min_index_chi3_offset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">chi_squared_stat3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+    <span class="c1">#print(min_index_chi3_offset)</span>
+    <span class="c1"># min_chi_offset = offset_array[min_index_chi3]</span>
+    <span class="c1"># print (min_chi_offset)</span>
+
+    <span class="c1">### Steps to make an array of individual model parameters</span>
+    <span class="n">model_parameter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">model_name</span><span class="p">),</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">model_name</span><span class="p">)):</span>
+        <span class="n">model_parameter</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">model_name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">model_parameter</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">model_name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">model_parameter</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">model_name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">model_parameter</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">model_name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">4</span><span class="p">])</span>
+        <span class="n">model_parameter</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">model_name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">5</span><span class="p">])</span>
+        <span class="n">model_parameter</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">model_name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">6</span><span class="p">])</span>
+
+    <span class="c1">#### Steps to min chi  Model Parameters individually</span>
+    <span class="n">min_chi_model</span> <span class="o">=</span> <span class="n">model_name</span><span class="p">[</span><span class="n">min_index_chi3</span><span class="p">]</span>  <span class="c1">### Name of min_chi_model</span>
+
+    <span class="n">min_chi_temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">min_chi_model</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">min_chi_gravity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">min_chi_model</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">min_chi_metal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">min_chi_model</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="n">min_chi_co</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">min_chi_model</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">4</span><span class="p">])</span>
+    <span class="n">min_chi_haze</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">min_chi_model</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">5</span><span class="p">])</span>
+    <span class="n">min_chi_cloud</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">min_chi_model</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">6</span><span class="p">])</span>
+
+    <span class="c1">#### Extending the min chi-square space around the minima starts here</span>
+    <span class="c1"># chi_value = []</span>
+    <span class="c1"># chi_index = []</span>
+    <span class="c1"># spectra_file_name = []</span>
+    <span class="c1"># offset_index = []</span>
+    <span class="c1"># for i in range(len(chi_squared_stat3)):</span>
+    <span class="c1">#  for j in range(len(chi_squared_stat3[0])):</span>
+    <span class="c1">#    if ((min_chi3 -1) &lt; chi_squared_stat3[i,j] &lt;= (min_chi3+0.001)):</span>
+    <span class="c1">#</span>
+    <span class="c1">#     chi_value.append(chi_squared_stat3[i,j])</span>
+    <span class="c1">#     chi_index.append(i)</span>
+    <span class="c1">#     offset_index.append(j)</span>
+    <span class="c1">#     spectra_file_name.append(file_name[i])</span>
+    <span class="c1">#</span>
+    <span class="c1"># print (chi_value)</span>
+    <span class="c1"># print(chi_index)</span>
+    <span class="c1"># print (offset_index)</span>
+    <span class="c1"># print (spectra_file_name)</span>
+    <span class="c1"># print (offset_array[chi_index,offset_index])</span>
+
+    <span class="n">temparray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="mi">400</span><span class="p">,</span>
+            <span class="mi">600</span><span class="p">,</span>
+            <span class="mi">700</span><span class="p">,</span>
+            <span class="mi">800</span><span class="p">,</span>
+            <span class="mi">900</span><span class="p">,</span>
+            <span class="mi">1000</span><span class="p">,</span>
+            <span class="mi">1100</span><span class="p">,</span>
+            <span class="mi">1200</span><span class="p">,</span>
+            <span class="mi">1300</span><span class="p">,</span>
+            <span class="mi">1400</span><span class="p">,</span>
+            <span class="mi">1500</span><span class="p">,</span>
+            <span class="mi">1600</span><span class="p">,</span>
+            <span class="mi">1700</span><span class="p">,</span>
+            <span class="mi">1800</span><span class="p">,</span>
+            <span class="mi">1900</span><span class="p">,</span>
+            <span class="mi">2000</span><span class="p">,</span>
+            <span class="mi">2100</span><span class="p">,</span>
+            <span class="mi">2200</span><span class="p">,</span>
+            <span class="mi">2300</span><span class="p">,</span>
+            <span class="mi">2400</span><span class="p">,</span>
+            <span class="mi">2500</span><span class="p">,</span>
+            <span class="mi">2600</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">g_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">)</span>
+    <span class="n">metalarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">])</span>
+    <span class="n">coarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.56</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">ray_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">1100</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span>
+    <span class="p">)</span>  <span class="c1">### Float was used to make it with decimal point</span>
+    <span class="n">cloud_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1">### cloud_bottom</span>
+
+    <span class="c1"># temp_metal_matrix= np.zeros((35,2),dtype=np.float64)</span>
+    <span class="c1"># temp_metal_matrix[0:7,0] = temparray[0]</span>
+    <span class="c1"># temp_metal_matrix[7:14,0] = temparray[1]</span>
+    <span class="c1"># temp_metal_matrix[14:21,0] = temparray[2]</span>
+    <span class="c1"># temp_metal_matrix[21:28,0] = temparray[3]</span>
+    <span class="c1"># temp_metal_matrix[28:35,0] = temparray[4]</span>
+    <span class="c1">#</span>
+    <span class="c1"># temp_metal_matrix[0:7,1] = metalarray[0:7]</span>
+    <span class="c1"># temp_metal_matrix[7:14,1] = metalarray[0:7]</span>
+    <span class="c1"># temp_metal_matrix[14:21,1] = metalarray[0:7]</span>
+    <span class="c1"># temp_metal_matrix[21:28,1] = metalarray[0:7]</span>
+    <span class="c1"># temp_metal_matrix[28:35,1] = metalarray[0:7]</span>
+
+    <span class="n">plot_xarray</span> <span class="o">=</span> <span class="p">[</span><span class="n">temparray</span><span class="p">,</span> <span class="n">g_values</span><span class="p">,</span> <span class="n">metalarray</span><span class="p">,</span> <span class="n">coarray</span><span class="p">,</span> <span class="n">ray_array</span><span class="p">,</span> <span class="n">cloud_array</span><span class="p">]</span>
+    <span class="n">plot_yarray</span> <span class="o">=</span> <span class="p">[</span><span class="n">temparray</span><span class="p">,</span> <span class="n">g_values</span><span class="p">,</span> <span class="n">metalarray</span><span class="p">,</span> <span class="n">coarray</span><span class="p">,</span> <span class="n">ray_array</span><span class="p">,</span> <span class="n">cloud_array</span><span class="p">]</span>
+
+    <span class="c1">#  plot_name_xarray = [&#39;temparray&#39;, &#39;metalarray&#39;, &#39;coarray&#39;, &#39;ray_array&#39;, &#39;cloud_array&#39;]</span>
+    <span class="c1">#  plot_name_yarray = [&#39;temparray&#39;, &#39;metalarray&#39;, &#39;coarray&#39;, &#39;ray_array&#39;, &#39;cloud_array&#39;]</span>
+
+    <span class="n">plot_name_xarray</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Temperature&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Gravity&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Metallicity&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;C/O-ratio&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Haze&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Clouds&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">plot_name_yarray</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Temperature&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Gravity&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Metallicity&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;C/O-ratio&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Haze&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Clouds&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="n">chi_temp_metal</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># temp_metal_matrix= np.zeros((35,2),dtype=np.float64)</span>
+
+    <span class="k">for</span> <span class="n">var1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>  <span class="c1">##or var1 in (0,1,2,3,4,5):</span>
+        <span class="k">for</span> <span class="n">var2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>  <span class="c1">##for var2 in range(var1, 5):</span>
+
+            <span class="c1">#print(var1)</span>
+            <span class="c1">#print(var2)</span>
+
+            <span class="n">variablex</span> <span class="o">=</span> <span class="n">plot_xarray</span><span class="p">[</span><span class="n">var1</span><span class="p">]</span>
+            <span class="n">variabley</span> <span class="o">=</span> <span class="n">plot_yarray</span><span class="p">[</span><span class="n">var2</span><span class="p">]</span>
+
+            <span class="c1">#print(variablex)</span>
+            <span class="c1">#print(variabley)</span>
+
+            <span class="n">variablenamex</span> <span class="o">=</span> <span class="n">plot_name_xarray</span><span class="p">[</span><span class="n">var1</span><span class="p">]</span>
+            <span class="n">variablenamey</span> <span class="o">=</span> <span class="n">plot_name_yarray</span><span class="p">[</span><span class="n">var2</span><span class="p">]</span>
+
+            <span class="c1">#print(variablenamex)</span>
+            <span class="c1">#print(variablenamey)</span>
+
+            <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="n">var2</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="c1">## Keep everthing as it for two variable system, just change the variable in the loop somehow and store at the end of the loop in new variable</span>
+            <span class="n">mapname</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">variablex</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">variabley</span><span class="p">),</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">variablex</span><span class="p">)):</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">variabley</span><span class="p">)):</span>
+                    <span class="n">chi1</span> <span class="o">=</span> <span class="p">[]</span>
+
+                    <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">model_name</span><span class="p">)):</span>
+
+                        <span class="c1"># print (model_parameter[model,0])</span>
+                        <span class="c1"># print (temparray[0])</span>
+
+                        <span class="k">if</span> <span class="p">(</span>
+                            <span class="n">model_parameter</span><span class="p">[</span><span class="n">model</span><span class="p">,</span> <span class="n">var1</span><span class="p">]</span> <span class="o">==</span> <span class="n">variablex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                            <span class="ow">and</span> <span class="n">model_parameter</span><span class="p">[</span><span class="n">model</span><span class="p">,</span> <span class="n">var2</span><span class="p">]</span> <span class="o">==</span> <span class="n">variabley</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                        <span class="p">):</span>
+                            <span class="n">chi1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">chi_squared_stat3</span><span class="p">[</span><span class="n">model</span><span class="p">,</span> <span class="p">:]))</span>
+                            <span class="c1"># chi1.append(chi_squared_stat3[model,offset_index[0]]) ### Check offset index for each planet</span>
+
+                            <span class="c1"># mapname = (variablenamex + &#39;_&#39; + variablenamey)</span>
+
+                            <span class="n">mapname</span><span class="p">[</span><span class="n">num</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">variablex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                            <span class="n">mapname</span><span class="p">[</span><span class="n">num</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">variabley</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+                    <span class="c1"># if (len(chi1) &gt;= 0):</span>
+                    <span class="c1">#print(j)</span>
+                    <span class="n">chi2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">chi1</span><span class="p">)</span>
+                    <span class="n">mapname</span><span class="p">[</span><span class="n">num</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">chi2</span> <span class="o">-</span> <span class="n">min_chi3</span>  <span class="c1">## we are storing del chi2 not chi2</span>
+                    <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>
+                    <span class="n">chi_temp_metal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chi2</span><span class="p">)</span>
+
+            <span class="c1">#print(mapname)</span>
+            <span class="n">del_chi_temp_metal</span> <span class="o">=</span> <span class="n">chi_temp_metal</span> <span class="o">-</span> <span class="n">min_chi3</span>
+            <span class="c1">#print(len(chi_temp_metal))</span>
+            <span class="c1">#print(mapname.shape)</span>
+
+            <span class="c1">############### Calculating delta chi contour intervals using confidence internals 68.27%	80.00%	90.00%	95.00%	95.45%	99.00%	99.73%	99.90%	99.99%</span>
+
+            <span class="c1"># chi_map = chi_squared_stat3[:,offset_index[0]]</span>
+            <span class="c1"># print (len(chi_map))</span>
+
+            <span class="n">map_variable_x</span> <span class="o">=</span> <span class="n">mapname</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># temp_metal_matrix[:,1]</span>
+            <span class="n">map_variable_y</span> <span class="o">=</span> <span class="n">mapname</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># temp_metal_matrix[:,0]</span>
+            <span class="c1">#print(map_variable_x)</span>
+            <span class="c1"># exit()</span>
+
+<span class="c1">#             rc(&quot;font&quot;, weight=&quot;bold&quot;)</span>
+<span class="c1">#             rcParams[&quot;axes.linewidth&quot;] = 1</span>
+<span class="c1">#             # rcParams[&#39;figure.figsize&#39;] = (25.0, 15.0)</span>
+<span class="c1">#             rc(&quot;text&quot;, usetex=False)  ### TO print underscores and not make them subscripts</span>
+<span class="c1">#             rc(&quot;font&quot;, **{&quot;family&quot;: &quot;serif&quot;, &quot;serif&quot;: [&quot;Palatino&quot;]})</span>
+<span class="c1">#             rc(&quot;savefig&quot;, dpi=300)</span>
+            <span class="c1">#### Contour plot</span>
+            <span class="n">xi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">map_variable_x</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">map_variable_x</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+            <span class="n">yi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">map_variable_y</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">map_variable_y</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+            <span class="c1"># Z = np.random.random_sample((42))*3</span>
+
+            <span class="n">Z_interp</span> <span class="o">=</span> <span class="n">griddata</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">map_variable_x</span><span class="p">,</span> <span class="n">map_variable_y</span><span class="p">),</span>
+                <span class="n">mapname</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span>
+                <span class="p">(</span><span class="n">xi</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:],</span> <span class="n">yi</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]),</span>
+            <span class="p">)</span>
+            <span class="c1">#print(Z_interp)</span>
+
+            <span class="c1"># levels = [25, 30, 35, 40, 45]</span>
+            <span class="c1"># levels = [0, 2.30, 3.22, 4.61,	5.99,	6.18,	9.21,	11.83,	13.82,	19.33]</span>
+            <span class="n">levels</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="mf">2.30</span><span class="p">,</span>
+                <span class="mf">6.18</span><span class="p">,</span>
+                <span class="mf">11.83</span><span class="p">,</span>
+                <span class="mf">19.33</span><span class="p">,</span>
+            <span class="p">]</span>  <span class="c1">## how many free parameters were used to calcualte these intervals fro the big chisquare  table.</span>
+            <span class="n">fig</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1">#print(var1)</span>
+            <span class="c1">#print(var2)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="n">var2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">var1</span><span class="p">))</span>
+
+            <span class="c1">#    if (var1 == 3):</span>
+            <span class="c1">#     line2 = contourf(xi, yi, Z_interp, locator=ticker.LogLocator(), levels) # levels, colors=(&#39;r&#39;, &#39;g&#39;, &#39;b&#39;, &#39;k&#39;))</span>
+            <span class="c1">#    elif (var2 &gt;= 3):</span>
+            <span class="c1">#     line2 = contourf(xi, yi, Z_interp, locator=ticker.LogLocator(), levels)</span>
+            <span class="c1">#    else :</span>
+            <span class="n">line2</span> <span class="o">=</span> <span class="n">contourf</span><span class="p">(</span>
+                <span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">Z_interp</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;afmhot&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">30</span>
+            <span class="p">)</span>  <span class="c1">### vmax has been changed from 19.33 to 25 to make end darker</span>
+            <span class="c1"># line2 = contourf(xi, yi, Z_interp, levels)</span>
+            <span class="c1"># plt.colorbar(line2)</span>
+            <span class="c1"># plt.clabel(line2, inline=1, fontsize=10) ### To add contour numbers in the plots also makes it look bit messy so removed</span>
+
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;symlog&quot;</span><span class="p">)</span>
+
+            <span class="c1">#### Probability plot</span>
+            <span class="c1"># line3 = plot(chi_squared_stat3.ravel()[:],prob[:])</span>
+            <span class="c1"># plt.setp(line3, linestyle=&#39;-&#39;,linewidth=4.0)</span>
+            <span class="c1">####</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">xlabel</span><span class="p">(</span><span class="n">variablenamex</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+            <span class="c1"># xlim(0,5000)</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">ylabel</span><span class="p">(</span><span class="n">variablenamey</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+                <span class="c1">#### Contour plot ends</span>
+            <span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s2">&quot;8&quot;</span><span class="p">)</span>
+            <span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s2">&quot;8&quot;</span><span class="p">)</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">gca</span><span class="p">()</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">ticker</span><span class="o">.</span><span class="n">ScalarFormatter</span><span class="p">())</span>
+
+            <span class="k">if</span> <span class="n">planet_grid</span> <span class="o">==</span> <span class="s2">&quot;HD_209458&quot;</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;HD-209458b&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">planet_grid</span> <span class="o">==</span> <span class="s2">&quot;HD_189733&quot;</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;HD-189733b&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+            <span class="c1"># else:</span>
+            <span class="c1"># plt.suptitle(planet_fig[pnt]+&#39;b&#39;,fontsize=25,fontweight=&#39;bold&#39;)</span>
+
+            <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FormatStrFormatter</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%g</span><span class="s2">&quot;</span><span class="p">))</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span>
+                <span class="n">FormatStrFormatter</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%g</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="p">)</span>  <span class="c1">## removes unwanted zeros in xticks</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;major&quot;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+            <span class="c1">### reducing tick interval for temperature and coratio on x axis manually for plots needed in paper</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">2500</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">var2</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">var2</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">var1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">var2</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">var1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">var2</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">var1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">and</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">1100</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">and</span> <span class="n">var2</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">and</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">1100</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">and</span> <span class="n">var1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">var1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">var2</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">var1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">majorLocator</span> <span class="o">=</span> <span class="n">FixedLocator</span><span class="p">([])</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">majorLocator</span><span class="p">)</span>
+            <span class="c1">### Remember axes might be different so just shift things up and down to make labels,ticks etc. work.</span>
+
+            <span class="c1">### seperate axis for colorbar</span>
+            <span class="n">cbar_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.92</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">])</span>
+            <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">line2</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cbar_ax</span><span class="p">)</span>  <span class="c1"># cmap=&#39;afmhot&#39; )</span>
+            <span class="n">cbar</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$1 \sigma$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$2 \sigma$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$3 \sigma$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$4 \sigma$&quot;</span><span class="p">],</span>
+                <span class="n">update_ticks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="c1"># cbar_ax.set_ylabel</span>
+            <span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="s2">&quot;12&quot;</span><span class="p">)</span>
+            <span class="c1">###########################################</span>
+    <span class="c1">#plt.savefig(&quot;corner_local_GAIADR2&quot; + str(planet[pnt]) + &quot;.pdf&quot;, bbox_inches=&quot;tight&quot;)</span>
+    <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../paper/figures/tspec_forward_model_corner/tspec_forward_model_corner.pdf&quot;</span><span class="p">)</span>
+<span class="c1"># show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-3-b9b90220b977&gt;:363: MatplotlibDeprecationWarning: Adding an axes using the same arguments as a previous axes currently reuses the earlier instance.  In a future version, a new instance will always be created and returned.  Meanwhile, this warning can be suppressed, and the future behavior ensured, by passing a unique label to each axes instance.
+  cbar_ax = fig.add_axes([0.92, 0.15, 0.03, 0.7])
+</pre></div>
+</div>
+<img alt="../_images/tspec_forward_model_corner_2_1.png" src="../_images/tspec_forward_model_corner_2_1.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="detrended_binned_lcs.html" title="previous page"><span class="section-number">13. </span>Detrended binned WLCs</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
