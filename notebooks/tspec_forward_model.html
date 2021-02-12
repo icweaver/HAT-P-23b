@@ -341,9 +341,35 @@
 <span class="p">)</span>
 
 <span class="c1"># Forward model data</span>
-<span class="n">wav_fm</span><span class="p">,</span> <span class="n">flux_fm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/HAT-P-23_DR2_best_fit_model.txt&quot;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">)</span>
+<span class="n">offsets</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.00034496</span><span class="p">,</span> <span class="mf">0.00034496</span><span class="p">)</span>
+<span class="n">forward_models</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;best_fit&quot;</span><span class="p">:</span> <span class="s2">&quot;trans-iso-generic_2500_20_+1.0_0.35_0001_0.00_model_scaled&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cloud&quot;</span><span class="p">:</span>    <span class="s2">&quot;trans-iso-generic_2500_20_+1.0_0.35_0001_1.00_model_scaled&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;haze&quot;</span><span class="p">:</span>     <span class="s2">&quot;trans-iso-generic_2500_20_+1.0_0.35_1100_0.00_model_scaled&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">model_type</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;params_string&quot;</span><span class="p">:</span> <span class="n">model_file_name</span><span class="p">,</span>
+        <span class="s2">&quot;wav&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">model_file_name</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+        <span class="s2">&quot;depth&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">model_file_name</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">model_type</span><span class="p">,</span> <span class="n">model_file_name</span><span class="p">),</span> <span class="n">offset</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">forward_models</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">offsets</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_params</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">C_O</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">Haze</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">Cloud</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;T=</span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s2">, g=</span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2">, Z=</span><span class="si">{</span><span class="n">Z</span><span class="si">}</span><span class="s2">, C/O=</span><span class="si">{</span><span class="n">C_O</span><span class="si">}</span><span class="s2">, Haze=</span><span class="si">{</span><span class="n">Haze</span><span class="si">}</span><span class="s2">, Cloud=</span><span class="si">{</span><span class="n">Cloud</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -359,12 +385,12 @@
 <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mean_wlc_depth</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkgrey&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
 
 <span class="c1"># Forward model</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">wav_fm</span> <span class="o">*</span> <span class="mf">1e4</span><span class="p">,</span>
-    <span class="n">flux_fm</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">,</span>
-    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;C8&quot;</span><span class="p">,</span>
-    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;local cond. T=2500, g=20, Z=+1.0 C/O=0.35, Haze=0001 Cloud=0.00&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">model_type</span><span class="p">,</span> <span class="n">model_data</span><span class="p">)</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">model_data</span><span class="p">[</span><span class="s2">&quot;wav&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e4</span><span class="p">,</span>
+        <span class="n">model_data</span><span class="p">[</span><span class="s2">&quot;depth&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">,</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_type</span><span class="si">}</span><span class="s2">: &quot;</span> <span class="o">+</span> <span class="n">parse_params</span><span class="p">(</span><span class="n">model_data</span><span class="p">[</span><span class="s2">&quot;params_string&quot;</span><span class="p">]),</span>
+    <span class="p">)</span>
 
 <span class="c1"># IMACS data</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span>
@@ -383,7 +409,7 @@
 <span class="c1"># Save</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">3_000</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">12_000</span><span class="p">,</span> <span class="mi">14_500</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">12_000</span><span class="p">,</span> <span class="mi">15_000</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Wavelength (Å)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Transit Depth (ppm)&quot;</span><span class="p">)</span>
 <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../paper/figures/tspec_forward_model/tspec_forward_model.pdf&quot;</span><span class="p">)</span>
@@ -391,7 +417,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/tspec_forward_model_9_0.png" src="../_images/tspec_forward_model_9_0.png" />
+<img alt="../_images/tspec_forward_model_10_0.png" src="../_images/tspec_forward_model_10_0.png" />
 </div>
 </div>
 </div>
