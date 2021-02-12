@@ -104,6 +104,7 @@ dependencies:
   - qt=5.9.7=h5867ecd_1
   - qtconsole=4.7.7=py_0
   - qtpy=1.9.0=py_0
+  - rclone=1.54.0=h519d9b9_0
   - readline=8.0=h7b6447c_0
   - scipy=1.5.2=py39h91f5cce_0
   - seaborn=0.11.1=pyhd3eb1b0_0
