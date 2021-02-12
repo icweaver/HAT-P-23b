@@ -15,3 +15,4 @@ sections:
 - file: notebooks/extracted_wlcs
 - file: notebooks/detrended_wlcs_corners
 - file: notebooks/detrended_binned_lcs
+- file: notebooks/tspec_forward_model_corner

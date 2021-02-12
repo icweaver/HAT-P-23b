@@ -62,7 +62,7 @@ def decompress_pickle(fname):
 def get_evidences(base_dir):
     fit_R0 = "fitR0" if "fit_R0" in base_dir else "NofitR0"
 
-    species = ["Na", "K", "TiO", "Na_K", "Na_TiO", "K_TiO", "Na_K_TiO", "H2O"]#, "H2O"]
+    species = ["Na", "K", "TiO", "Na_K", "Na_TiO", "K_TiO", "Na_K_TiO", "H2O"]  # , "H2O"]
     model_names_dict = {
         "clear": f"NoHet_FitP0_NoClouds_NoHaze_{fit_R0}",
         "clear+cloud": f"NoHet_FitP0_Clouds_NoHaze_{fit_R0}",
@@ -1108,9 +1108,11 @@ def write_latex_row(row):
     v, vu, vd = row
     return f"{v:.3f}^{{+{vu:.1e}}}_{{-{vd:.1e}}}"
 
+
 def write_latex_row2(row):
     v, vu, vd = row
     return f"{v:.1f}^{{+{vu:.0f}}}_{{-{vd:.0f}}}"
+
 
 def write_latex_row_sig_fig(row, x_digits=-2, xu_digits=-2, xd_digits=-2):
     x, xu, xd = row
@@ -1118,7 +1120,7 @@ def write_latex_row_sig_fig(row, x_digits=-2, xu_digits=-2, xd_digits=-2):
     vu = int(round(xu, xu_digits))
     vd = int(round(xd, xd_digits))
     return f"{v}^{{+{vu}}}_{{-{vd}}}"
-    #return f"{v:.3g}^{{+{vu:.2g}}}_{{-{vd:.2g}}}"
+    # return f"{v:.3g}^{{+{vu:.2g}}}_{{-{vd:.2g}}}"
 
 
 def write_latex2(val, unc):
@@ -1128,6 +1130,7 @@ def write_latex2(val, unc):
 def write_latex_single(row):
     v, v_unc = row
     return f"{v:.3f} \pm {v_unc:.3f}"
+
 
 def write_latex_single_sig_fig(row, x_digits=-2, x_unc_digits=-2):
     x, x_unc = row
