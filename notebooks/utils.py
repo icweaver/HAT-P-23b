@@ -62,7 +62,7 @@ def decompress_pickle(fname):
 def get_evidences(base_dir, relative_to_spot_only=False):
     fit_R0 = "fitR0" if "fit_R0" in base_dir else "NofitR0"
 
-    species = ["Na", "K", "TiO", "Na_K", "Na_TiO", "K_TiO", "Na_K_TiO", "CO"]
+    species = ["Na", "K", "TiO", "Na_K", "Na_TiO", "K_TiO", "Na_K_TiO"]
     model_names_dict = {
         "clear": f"NoHet_FitP0_NoClouds_NoHaze_{fit_R0}",
         "clear+cloud": f"NoHet_FitP0_Clouds_NoHaze_{fit_R0}",
@@ -98,7 +98,7 @@ def get_evidences(base_dir, relative_to_spot_only=False):
     if relative_to_spot_only:
         model_id = f"Het_FitP0_NoClouds_NoHaze_{fit_R0}_no_features"
         df_lnZ_min = load_pickle(f"{base_dir}/HATP23_E1_{model_id}/retrieval.pkl")
-        print(f"spot only lnZ: {df_lnZ_min['lnZ']} +/- {df_lnZ_min['lnZerr']}")
+        #print(f"spot only lnZ: {df_lnZ_min['lnZ']} +/- {df_lnZ_min['lnZerr']}")
         species_min = "no_features"
         model_min = "spot only"
     else:
