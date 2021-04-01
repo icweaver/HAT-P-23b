@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -44,7 +44,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -176,21 +176,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -208,7 +208,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -224,21 +224,22 @@
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -257,10 +258,16 @@
    4.3. Plot
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table">
+   4.4. Table
+  </a>
+ </li>
 </ul>
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -334,23 +341,262 @@
 <span class="c1"># Save</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
+<span class="c1">#utils.savefig(f&quot;../paper/figures/tspec_full/tspec_full.pdf&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>offsets: [-381.66382639 -250.19806149  604.72304087  238.023367   -134.88932493]
+offsets (% mean wlc depth): [-2.94346912 -1.92957838  4.66374719  1.83568466 -1.04029393]
+Saving tspec to: data/tspec_full/tspec_c.csv
+mean WLC depth: 12966.462729191497 228.463440286341
+Rp (Rj): 1.2765205003564386 jupiterRad
+Rs (Rsun): 1.152 solRad
+gp (m/s^2): 2920.5267508681527 cm / s2
+</pre></div>
+</div>
+<img alt="../_images/tspec_full_7_1.png" src="../_images/tspec_full_7_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_dir</span> <span class="o">=</span> <span class="s2">&quot;data/tspec_full&quot;</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">FIG_WIDE</span><span class="p">)</span>
+
+<span class="n">utils</span><span class="o">.</span><span class="n">plot_tspec_IMACS</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">base_dir</span><span class="p">)</span>
+
+<span class="c1"># Save</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
 <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../paper/figures/tspec_full/tspec_full.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>offsets: [-360.38370533 -228.91794043  626.00316194  259.30348806 -113.60920387]
-offsets (% mean wlc depth): [-2.78392137 -1.76836393  4.83580017  2.00308868 -0.87761762]
-(5, 3, 17)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>offsets: [-381.66382639 -250.19806149  604.72304087  238.023367   -134.88932493]
+offsets (% mean wlc depth): [-2.94346912 -1.92957838  4.66374719  1.83568466 -1.04029393]
 Saving tspec to: data/tspec_full/tspec_c.csv
-mean WLC depth: 12945.182608127869 2.168930318004236
-Rp (Rj): 1.2754725790428136 jupiterRad
+mean WLC depth: 12966.462729191497 228.463440286341
+Rp (Rj): 1.2765205003564386 jupiterRad
 Rs (Rsun): 1.152 solRad
-gp (m/s^2): 2925.3276999709506 cm / s2
+gp (m/s^2): 2920.5267508681527 cm / s2
 </pre></div>
 </div>
-<img alt="../_images/tspec_full_7_1.png" src="../_images/tspec_full_7_1.png" />
+<img alt="../_images/tspec_full_8_1.png" src="../_images/tspec_full_8_1.png" />
 </div>
+</div>
+</div>
+<div class="section" id="table">
+<h2><span class="section-number">4.4. </span>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/tspec_full/tspec_c.csv&quot;</span><span class="p">)</span><span class="c1">#.to_clipboard(index=False)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Wavelength (Å)</th>
+      <th>Transit 1</th>
+      <th>Transit 2</th>
+      <th>Transit 3</th>
+      <th>Transit 4</th>
+      <th>Transit 5</th>
+      <th>Combined</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5400.0 - 5600.0</td>
+      <td>13100^{+1300}_{-1400}</td>
+      <td>13900^{+300}_{-300}</td>
+      <td>13600^{+600}_{-600}</td>
+      <td>13300^{+600}_{-600}</td>
+      <td>14000^{+600}_{-600}</td>
+      <td>13800 \pm 200</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5600.0 - 5800.0</td>
+      <td>14200^{+1400}_{-1400}</td>
+      <td>12000^{+1200}_{-1100}</td>
+      <td>13300^{+700}_{-700}</td>
+      <td>13300^{+600}_{-600}</td>
+      <td>13400^{+500}_{-500}</td>
+      <td>13300 \pm 300</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5800.0 - 5985.8</td>
+      <td>13600^{+1100}_{-1200}</td>
+      <td>11900^{+1100}_{-1000}</td>
+      <td>14000^{+700}_{-800}</td>
+      <td>13700^{+400}_{-400}</td>
+      <td>13000^{+800}_{-700}</td>
+      <td>13500 \pm 300</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5985.8 - 6185.8</td>
+      <td>12800^{+1000}_{-1000}</td>
+      <td>12300^{+1000}_{-500}</td>
+      <td>12800^{+1200}_{-1300}</td>
+      <td>13200^{+500}_{-500}</td>
+      <td>14000^{+700}_{-700}</td>
+      <td>13200 \pm 300</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6655.0 - 6855.0</td>
+      <td>14000^{+900}_{-800}</td>
+      <td>13000^{+600}_{-700}</td>
+      <td>12600^{+500}_{-600}</td>
+      <td>13200^{+600}_{-600}</td>
+      <td>13800^{+400}_{-400}</td>
+      <td>13300 \pm 200</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6855.0 - 7055.0</td>
+      <td>13100^{+900}_{-900}</td>
+      <td>13400^{+400}_{-500}</td>
+      <td>13000^{+600}_{-600}</td>
+      <td>14000^{+600}_{-600}</td>
+      <td>14100^{+400}_{-400}</td>
+      <td>13700 \pm 200</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7055.0 - 7255.0</td>
+      <td>13000^{+700}_{-700}</td>
+      <td>12600^{+900}_{-900}</td>
+      <td>12900^{+700}_{-700}</td>
+      <td>13800^{+600}_{-600}</td>
+      <td>13800^{+300}_{-300}</td>
+      <td>13600 \pm 200</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7255.0 - 7455.0</td>
+      <td>13400^{+800}_{-700}</td>
+      <td>12500^{+600}_{-600}</td>
+      <td>13500^{+600}_{-600}</td>
+      <td>13300^{+500}_{-400}</td>
+      <td>14300^{+200}_{-300}</td>
+      <td>13800 \pm 200</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>7455.0 - 7655.0</td>
+      <td>12900^{+1000}_{-1000}</td>
+      <td>12200^{+600}_{-600}</td>
+      <td>12800^{+600}_{-600}</td>
+      <td>13400^{+400}_{-400}</td>
+      <td>14000^{+500}_{-500}</td>
+      <td>13200 \pm 200</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>7655.0 - 7709.0</td>
+      <td>12200^{+900}_{-800}</td>
+      <td>12300^{+700}_{-700}</td>
+      <td>13800^{+1000}_{-1000}</td>
+      <td>13500^{+700}_{-700}</td>
+      <td>13200^{+500}_{-500}</td>
+      <td>13000 \pm 300</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>7709.0 - 7909.0</td>
+      <td>13100^{+800}_{-800}</td>
+      <td>12200^{+600}_{-600}</td>
+      <td>13000^{+500}_{-400}</td>
+      <td>14000^{+700}_{-700}</td>
+      <td>14100^{+400}_{-400}</td>
+      <td>13400 \pm 200</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>7909.0 - 8109.0</td>
+      <td>12400^{+600}_{-600}</td>
+      <td>12200^{+700}_{-700}</td>
+      <td>12600^{+500}_{-500}</td>
+      <td>13600^{+500}_{-600}</td>
+      <td>13600^{+400}_{-400}</td>
+      <td>13000 \pm 200</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>8109.0 - 8269.0</td>
+      <td>12500^{+400}_{-300}</td>
+      <td>12600^{+700}_{-800}</td>
+      <td>12300^{+500}_{-500}</td>
+      <td>13200^{+500}_{-500}</td>
+      <td>13700^{+500}_{-500}</td>
+      <td>12900 \pm 200</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>8269.0 - 8469.0</td>
+      <td>12600^{+400}_{-400}</td>
+      <td>12600^{+800}_{-900}</td>
+      <td>12400^{+400}_{-400}</td>
+      <td>13400^{+500}_{-500}</td>
+      <td>13800^{+400}_{-400}</td>
+      <td>13100 \pm 200</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>8469.0 - 8669.0</td>
+      <td>12300^{+600}_{-600}</td>
+      <td>12400^{+600}_{-500}</td>
+      <td>11800^{+500}_{-500}</td>
+      <td>13600^{+500}_{-500}</td>
+      <td>13400^{+400}_{-400}</td>
+      <td>12700 \pm 200</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>8669.0 - 8869.0</td>
+      <td>12600^{+700}_{-600}</td>
+      <td>12300^{+400}_{-500}</td>
+      <td>12800^{+400}_{-400}</td>
+      <td>12900^{+400}_{-400}</td>
+      <td>12800^{+700}_{-700}</td>
+      <td>12700 \pm 200</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>8869.0 - 9069.0</td>
+      <td>13100^{+800}_{-900}</td>
+      <td>12800^{+400}_{-500}</td>
+      <td>12300^{+600}_{-500}</td>
+      <td>12700^{+400}_{-300}</td>
+      <td>13000^{+600}_{-600}</td>
+      <td>12700 \pm 200</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>
@@ -377,15 +623,15 @@ gp (m/s^2): 2925.3276999709506 cm / s2
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="photometric_act.html" title="previous page"><span class="section-number">3. </span>Photometric monitoring</a>
     <a class='right-next' id="next-link" href="tspec_species.html" title="next page"><span class="section-number">5. </span>Transmission spectra: species</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">

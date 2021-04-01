@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -44,7 +44,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -176,21 +176,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -208,7 +208,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -224,21 +224,22 @@
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -266,6 +267,7 @@
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -419,6 +421,287 @@ dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_wakeford</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>T</th>
+      <th>logg</th>
+      <th>H2O-J</th>
+      <th>H2O-J_unc</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>GJ436</th>
+      <td>669.0</td>
+      <td>3.10</td>
+      <td>0.339500</td>
+      <td>0.266522</td>
+    </tr>
+    <tr>
+      <th>GJ1214</th>
+      <td>547.0</td>
+      <td>2.94</td>
+      <td>0.003296</td>
+      <td>0.056763</td>
+    </tr>
+    <tr>
+      <th>HAT-P-01</th>
+      <td>1322.0</td>
+      <td>2.93</td>
+      <td>1.337013</td>
+      <td>0.679367</td>
+    </tr>
+    <tr>
+      <th>HAT-P-11</th>
+      <td>838.0</td>
+      <td>3.06</td>
+      <td>2.499212</td>
+      <td>0.504664</td>
+    </tr>
+    <tr>
+      <th>HAT-P-12</th>
+      <td>955.0</td>
+      <td>2.75</td>
+      <td>0.217148</td>
+      <td>0.650651</td>
+    </tr>
+    <tr>
+      <th>HAT-P-17</th>
+      <td>792.0</td>
+      <td>3.11</td>
+      <td>1.510989</td>
+      <td>0.672787</td>
+    </tr>
+    <tr>
+      <th>HAT-P-18</th>
+      <td>841.0</td>
+      <td>2.73</td>
+      <td>1.644092</td>
+      <td>0.401364</td>
+    </tr>
+    <tr>
+      <th>HAT-P-26</th>
+      <td>1001.0</td>
+      <td>2.65</td>
+      <td>1.384714</td>
+      <td>0.239845</td>
+    </tr>
+    <tr>
+      <th>HAT-P-32</th>
+      <td>1801.0</td>
+      <td>2.78</td>
+      <td>1.109273</td>
+      <td>0.395724</td>
+    </tr>
+    <tr>
+      <th>HAT-P-38</th>
+      <td>1082.0</td>
+      <td>2.99</td>
+      <td>1.587813</td>
+      <td>0.550770</td>
+    </tr>
+    <tr>
+      <th>HAT-P-41</th>
+      <td>1941.0</td>
+      <td>2.84</td>
+      <td>0.830380</td>
+      <td>0.198130</td>
+    </tr>
+    <tr>
+      <th>HD97658</th>
+      <td>757.0</td>
+      <td>3.15</td>
+      <td>0.387267</td>
+      <td>0.617148</td>
+    </tr>
+    <tr>
+      <th>HD189733</th>
+      <td>1191.0</td>
+      <td>3.34</td>
+      <td>1.914968</td>
+      <td>0.366223</td>
+    </tr>
+    <tr>
+      <th>HD209458</th>
+      <td>1459.0</td>
+      <td>2.97</td>
+      <td>1.201088</td>
+      <td>0.135370</td>
+    </tr>
+    <tr>
+      <th>WASP-6</th>
+      <td>1184.0</td>
+      <td>2.90</td>
+      <td>0.971666</td>
+      <td>0.386287</td>
+    </tr>
+    <tr>
+      <th>WASP-12</th>
+      <td>2580.0</td>
+      <td>3.02</td>
+      <td>1.424847</td>
+      <td>0.310041</td>
+    </tr>
+    <tr>
+      <th>WASP-17</th>
+      <td>1755.0</td>
+      <td>2.53</td>
+      <td>2.312078</td>
+      <td>0.926330</td>
+    </tr>
+    <tr>
+      <th>WASP-19</th>
+      <td>2077.0</td>
+      <td>3.16</td>
+      <td>1.426730</td>
+      <td>0.532266</td>
+    </tr>
+    <tr>
+      <th>WASP-31</th>
+      <td>1575.0</td>
+      <td>2.70</td>
+      <td>0.591729</td>
+      <td>0.396906</td>
+    </tr>
+    <tr>
+      <th>WASP-39</th>
+      <td>1166.0</td>
+      <td>2.63</td>
+      <td>1.241439</td>
+      <td>0.250035</td>
+    </tr>
+    <tr>
+      <th>WASP-43</th>
+      <td>1440.0</td>
+      <td>3.70</td>
+      <td>1.144747</td>
+      <td>0.522718</td>
+    </tr>
+    <tr>
+      <th>WASP-52</th>
+      <td>1315.0</td>
+      <td>2.84</td>
+      <td>1.253270</td>
+      <td>0.118420</td>
+    </tr>
+    <tr>
+      <th>WASP-63</th>
+      <td>1540.0</td>
+      <td>2.62</td>
+      <td>0.779067</td>
+      <td>0.288147</td>
+    </tr>
+    <tr>
+      <th>WASP-67</th>
+      <td>1003.0</td>
+      <td>2.93</td>
+      <td>0.945215</td>
+      <td>0.767270</td>
+    </tr>
+    <tr>
+      <th>WASP-69</th>
+      <td>963.0</td>
+      <td>2.73</td>
+      <td>0.212735</td>
+      <td>0.092289</td>
+    </tr>
+    <tr>
+      <th>WASP-74</th>
+      <td>1910.0</td>
+      <td>3.02</td>
+      <td>0.954418</td>
+      <td>0.254206</td>
+    </tr>
+    <tr>
+      <th>WASP-76</th>
+      <td>2160.0</td>
+      <td>2.72</td>
+      <td>0.732639</td>
+      <td>0.555734</td>
+    </tr>
+    <tr>
+      <th>WASP-79</th>
+      <td>1716.0</td>
+      <td>2.92</td>
+      <td>0.659614</td>
+      <td>0.598546</td>
+    </tr>
+    <tr>
+      <th>WASP-80</th>
+      <td>825.0</td>
+      <td>3.16</td>
+      <td>0.377167</td>
+      <td>0.262816</td>
+    </tr>
+    <tr>
+      <th>WASP-101</th>
+      <td>1560.0</td>
+      <td>2.76</td>
+      <td>-0.341726</td>
+      <td>0.371857</td>
+    </tr>
+    <tr>
+      <th>WASP-107</th>
+      <td>736.0</td>
+      <td>2.49</td>
+      <td>0.602586</td>
+      <td>0.080241</td>
+    </tr>
+    <tr>
+      <th>WASP-121</th>
+      <td>2358.0</td>
+      <td>2.97</td>
+      <td>1.034493</td>
+      <td>0.264364</td>
+    </tr>
+    <tr>
+      <th>WASP-127</th>
+      <td>1400.0</td>
+      <td>2.33</td>
+      <td>1.135027</td>
+      <td>0.110355</td>
+    </tr>
+    <tr>
+      <th>XO-1</th>
+      <td>1204.0</td>
+      <td>1.66</td>
+      <td>0.376148</td>
+      <td>0.666316</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_southworth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span>
     <span class="s2">&quot;https://www.astro.keele.ac.uk/jkt/tepcat/allplanets-csv.csv&quot;</span><span class="p">,</span>
     <span class="n">sep</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;\s*,\s*&quot;</span><span class="p">,</span>
@@ -510,11 +793,11 @@ dtype: object
       <td>0.035</td>
       <td>0.954</td>
       <td>...</td>
-      <td>2.10</td>
+      <td>2.1</td>
       <td>1.9</td>
-      <td>4.710</td>
-      <td>0.560</td>
-      <td>0.530</td>
+      <td>4.71</td>
+      <td>0.56</td>
+      <td>0.53</td>
       <td>2349.0</td>
       <td>188.0</td>
       <td>193.0</td>
@@ -534,11 +817,11 @@ dtype: object
       <td>0.040</td>
       <td>1.170</td>
       <td>...</td>
-      <td>1.90</td>
+      <td>1.9</td>
       <td>9.5</td>
-      <td>2.100</td>
-      <td>0.400</td>
-      <td>0.400</td>
+      <td>2.10</td>
+      <td>0.40</td>
+      <td>0.40</td>
       <td>1170.0</td>
       <td>2.8</td>
       <td>4.3</td>
@@ -558,11 +841,11 @@ dtype: object
       <td>0.020</td>
       <td>0.290</td>
       <td>...</td>
-      <td>-1.00</td>
+      <td>-1.0</td>
       <td>-1</td>
-      <td>-1.000</td>
-      <td>-1.000</td>
-      <td>-1.000</td>
+      <td>-1.00</td>
+      <td>-1.00</td>
+      <td>-1.00</td>
       <td>1669.0</td>
       <td>244.0</td>
       <td>258.0</td>
@@ -570,7 +853,7 @@ dtype: object
       <td>2017ApJ...849...11G</td>
     </tr>
     <tr>
-      <th>AU_Mic</th>
+      <th>AU_Mic_b</th>
       <td>3700</td>
       <td>100</td>
       <td>100</td>
@@ -582,40 +865,40 @@ dtype: object
       <td>0.030</td>
       <td>0.750</td>
       <td>...</td>
-      <td>-1.00</td>
+      <td>-1.0</td>
       <td>-1</td>
-      <td>-1.000</td>
-      <td>-1.000</td>
-      <td>-1.000</td>
+      <td>-1.00</td>
+      <td>-1.00</td>
+      <td>-1.00</td>
       <td>-1.0</td>
       <td>-1.0</td>
       <td>-1.0</td>
       <td>arXiv:2006.13248</td>
-      <td>arXiv:2011.13357</td>
+      <td>arXiv:2012.13238</td>
     </tr>
     <tr>
-      <th>CoRoT-01</th>
-      <td>5950</td>
-      <td>150</td>
-      <td>150</td>
-      <td>-0.30</td>
-      <td>0.25</td>
-      <td>0.25</td>
-      <td>0.950</td>
-      <td>0.110</td>
-      <td>0.110</td>
-      <td>1.131</td>
+      <th>AU_Mic_c</th>
+      <td>3700</td>
+      <td>100</td>
+      <td>100</td>
+      <td>-1.00</td>
+      <td>-1.00</td>
+      <td>-1.00</td>
+      <td>0.500</td>
+      <td>0.030</td>
+      <td>0.030</td>
+      <td>0.750</td>
       <td>...</td>
-      <td>0.69</td>
-      <td>0.69</td>
-      <td>0.259</td>
-      <td>0.021</td>
-      <td>0.021</td>
-      <td>1915.0</td>
-      <td>49.0</td>
-      <td>49.0</td>
-      <td>2008A+A...482L..17B</td>
-      <td>2011MNRAS.417.2166S</td>
+      <td>-1.0</td>
+      <td>-1</td>
+      <td>-1.00</td>
+      <td>-1.00</td>
+      <td>-1.00</td>
+      <td>-1.0</td>
+      <td>-1.0</td>
+      <td>-1.0</td>
+      <td>arXiv:2012.13238</td>
+      <td>arXiv:2012.13238</td>
     </tr>
   </tbody>
 </table>
@@ -663,6 +946,94 @@ err.3                  float64
 Discovery_reference     object
 Recent_reference        object
 dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_southworth</span><span class="p">[</span><span class="s2">&quot;a(AU)&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;tepcat&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;a (AU)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/mango/Desktop/tepcat.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1311</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1312</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_accessor</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1313</span>         <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/home/mango/Desktop&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">PermissionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">6132</span><span class="n">a66fbebb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/mango/Desktop/tepcat.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+
+<span class="nn">~/work/HAT-P-23b/HAT-P-23b/notebooks/utils.py</span> in <span class="ni">savefig</span><span class="nt">(fpath, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1052</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1053</span> <span class="k">def</span> <span class="nf">savefig</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1054</span>     <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1055</span>     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1056</span> 
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1314</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">parents</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">==</span> <span class="bp">self</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1315</span>                 <span class="k">raise</span>
+<span class="ne">-&gt; </span><span class="mi">1316</span>             <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1317</span>             <span class="bp">self</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="n">exist_ok</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1318</span>         <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+
+<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1310</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1311</span><span class="s2">         try:</span>
+<span class="ne">-&gt; </span><span class="mi">1312</span><span class="s2">             self._accessor.mkdir(self, mode)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1313</span><span class="s2">         except FileNotFoundError:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1314</span><span class="s2">             if not parents or self.parent == self:</span>
+
+<span class="ne">PermissionError</span>: [Errno 13] Permission denied: &#39;/home/mango&#39;
+</pre></div>
+</div>
+<img alt="../_images/cloudy_vs_clear_10_1.png" src="../_images/cloudy_vs_clear_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_southworth</span><span class="p">[</span><span class="s2">&quot;a(AU)&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>System
+55_Cnc_e    0.01544
+pi_Men      0.06800
+AD_3116    -1.00000
+AU_Mic_b    0.06450
+AU_Mic_c    0.11010
+             ...   
+XO-3        0.04529
+XO-4        0.05485
+XO-5        0.05148
+XO-6        0.07250
+XO-7        0.04421
+Name: a(AU), Length: 1010, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -756,11 +1127,11 @@ dtype: object
 <span class="n">targ_coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.485</span><span class="p">,</span> <span class="mi">2027</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="o">*</span><span class="n">targ_coords</span><span class="p">,</span>
-    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;#F3F3F3&quot;</span><span class="p">,</span>
-    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span>
-    <span class="n">s</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-    <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;PuOr&quot;</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span>
+    <span class="c1">#marker=&quot;*&quot;,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="c1">#cmap=&quot;PuOr&quot;,</span>
     <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
@@ -774,6 +1145,65 @@ dtype: object
     <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
+<span class="c1"># Plot WASP-50</span>
+<span class="n">targ_coords</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">30</span><span class="p">),</span> <span class="mi">1381</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="o">*</span><span class="n">targ_coords</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span>
+    <span class="c1">#marker=&quot;*&quot;,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="c1">#cmap=&quot;PuOr&quot;,</span>
+    <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;WASP-50b&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="n">targ_coords</span><span class="p">,</span>
+    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;offset points&quot;</span><span class="p">,</span>
+    <span class="n">ha</span> <span class="o">=</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Jupiter</span>
+<span class="n">targ_coords</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">25</span><span class="p">),</span> <span class="mi">150</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="o">*</span><span class="n">targ_coords</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span>
+    <span class="c1">#marker=&quot;*&quot;,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="c1">#cmap=&quot;PuOr&quot;,</span>
+    <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Plot WASP-43</span>
+<span class="n">targ_coords</span> <span class="o">=</span> <span class="n">df_wakeford</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;WASP-43&quot;</span><span class="p">][[</span><span class="s2">&quot;logg&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;WASP-43b&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="n">targ_coords</span><span class="p">,</span>
+    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;offset points&quot;</span><span class="p">,</span>
+    <span class="c1">#ha = &quot;right&quot;,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+    
+    
+<span class="c1"># Plot HD189733</span>
+<span class="n">targ_coords</span> <span class="o">=</span> <span class="n">df_wakeford</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;HD189733&quot;</span><span class="p">][[</span><span class="s2">&quot;logg&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+    <span class="s2">&quot;HD189733&quot;</span><span class="p">,</span>
+    <span class="n">xy</span><span class="o">=</span><span class="n">targ_coords</span><span class="p">,</span>
+    <span class="c1">#xytext=(10, 10),</span>
+    <span class="c1">#textcoords=&quot;offset points&quot;,</span>
+    <span class="c1">#ha = &quot;right&quot;,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="c1"># Plot divide</span>
 <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="mi">300</span> <span class="o">-</span> <span class="mi">2100</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.3</span> <span class="o">-</span> <span class="mf">2.4</span><span class="p">)</span>
@@ -783,16 +1213,16 @@ dtype: object
 
 <span class="c1"># Save</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">2.4</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">2_700</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2_700</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$log(g)$ (dex)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;T$_</span><span class="si">{eq}</span><span class="s2">$ (K)&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
-<span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;</span><span class="p">)</span>
+<span class="c1">#utils.savefig(&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cloudy_vs_clear_16_0.png" src="../_images/cloudy_vs_clear_16_0.png" />
+<img alt="../_images/cloudy_vs_clear_20_0.png" src="../_images/cloudy_vs_clear_20_0.png" />
 </div>
 </div>
 </div>
@@ -820,15 +1250,15 @@ dtype: object
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="retrieval_tspec.html" title="previous page"><span class="section-number">8. </span>Retrieval transmission spectra</a>
     <a class='right-next' id="next-link" href="raw_frames.html" title="next page"><span class="section-number">10. </span>2D Spectra</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
