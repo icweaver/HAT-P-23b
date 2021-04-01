@@ -859,8 +859,8 @@ def plot_tspec_IMACS(ax, base_dir):
         results = pd.read_table(fpath, sep="\s+", escapechar="#", index_col="Variable")
         p, p_u, p_d = results.loc["p"]
         wlc_depth = p ** 2 * 1e6
-        wlc_depth_u = p_u ** 2 * 1e6
-        wlc_depth_d = p_d ** 2 * 1e6
+        wlc_depth_u = 2e6 * p * p_u
+        wlc_depth_d = 2e6 * p * p_d
         depth_wlc_stats.append([wlc_depth, wlc_depth_u, wlc_depth_d])
 
         # Tspec
@@ -882,11 +882,11 @@ def plot_tspec_IMACS(ax, base_dir):
     )
 
     wlc_offsets = depth_wlc - mean_wlc_depth
-    # wlc_offsets *= 0
+    #wlc_offsets *= 0
     print(f"offsets: {wlc_offsets}")
     print(f"offsets (% mean wlc depth): {wlc_offsets*100/mean_wlc_depth}")
     tspec_stats = np.array(tspec_stats)  # transits x (depth, u, d) x wavelength
-    print(tspec_stats.shape)
+    #print(tspec_stats.shape)
     tspec_stats[:, 0, :] -= wlc_offsets[np.newaxis].T
 
     tspec_depths = tspec_stats[:, 0, :]
@@ -974,7 +974,7 @@ def plot_tspec_IMACS(ax, base_dir):
     tspec_table["Wavelength (Å)"] = df_wavs.apply(write_latex_wav, axis=1)
     # Transmission spectra
     for transit, df_tspec in tspec_tables.items():
-        tspec_table[transit] = df_tspec.apply(write_latex_row_sig_fig, axis=1)
+        tspec_table[transit] = df_tspec.apply(write_latex_sig_fig, axis=1)
     data = np.array([tspec_combined, tspec_combined_unc]).T
     df_combined = pd.DataFrame(data, columns=["Combined", "Unc"])
     tspec_table["Combined"] = df_combined.apply(write_latex_single_sig_fig, axis=1)
@@ -1122,13 +1122,9 @@ def write_latex_row2(row):
     return f"{v:.1f}^{{+{vu:.0f}}}_{{-{vd:.0f}}}"
 
 
-def write_latex_row_sig_fig(row, x_digits=-2, xu_digits=-2, xd_digits=-2):
-    x, xu, xd = row
-    v = int(round(x, x_digits))
-    vu = int(round(xu, xu_digits))
-    vd = int(round(xd, xd_digits))
-    return f"{v}^{{+{vu}}}_{{-{vd}}}"
-    # return f"{v:.3g}^{{+{vu:.2g}}}_{{-{vd:.2g}}}"
+def write_latex_row(row, fmt_v=".0f", fmt_vu=".0f", fmt_vd=".0f"):
+    v, vu, vd = row
+    return f"{v:{fmt_v}}^{{+{vu:{fmt_vu}}}}_{{-{vd:{fmt_vd}}}}"
 
 
 def write_latex2(val, unc):
@@ -1138,6 +1134,14 @@ def write_latex2(val, unc):
 def write_latex_single(row):
     v, v_unc = row
     return f"{v:.3f} \pm {v_unc:.3f}"
+
+
+def write_latex_sig_fig(row, x_digits=-2, x_u_digits=-2, x_d_digits=-2):
+    x, x_u, x_d = row
+    v = int(round(x, x_digits))
+    v_u = int(round(x_u, x_u_digits))
+    v_d = int(round(x_d, x_d_digits))
+    return f"{v}^{{+{v_u}}}_{{-{v_d}}}"
 
 
 def write_latex_single_sig_fig(row, x_digits=-2, x_unc_digits=-2):
