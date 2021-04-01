@@ -1,5 +1,7 @@
 # ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b
 
+[![DOI](https://zenodo.org/badge/333844972.svg)](https://zenodo.org/badge/latestdoi/333844972)
+
 ## Quickstart
 This site hosts the collection of Jupyter notebooks used to produce each figure in the paper. All of the data used by each notebook is available [here](https://www.dropbox.com/sh/ikyxx0at9xifo9s/AABXhaI-K4Jf4QK6FQZR0gDua?dl=0). Individual datasets for each notebook can also be downloaded directly from within the notebooks themselves.
 
