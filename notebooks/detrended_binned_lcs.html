@@ -403,12 +403,12 @@
     <span class="n">annotate_kwargs</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
         <span class="s2">&quot;horizontalalignment&quot;</span><span class="p">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;path_effects&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">PathEffects</span><span class="o">.</span><span class="n">withStroke</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)],</span>
+        <span class="s2">&quot;path_effects&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">PathEffects</span><span class="o">.</span><span class="n">withStroke</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)],</span>
     <span class="p">}</span>
     <span class="n">annotate_rms_kwargs</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
         <span class="s2">&quot;horizontalalignment&quot;</span><span class="p">:</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;path_effects&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">PathEffects</span><span class="o">.</span><span class="n">withStroke</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)],</span>
+        <span class="s2">&quot;path_effects&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">PathEffects</span><span class="o">.</span><span class="n">withStroke</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)],</span>
     <span class="p">}</span>
 
     <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">FIG_LARGE</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -448,148 +448,20 @@
     <span class="c1"># Save</span>
     <span class="n">ax_left</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Normalized flux + offset&quot;</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.52</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Phase&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
-    <span class="n">ax_left</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.075</span><span class="p">,</span> <span class="mf">0.075</span><span class="p">)</span>
+    <span class="n">ax_left</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_LARGE</span><span class="p">)</span>
     <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;detrended_binned_lcs_&quot;</span> <span class="o">+</span> <span class="n">title</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
-    <span class="c1">#utils.savefig(f&quot;../paper/figures/detrended_binned_lcs/{title}.pdf&quot;)</span>
-    <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/home/mango/Desktop/detrended_binned_lcs/</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+    <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;../paper/figures/detrended_binned_lcs/</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1311</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1312</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_accessor</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1313</span>         <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/home/mango/Desktop/detrended_binned_lcs&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1311</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1312</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_accessor</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1313</span>         <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/home/mango/Desktop&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">PermissionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="n">ab88d69d989</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;detrended_binned_lcs_&quot;</span> <span class="o">+</span> <span class="n">title</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="c1">#utils.savefig(f&quot;../paper/figures/detrended_binned_lcs/{title}.pdf&quot;)</span>
-<span class="ne">--&gt; </span><span class="mi">127</span>     <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/home/mango/Desktop/detrended_binned_lcs/</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
-
-<span class="nn">~/work/HAT-P-23b/HAT-P-23b/notebooks/utils.py</span> in <span class="ni">savefig</span><span class="nt">(fpath, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1052</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1053</span> <span class="k">def</span> <span class="nf">savefig</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1054</span>     <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1055</span>     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1056</span> 
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1314</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">parents</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">==</span> <span class="bp">self</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1315</span>                 <span class="k">raise</span>
-<span class="ne">-&gt; </span><span class="mi">1316</span>             <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1317</span>             <span class="bp">self</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="n">exist_ok</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1318</span>         <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1314</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">parents</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">==</span> <span class="bp">self</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1315</span>                 <span class="k">raise</span>
-<span class="ne">-&gt; </span><span class="mi">1316</span>             <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1317</span>             <span class="bp">self</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="n">exist_ok</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1318</span>         <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1310</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1311</span><span class="s2">         try:</span>
-<span class="ne">-&gt; </span><span class="mi">1312</span><span class="s2">             self._accessor.mkdir(self, mode)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1313</span><span class="s2">         except FileNotFoundError:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1314</span><span class="s2">             if not parents or self.parent == self:</span>
-
-<span class="ne">PermissionError</span>: [Errno 13] Permission denied: &#39;/home/mango&#39;
-</pre></div>
-</div>
+<img alt="../_images/detrended_binned_lcs_7_0.png" src="../_images/detrended_binned_lcs_7_0.png" />
 <img alt="../_images/detrended_binned_lcs_7_1.png" src="../_images/detrended_binned_lcs_7_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mplcyberpunk</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_theme</span><span class="p">(</span><span class="n">notebook_mode</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span> <span class="c1"># Reset to default before layering on any changes</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s2">&quot;Paired&quot;</span><span class="p">,</span> <span class="n">color_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;talk&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">notebook_mode</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span><span class="p">:</span>
-        <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;ticks&#39;</span><span class="p">)</span>
-        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="c1"># xticks</span>
-            <span class="s2">&quot;xtick.top&quot;</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span>
-            <span class="s2">&quot;xtick.direction&quot;</span><span class="p">:</span><span class="s2">&quot;out&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;xtick.major.size&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
-            <span class="s2">&quot;xtick.minor.visible&quot;</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span>
-
-            <span class="c1"># yticks</span>
-            <span class="s2">&quot;ytick.right&quot;</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span>
-            <span class="s2">&quot;ytick.direction&quot;</span><span class="p">:</span><span class="s2">&quot;out&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;ytick.major.size&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
-            <span class="s2">&quot;ytick.minor.visible&quot;</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span>
-
-            <span class="c1"># pallete</span>
-            <span class="s2">&quot;axes.prop_cycle&quot;</span><span class="p">:</span><span class="n">mpl</span><span class="o">.</span><span class="n">cycler</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="p">[</span>
-                <span class="s2">&quot;#fdbf6f&quot;</span><span class="p">,</span> <span class="c1"># Yellow</span>
-                <span class="s2">&quot;#ff7f00&quot;</span><span class="p">,</span> <span class="c1"># Orange</span>
-                <span class="s2">&quot;#a6cee3&quot;</span><span class="p">,</span> <span class="c1"># Cyan</span>
-                <span class="s2">&quot;#1f78b4&quot;</span><span class="p">,</span> <span class="c1"># Blue</span>
-                <span class="s2">&quot;#956cb4&quot;</span><span class="p">,</span> <span class="c1"># Purple</span>
-                <span class="s2">&quot;#029e73&quot;</span><span class="p">,</span> <span class="c1"># Green</span>
-                <span class="s2">&quot;#c44e52&quot;</span><span class="p">,</span> <span class="c1"># Red</span>
-            <span class="p">]),</span>
-        <span class="p">}</span>
-        <span class="c1">#sns.set_style(&quot;ticks&quot;, tick_params)</span>
-        <span class="c1">#params = {</span>
-        <span class="c1">#    &quot;axes.formatter.limits&quot;:(-3, 7),</span>
-        <span class="c1">#    #&quot;axes.spine.right&quot;:False,</span>
-        <span class="c1">#    &quot;xtick.major.size&quot;:2,</span>
-        <span class="c1">#}</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
-
-    <span class="k">elif</span> <span class="n">notebook_mode</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;dark&quot;</span><span class="p">:</span>
-        <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s2">&quot;colorblind&quot;</span><span class="p">,</span> <span class="n">color_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;talk&quot;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;cyberpunk&quot;</span><span class="p">)</span>
-        <span class="c1"># Re-order color cycle</span>
-        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;axes.prop_cycle&quot;</span><span class="p">:</span><span class="n">mpl</span><span class="o">.</span><span class="n">cycler</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="p">[</span>
-               <span class="s2">&quot;#fdbf6f&quot;</span><span class="p">,</span> <span class="c1"># Yellow</span>
-                <span class="s2">&quot;#ff7f00&quot;</span><span class="p">,</span> <span class="c1"># Orange</span>
-                <span class="s2">&quot;#a6cee3&quot;</span><span class="p">,</span> <span class="c1"># Cyan</span>
-                <span class="s2">&quot;#1f78b4&quot;</span><span class="p">,</span> <span class="c1"># Blue</span>
-                <span class="s2">&quot;thistle&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;#956cb4&quot;</span><span class="p">,</span> <span class="c1"># Purple</span>
-                <span class="s2">&quot;#029e73&quot;</span><span class="p">,</span> <span class="c1"># Green</span>
-                <span class="s2">&quot;#c44e52&quot;</span><span class="p">,</span> <span class="c1"># Red</span>
-            <span class="p">]),</span>
-        <span class="p">}</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
-        
-<span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
+<img alt="../_images/detrended_binned_lcs_7_2.png" src="../_images/detrended_binned_lcs_7_2.png" />
+<img alt="../_images/detrended_binned_lcs_7_3.png" src="../_images/detrended_binned_lcs_7_3.png" />
+<img alt="../_images/detrended_binned_lcs_7_4.png" src="../_images/detrended_binned_lcs_7_4.png" />
 </div>
 </div>
 </div>

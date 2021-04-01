@@ -431,7 +431,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">fmt_vals</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;fmt_v&quot;</span><span class="p">:</span><span class="s2">&quot;.5f&quot;</span><span class="p">,</span> <span class="s2">&quot;fmt_vu&quot;</span><span class="p">:</span><span class="s2">&quot;.5f&quot;</span><span class="p">,</span> <span class="s2">&quot;fmt_vd&quot;</span><span class="p">:</span><span class="s2">&quot;.5f&quot;</span><span class="p">}</span>
         <span class="n">results_dict</span><span class="p">[</span><span class="n">transit</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">utils</span><span class="o">.</span><span class="n">write_latex_row_sig_fig</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">param</span><span class="p">],</span> <span class="o">**</span><span class="n">fmt_vals</span><span class="p">)</span>
+            <span class="n">utils</span><span class="o">.</span><span class="n">write_latex_row</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">param</span><span class="p">],</span> <span class="o">**</span><span class="n">fmt_vals</span><span class="p">)</span>
         <span class="p">)</span>
         
 <span class="n">results_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results_dict</span><span class="p">)</span>
@@ -440,19 +440,117 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">235296</span><span class="n">c52829</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>             <span class="n">fmt_vals</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;fmt_v&quot;</span><span class="p">:</span><span class="s2">&quot;.5f&quot;</span><span class="p">,</span> <span class="s2">&quot;fmt_vu&quot;</span><span class="p">:</span><span class="s2">&quot;.5f&quot;</span><span class="p">,</span> <span class="s2">&quot;fmt_vd&quot;</span><span class="p">:</span><span class="s2">&quot;.5f&quot;</span><span class="p">}</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="n">results_dict</span><span class="p">[</span><span class="n">transit</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-<span class="ne">---&gt; </span><span class="mi">33</span>             <span class="n">utils</span><span class="o">.</span><span class="n">write_latex_row_sig_fig</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">param</span><span class="p">],</span> <span class="o">**</span><span class="n">fmt_vals</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>         <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> 
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">AttributeError</span>: module &#39;utils&#39; has no attribute &#39;write_latex_row_sig_fig&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>parameter</th>
+      <th>Transit 1</th>
+      <th>Transit 2</th>
+      <th>Transit 3</th>
+      <th>Transit 4</th>
+      <th>Transit 5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>$R_\mathrm{p}/R_\mathrm{s}$</td>
+      <td>0.11218^{+0.00283}_{-0.00289}</td>
+      <td>0.11277^{+0.00187}_{-0.00204}</td>
+      <td>0.11650^{+0.00257}_{-0.00279}</td>
+      <td>0.11491^{+0.00206}_{-0.00202}</td>
+      <td>0.11328^{+0.00202}_{-0.00216}</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>$t_0$</td>
+      <td>4852.26537^{+0.00015}_{-0.00015}</td>
+      <td>4852.26540^{+0.00014}_{-0.00014}</td>
+      <td>4852.26541^{+0.00014}_{-0.00013}</td>
+      <td>4852.26545^{+0.00015}_{-0.00015}</td>
+      <td>4852.26543^{+0.00013}_{-0.00014}</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>$P$</td>
+      <td>1.21289^{+1.13e-07}_{-1.14e-07}</td>
+      <td>1.21289^{+8.45e-08}_{-8.76e-08}</td>
+      <td>1.21289^{+8.76e-08}_{-8.78e-08}</td>
+      <td>1.21289^{+7.42e-08}_{-7.84e-08}</td>
+      <td>1.21289^{+7e-08}_{-7.13e-08}</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>$\rho_\mathrm{s}$</td>
+      <td>1.07230^{+0.08406}_{-0.07603}</td>
+      <td>0.96894^{+0.06463}_{-0.05683}</td>
+      <td>1.01504^{+0.05602}_{-0.05063}</td>
+      <td>1.03666^{+0.06581}_{-0.06079}</td>
+      <td>1.02626^{+0.07229}_{-0.07204}</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>$i$</td>
+      <td>84.33384^{+0.88921}_{-0.80101}</td>
+      <td>83.14471^{+0.73406}_{-0.61691}</td>
+      <td>83.64261^{+0.56957}_{-0.51338}</td>
+      <td>83.76319^{+0.69346}_{-0.64068}</td>
+      <td>83.73923^{+0.73109}_{-0.74358}</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>$b$</td>
+      <td>0.43173^{+0.04848}_{-0.05892}</td>
+      <td>0.50417^{+0.03445}_{-0.04412}</td>
+      <td>0.47517^{+0.02969}_{-0.03537}</td>
+      <td>0.46904^{+0.03843}_{-0.04320}</td>
+      <td>0.46936^{+0.04278}_{-0.04503}</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>$a/R_\mathrm{s}$</td>
+      <td>4.36890^{+0.11130}_{-0.10580}</td>
+      <td>4.22377^{+0.09190}_{-0.08424}</td>
+      <td>4.28971^{+0.07750}_{-0.07254}</td>
+      <td>4.31996^{+0.08955}_{-0.08614}</td>
+      <td>4.30547^{+0.09880}_{-0.10320}</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>$u$</td>
+      <td>0.24859^{+0.10290}_{-0.10754}</td>
+      <td>0.38699^{+0.07698}_{-0.07472}</td>
+      <td>0.37032^{+0.10186}_{-0.11732}</td>
+      <td>0.40126^{+0.08643}_{-0.09298}</td>
+      <td>0.32686^{+0.07151}_{-0.08796}</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>$\delta$</td>
+      <td>12584.79890^{+633.98979}_{-647.93827}</td>
+      <td>12716.26467^{+421.08962}_{-459.31331}</td>
+      <td>13571.18577^{+598.68259}_{-650.42694}</td>
+      <td>13204.48610^{+472.94430}_{-465.37117}</td>
+      <td>12831.57340^{+456.65963}_{-489.88214}</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>

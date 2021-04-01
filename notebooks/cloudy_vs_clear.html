@@ -950,94 +950,6 @@ dtype: object
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_southworth</span><span class="p">[</span><span class="s2">&quot;a(AU)&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;tepcat&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;a (AU)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-
-<span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/mango/Desktop/tepcat.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1311</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1312</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_accessor</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1313</span>         <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/home/mango/Desktop&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">PermissionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">6132</span><span class="n">a66fbebb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/mango/Desktop/tepcat.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
-
-<span class="nn">~/work/HAT-P-23b/HAT-P-23b/notebooks/utils.py</span> in <span class="ni">savefig</span><span class="nt">(fpath, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1052</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1053</span> <span class="k">def</span> <span class="nf">savefig</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1054</span>     <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1055</span>     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1056</span> 
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1314</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">parents</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">==</span> <span class="bp">self</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1315</span>                 <span class="k">raise</span>
-<span class="ne">-&gt; </span><span class="mi">1316</span>             <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1317</span>             <span class="bp">self</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="n">exist_ok</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1318</span>         <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
-
-<span class="nn">/usr/share/miniconda/envs/hatp23b/lib/python3.9/pathlib.py</span> in <span class="ni">mkdir</span><span class="nt">(self, mode, parents, exist_ok)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1310</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1311</span><span class="s2">         try:</span>
-<span class="ne">-&gt; </span><span class="mi">1312</span><span class="s2">             self._accessor.mkdir(self, mode)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1313</span><span class="s2">         except FileNotFoundError:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1314</span><span class="s2">             if not parents or self.parent == self:</span>
-
-<span class="ne">PermissionError</span>: [Errno 13] Permission denied: &#39;/home/mango&#39;
-</pre></div>
-</div>
-<img alt="../_images/cloudy_vs_clear_10_1.png" src="../_images/cloudy_vs_clear_10_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_southworth</span><span class="p">[</span><span class="s2">&quot;a(AU)&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>System
-55_Cnc_e    0.01544
-pi_Men      0.06800
-AD_3116    -1.00000
-AU_Mic_b    0.06450
-AU_Mic_c    0.11010
-             ...   
-XO-3        0.04529
-XO-4        0.05485
-XO-5        0.05148
-XO-6        0.07250
-XO-7        0.04421
-Name: a(AU), Length: 1010, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>It seems that something went wrong with the conversion of the <code class="docutils literal notranslate"><span class="pre">errdn.6</span></code> column (it should be a float since it corresponds to the lower bound on the uncertainty of <code class="docutils literal notranslate"><span class="pre">g_b</span></code>), so let’s take a look at what happened:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1127,11 +1039,11 @@ Name: a(AU), Length: 1010, dtype: float64
 <span class="n">targ_coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.485</span><span class="p">,</span> <span class="mi">2027</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="o">*</span><span class="n">targ_coords</span><span class="p">,</span>
-    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span>
-    <span class="c1">#marker=&quot;*&quot;,</span>
-    <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
-    <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="c1">#cmap=&quot;PuOr&quot;,</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;#F3F3F3&quot;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;PuOr&quot;</span><span class="p">,</span>
     <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
@@ -1146,64 +1058,64 @@ Name: a(AU), Length: 1010, dtype: float64
 <span class="p">)</span>
 
 <span class="c1"># Plot WASP-50</span>
-<span class="n">targ_coords</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">30</span><span class="p">),</span> <span class="mi">1381</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-    <span class="o">*</span><span class="n">targ_coords</span><span class="p">,</span>
-    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span>
-    <span class="c1">#marker=&quot;*&quot;,</span>
-    <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
-    <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="c1">#cmap=&quot;PuOr&quot;,</span>
-    <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
-    <span class="s2">&quot;WASP-50b&quot;</span><span class="p">,</span>
-    <span class="n">xy</span><span class="o">=</span><span class="n">targ_coords</span><span class="p">,</span>
-    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
-    <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;offset points&quot;</span><span class="p">,</span>
-    <span class="n">ha</span> <span class="o">=</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span>
-    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-    <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="c1"># targ_coords = (np.log10(100*30), 1381)</span>
+<span class="c1"># ax.scatter(</span>
+<span class="c1">#     *targ_coords,</span>
+<span class="c1">#     c=&quot;g&quot;,</span>
+<span class="c1">#     #marker=&quot;*&quot;,</span>
+<span class="c1">#     s=200,</span>
+<span class="c1">#     lw=0,</span>
+<span class="c1">#     #cmap=&quot;PuOr&quot;,</span>
+<span class="c1">#     vmin=0,</span>
+<span class="c1">#     vmax=2,</span>
+<span class="c1"># )</span>
+<span class="c1"># ax.annotate(</span>
+<span class="c1">#     &quot;WASP-50b&quot;,</span>
+<span class="c1">#     xy=targ_coords,</span>
+<span class="c1">#     xytext=(10, 10),</span>
+<span class="c1">#     textcoords=&quot;offset points&quot;,</span>
+<span class="c1">#     ha = &quot;right&quot;,</span>
+<span class="c1">#     fontsize=12,</span>
+<span class="c1">#     weight=&quot;bold&quot;,</span>
+<span class="c1"># )</span>
 
 <span class="c1"># Jupiter</span>
-<span class="n">targ_coords</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">25</span><span class="p">),</span> <span class="mi">150</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-    <span class="o">*</span><span class="n">targ_coords</span><span class="p">,</span>
-    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span>
-    <span class="c1">#marker=&quot;*&quot;,</span>
-    <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
-    <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="c1">#cmap=&quot;PuOr&quot;,</span>
-    <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="c1"># targ_coords = (np.log10(100*25), 150)</span>
+<span class="c1"># ax.scatter(</span>
+<span class="c1">#     *targ_coords,</span>
+<span class="c1">#     c=&quot;r&quot;,</span>
+<span class="c1">#     #marker=&quot;*&quot;,</span>
+<span class="c1">#     s=200,</span>
+<span class="c1">#     lw=0,</span>
+<span class="c1">#     #cmap=&quot;PuOr&quot;,</span>
+<span class="c1">#     vmin=0,</span>
+<span class="c1">#     vmax=2,</span>
+<span class="c1"># )</span>
 
 <span class="c1"># Plot WASP-43</span>
-<span class="n">targ_coords</span> <span class="o">=</span> <span class="n">df_wakeford</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;WASP-43&quot;</span><span class="p">][[</span><span class="s2">&quot;logg&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
-    <span class="s2">&quot;WASP-43b&quot;</span><span class="p">,</span>
-    <span class="n">xy</span><span class="o">=</span><span class="n">targ_coords</span><span class="p">,</span>
-    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
-    <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;offset points&quot;</span><span class="p">,</span>
-    <span class="c1">#ha = &quot;right&quot;,</span>
-    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-    <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="c1"># targ_coords = df_wakeford.loc[&quot;WASP-43&quot;][[&quot;logg&quot;, &quot;T&quot;]].values</span>
+<span class="c1"># ax.annotate(</span>
+<span class="c1">#     &quot;WASP-43b&quot;,</span>
+<span class="c1">#     xy=targ_coords,</span>
+<span class="c1">#     xytext=(10, 10),</span>
+<span class="c1">#     textcoords=&quot;offset points&quot;,</span>
+<span class="c1">#     #ha = &quot;right&quot;,</span>
+<span class="c1">#     fontsize=12,</span>
+<span class="c1">#     weight=&quot;bold&quot;,</span>
+<span class="c1"># )</span>
     
     
 <span class="c1"># Plot HD189733</span>
-<span class="n">targ_coords</span> <span class="o">=</span> <span class="n">df_wakeford</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;HD189733&quot;</span><span class="p">][[</span><span class="s2">&quot;logg&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
-    <span class="s2">&quot;HD189733&quot;</span><span class="p">,</span>
-    <span class="n">xy</span><span class="o">=</span><span class="n">targ_coords</span><span class="p">,</span>
-    <span class="c1">#xytext=(10, 10),</span>
-    <span class="c1">#textcoords=&quot;offset points&quot;,</span>
-    <span class="c1">#ha = &quot;right&quot;,</span>
-    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-    <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="c1"># targ_coords = df_wakeford.loc[&quot;HD189733&quot;][[&quot;logg&quot;, &quot;T&quot;]].values</span>
+<span class="c1"># ax.annotate(</span>
+<span class="c1">#     &quot;HD189733&quot;,</span>
+<span class="c1">#     xy=targ_coords,</span>
+<span class="c1">#     #xytext=(10, 10),</span>
+<span class="c1">#     #textcoords=&quot;offset points&quot;,</span>
+<span class="c1">#     #ha = &quot;right&quot;,</span>
+<span class="c1">#     fontsize=12,</span>
+<span class="c1">#     weight=&quot;bold&quot;,</span>
+<span class="c1"># )</span>
 
 <span class="c1"># Plot divide</span>
 <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="mi">300</span> <span class="o">-</span> <span class="mi">2100</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">3.3</span> <span class="o">-</span> <span class="mf">2.4</span><span class="p">)</span>
@@ -1217,12 +1129,12 @@ Name: a(AU), Length: 1010, dtype: float64
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$log(g)$ (dex)&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;T$_</span><span class="si">{eq}</span><span class="s2">$ (K)&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">FIG_WIDE</span><span class="p">)</span>
-<span class="c1">#utils.savefig(&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;)</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../paper/figures/cloudy_vs_clear/cloudy_vs_clear.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cloudy_vs_clear_20_0.png" src="../_images/cloudy_vs_clear_20_0.png" />
+<img alt="../_images/cloudy_vs_clear_17_0.png" src="../_images/cloudy_vs_clear_17_0.png" />
 </div>
 </div>
 </div>
