@@ -1,5 +1,6 @@
 # ACCESS: An optical transmission spectrum of the high gravity, hot Jupiter HAT-P-23b
 
+[![paper](https://img.shields.io/badge/read-the%20paper-brightgreen)](https://ui.adsabs.harvard.edu/abs/2021arXiv210404101W/abstract)
 [![DOI](https://zenodo.org/badge/333844972.svg)](https://zenodo.org/badge/latestdoi/333844972)
 
 ## Quickstart
